@@ -1,0 +1,43 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import CompoundInterestCalculator from '../components/calculators/CompoundInterestCalculator';
+
+const faqs = [
+  {
+    q: 'What is the compound interest formula?',
+    a: 'A = P(1 + r/n)^(nt), where P is the principal, r is the annual interest rate as a decimal, n is the number of times interest compounds per year, and t is the number of years. Compound interest earned is A minus P.',
+  },
+  {
+    q: 'How does compounding frequency change the result?',
+    a: 'More frequent compounding adds interest to the balance sooner, so it earns interest again sooner. $10,000 at 5% for 10 years grows to $16,289 with annual compounding and $16,470 with monthly compounding.',
+  },
+  {
+    q: 'What is the difference between simple and compound interest?',
+    a: 'Simple interest is paid only on the original principal. Compound interest is paid on the principal plus all interest already earned, so the balance grows exponentially rather than in a straight line.',
+  },
+  {
+    q: 'How are monthly contributions handled?',
+    a: 'Contributions are added at the end of each month and then earn interest at the same rate as the rest of the balance. Leave the contribution at 0 to use the classic single-deposit formula.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="compound-interest-calculator-online"
+  h1="Compound Interest Calculator"
+  description="Free compound interest calculator. Enter principal, rate, time, and compounding frequency to see your future value, interest earned, and growth by year."
+  faqs={faqs}
+>
+  <CompoundInterestCalculator client:visible />
+  <Fragment slot="formula">
+    <p>
+      Compound interest uses <strong>A = P(1 + r/n)<sup>nt</sup></strong>. <em>P</em> is the starting principal,
+      <em>r</em> the annual rate as a decimal, <em>n</em> the number of compounding periods per year, and <em>t</em> the
+      number of years. The interest earned is <em>A − P</em>.
+    </p>
+    <p>
+      With monthly contributions, each deposit is added at the end of the month and compounds from then on. For example,
+      $10,000 at 5% compounded monthly for 10 years grows to about $16,470, of which $6,470 is interest.
+    </p>
+  </Fragment>
+</CalculatorLayout>
