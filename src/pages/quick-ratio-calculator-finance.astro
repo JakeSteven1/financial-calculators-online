@@ -1,0 +1,36 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import QuickRatioCalculator from '../components/calculators/QuickRatioCalculator';
+
+const faqs = [
+  {
+    q: 'What is the quick ratio?',
+    a: 'Also called the acid-test ratio, it measures whether a company can pay its current liabilities using only its most liquid assets: cash, marketable securities, and receivables.',
+  },
+  {
+    q: 'What is a good quick ratio?',
+    a: 'A ratio of 1.0 or higher is generally considered healthy: liquid assets fully cover short-term obligations. Below 1.0, the company depends on selling inventory or new financing to pay its bills.',
+  },
+  {
+    q: 'Why exclude inventory and prepaid expenses?',
+    a: 'Inventory may take months to sell and could sell at a discount, and prepaid expenses can’t be converted to cash at all. Excluding them gives a conservative view of liquidity.',
+  },
+  {
+    q: 'Can I calculate it from the asset side instead?',
+    a: 'Yes: (cash + marketable securities + accounts receivable) ÷ current liabilities. The liquidity ratio calculator shows both forms along with the current and cash ratios.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="quick-ratio-calculator-finance"
+  h1="Quick Ratio Calculator"
+  description="Calculate the quick (acid-test) ratio from current assets, inventory, prepaid expenses, and current liabilities to test a company's liquidity."
+  faqs={faqs}
+>
+  <QuickRatioCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Quick ratio = (current assets − inventory − prepaid expenses) ÷ current liabilities</strong></p>
+    <p>($250,000 − $80,000 − $10,000) ÷ $125,000 = 1.28.</p>
+  </Fragment>
+</CalculatorLayout>
