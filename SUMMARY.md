@@ -23,17 +23,38 @@ Static Astro rebuild of financialcalculatoronlinefree.com, ready for Cloudflare 
 - Internal links: 0 broken, all root-relative with a trailing slash. Hubs link to every calculator in them;
   every calculator links back to its hub.
 
-## Needs your attention (see BLOCKED.md)
-1. **ads.txt uses `pub-7205603150750890` but the publisher ID is `pub-2644536267352236`.** One is likely wrong.
-2. No AdSense ad unit IDs yet, so ad slots are empty placeholders.
-3. `/random-email-picker-iloamelkm/` (unlisted premium page) was not rebuilt; decide whether to keep, redirect, or retire it.
-4. Add a `/free-online-financial-calculators/ → /` 301 when you set up Cloudflare Pages.
+## Design and fixes phase
+- **Copy cleanup**: removed WordPress import artifacts: duplicated hub menus, a duplicated article, broken bold
+  headings, Elementor call-to-action remnants (literal `[` / `](/url/)`), 40 empty widget headings, KaTeX garbage, stray
+  spacing. "Calculator below" pointers now say "above". `npm run check:artifacts` finds 0 hits.
+- **Navigation**: Financial, Business, Statistics, Home, Personal Finance, with the logo linking home. Zero-JS
+  `<details>` menu on mobile; the active hub is highlighted on hub pages and their calculators.
+- **Internal links**: a "Related calculators" section (3–5 per page, from `src/data/related.ts`) and 32 contextual prose
+  links. Vague homepage links like "[calculator](/)" were unlinked. Every calculator has at least 3 inbound pages.
+- **Logo and icons**: header logo via astro:assets; `favicon.ico`, `favicon.svg`, apple-touch icon, 192/512 icons, and
+  `site.webmanifest` (`npm run favicons`).
+- **Images**: 21 WordPress images restored to `src/assets/images/` with alt text written from what each image shows;
+  inline images are optimized and lazy-loaded; featured images are each page's `og:image` (logo fallback).
+- **Social**: X/Twitter link in the footer, `Organization` JSON-LD on the homepage, full Open Graph and Twitter tags.
+- **Design**: white background, neutral grays, one blue accent; calculator card with a prominent results panel;
+  charts in their own cards with a validated palette; prose capped at 70ch; hub card grids; homepage organized by hub;
+  new footer. axe-core reports no WCAG A/AA violations on any page.
+- **Blocked items resolved**: publisher ID is `pub-7205603150750890` everywhere; `/random-email-picker-iloamelkm/`
+  is an unlisted `noindex` working picker; `public/_redirects` 301s `/free-online-financial-calculators/` to `/`.
 
-Behavior changes from the WordPress versions (bug fixes, updated data, expanded inputs) are listed in DECISIONS.md.
+Current checks: 182 tests pass, `astro check` 0 errors, 67 pages built, 390px smoke test clean on all pages,
+0 broken internal links. Details and reasoning are in DECISIONS.md under "Design and fixes phase".
+
+## Needs your attention (see BLOCKED.md)
+1. No AdSense ad unit IDs yet, so ad slots are empty reserved boxes.
 
 ## Commands
 - `npm run dev`: local dev server
 - `npm run build`: static build to `dist/`
 - `npm test`: unit tests
 - `npm run check`: type check
-- `npm run import:wp`: re-pull WordPress content
+- `npm run import:wp`: re-pull WordPress content (overwrites the hand-cleaned Markdown)
+- `npm run smoke`: headless 390px check of every built page
+- `npm run check:artifacts` / `npm run check:links`: import-artifact grep and internal link check on `dist/`
+- `npm run screenshots <label>`: desktop and mobile screenshots to `screenshots/<label>/`
+- `npm run favicons`: regenerate icons from the logo
