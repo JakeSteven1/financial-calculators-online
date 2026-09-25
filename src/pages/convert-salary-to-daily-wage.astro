@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import DailyWageCalculator from '../components/calculators/DailyWageCalculator';
+
+const faqs = [
+  {
+    q: 'How much do I make a day on my salary?',
+    a: 'Divide your yearly salary by the number of days you work. A full-time schedule has 260 workdays (52 weeks × 5 days), so $65,000 a year is $250 per workday.',
+  },
+  {
+    q: 'Should I divide by 260 or 365?',
+    a: 'Divide by 260 (or your actual workdays) to find what each day of work earns. Divide by 365 to find what you earn per calendar day, including weekends, which is useful for budgeting daily spending.',
+  },
+  {
+    q: 'Do paid holidays change my daily rate?',
+    a: 'No. Paid holidays and vacation are already part of your salary, so they stay in the 260 days. Only unpaid days off reduce the days your salary covers.',
+  },
+  {
+    q: 'What is a daily rate for contractors?',
+    a: 'Contractors usually charge well above an employee’s daily wage to cover benefits, taxes, unpaid time, and gaps between projects. A common rule of thumb is 1.5 to 2 times the equivalent salaried daily rate.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="convert-salary-to-daily-wage"
+  h1="Convert Salary to Daily Wage"
+  description="How much do you make in a day? Convert your yearly salary to a daily wage per workday or per calendar day, plus your effective hourly rate."
+  faqs={faqs}
+>
+  <DailyWageCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Per workday</strong> = salary ÷ (52 × workdays per week − unpaid days off)</li>
+      <li><strong>Per calendar day</strong> = salary ÷ 365</li>
+      <li><strong>Per hour</strong> = per-workday wage ÷ hours per day</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>

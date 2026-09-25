@@ -41,7 +41,7 @@
 - [x] /lifetime-wealth-ratio-calculator/
 - [x] /hourly-wage-yearly-salary-calculator/
 - [x] /closing-costs-calculator/
-- [ ] /convert-salary-to-daily-wage/
+- [x] /convert-salary-to-daily-wage/
 - [ ] /effective-annual-interest-rate-calculator-online/
 - [ ] /return-on-investment-calculator/
 - [ ] /stock-price-revenue-sale/
