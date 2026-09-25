@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RefinanceCalculator from '../components/calculators/RefinanceCalculator';
+
+const faqs = [
+  {
+    q: 'When does refinancing make sense?',
+    a: 'When the monthly savings recover the closing costs before you expect to sell or refinance again, and the total cost of the new loan is lower. A common rule of thumb is a rate drop of at least 0.5 to 1 percentage point.',
+  },
+  {
+    q: 'How is the break-even point calculated?',
+    a: 'Closing costs ÷ monthly savings. $5,000 in costs with $200 a month in savings breaks even after 25 months.',
+  },
+  {
+    q: 'Why can a lower payment still cost more overall?',
+    a: 'If you restart the clock with a longer term, such as refinancing 22 remaining years into a new 30-year loan, you make more payments. The lower rate can be outweighed by the extra years of interest.',
+  },
+  {
+    q: 'Should I roll closing costs into the loan?',
+    a: 'It avoids paying cash up front, but you pay interest on those costs for the life of the loan and your balance starts higher. The calculator shows both options.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="refinance-calculator-online-free"
+  h1="Refinance Calculator"
+  description="Should you refinance? Compare your current mortgage with a new rate and term to see monthly savings, break-even time, and total lifetime savings."
+  faqs={faqs}
+>
+  <RefinanceCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Payment</strong> = P × i ÷ (1 − (1 + i)<sup>−n</sup>) for both the current and new loan</li>
+      <li><strong>Monthly savings</strong> = current payment − new payment</li>
+      <li><strong>Break-even months</strong> = closing costs ÷ monthly savings</li>
+      <li><strong>Lifetime savings</strong> = current payment × remaining months − (new payment × new months + closing costs)</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
