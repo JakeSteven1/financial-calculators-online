@@ -1,0 +1,27 @@
+---
+import HubLayout from '../layouts/HubLayout.astro';
+
+const faqs = [
+  {
+    q: 'Which real estate calculator should I use first?',
+    a: 'If you are buying, start with the home affordability calculator to set a price range, then use the mortgage calculator for the monthly payment and the closing costs calculator for cash needed.',
+  },
+  {
+    q: 'Do the mortgage calculators include taxes and insurance?',
+    a: 'The mortgage, affordability, and rate comparison calculators include property tax, homeowners insurance, HOA dues, and PMI. The amortization and payoff calculators cover principal and interest only.',
+  },
+  {
+    q: 'When should I refinance?',
+    a: 'When the monthly savings recover your closing costs before you expect to move or refinance again. The refinance and break-even calculators show both the break-even month and total lifetime savings.',
+  },
+];
+---
+
+<HubLayout
+  hub="home-calculators-online"
+  contentSlug="home-calculators-online"
+  h1="Real Estate Calculators Online"
+  intro="Mortgage, refinance, affordability, equity, and home cost calculators for buying, owning, improving, and selling a home."
+  description="Free real estate calculators: mortgage payments, affordability, refinance and break-even, amortization, closing costs, home equity, rent vs buy, and more."
+  faqs={faqs}
+/>
