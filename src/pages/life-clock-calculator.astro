@@ -1,0 +1,42 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import LifeClockCalculator from '../components/calculators/LifeClockCalculator';
+
+const faqs = [
+  {
+    q: 'What is a life clock?',
+    a: 'A life clock squeezes an average lifespan into one 24-hour day. Birth is midnight and the end of a typical life is the following midnight, so the time shown is how far through the "day" of your life you are.',
+  },
+  {
+    q: 'What time is it in my life if I am 40?',
+    a: 'With a 78.4-year life expectancy, age 40 is about 12:14 PM: just past noon. Age 20 is about 6:07 AM, and age 60 is about 6:22 PM.',
+  },
+  {
+    q: 'Why does gender change the result?',
+    a: 'Women in the US live about five years longer than men on average (81.1 vs 75.8 years in 2023 CDC data), so the same age sits earlier on a woman’s clock.',
+  },
+  {
+    q: 'Can I use my own life expectancy?',
+    a: 'Yes. Choose Custom and enter any number of years, for example an estimate from a longevity calculator or family history.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="life-clock-calculator"
+  h1="Life Clock Calculator: What Time Is It in Your Life?"
+  description="What time is it in your life? Our free life clock maps your age onto a 24-hour day using US life expectancy, with male, female, or custom options."
+  faqs={faqs}
+>
+  <LifeClockCalculator client:visible />
+  <Fragment slot="formula">
+    <p>
+      <strong>Life clock hours = (age ÷ life expectancy) × 24</strong>. The whole-number part is the hour and the
+      fraction × 60 is the minutes. The result is shown on a 12-hour clock.
+    </p>
+    <p>
+      Life expectancy defaults to US figures from the CDC’s 2023 final data: 78.4 years overall, 75.8 for men, and 81.1
+      for women. A 35-year-old woman: 35 ÷ 81.1 × 24 = 10.36 hours, or about 10:21 AM.
+    </p>
+  </Fragment>
+</CalculatorLayout>

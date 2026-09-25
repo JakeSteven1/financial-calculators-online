@@ -9,7 +9,7 @@
 - [ ] /tvm-calculator-online/
 - [ ] /sales-calculator-online/
 - [ ] /customer-lifetime-value-calculator-online/
-- [ ] /life-clock-calculator/
+- [x] /life-clock-calculator/
 - [ ] /online-calculator-for-interest-plus-principal/
 - [ ] /quartile-calculator-online-free/
 - [ ] /liquidity-ratio-calculator-online/
