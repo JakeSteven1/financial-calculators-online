@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import AffordabilityCalculator from '../components/calculators/AffordabilityCalculator';
+
+const faqs = [
+  {
+    q: 'How much house can I afford?',
+    a: 'Lenders typically cap your total housing payment at about 28% of gross monthly income and all debt payments at about 36%. The calculator finds the highest price whose full payment (principal, interest, taxes, insurance, HOA) fits within both limits.',
+  },
+  {
+    q: 'What is the 28/36 rule?',
+    a: 'Spend no more than 28% of gross monthly income on housing and no more than 36% on housing plus other debts. On $120,000 a year ($10,000 a month) that is $2,800 for housing and $3,600 for all debts.',
+  },
+  {
+    q: 'How do my other debts affect affordability?',
+    a: 'Every dollar of monthly debt payments reduces the back-end budget by a dollar. A $500 car payment can lower the home price you qualify for by about $70,000 at a 6.5% rate.',
+  },
+  {
+    q: 'Can I qualify with higher ratios?',
+    a: 'Often, yes. FHA loans commonly allow 31% and 43%, and some programs go higher with strong credit or reserves. But a payment you qualify for isn’t always one you can comfortably afford.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="home-affordability-calculator"
+  h1="Home Affordability Calculator"
+  description="How much house can you afford? Estimate your maximum home price from income, debts, down payment, and rate using lender debt-to-income limits."
+  faqs={faqs}
+>
+  <AffordabilityCalculator client:visible />
+  <Fragment slot="formula">
+    <p>Monthly housing budget <strong>M = min(income × front-end %, income × back-end % − debts)</strong>, using gross monthly income.</p>
+    <p>
+      The price <em>P</em> solves <strong>f × (P − down payment) + P × tax rate ÷ 12 + insurance ÷ 12 + HOA = M</strong>,
+      where <em>f</em> is the monthly payment per dollar borrowed at your rate and term.
+    </p>
+  </Fragment>
+</CalculatorLayout>
