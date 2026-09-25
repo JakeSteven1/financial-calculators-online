@@ -43,7 +43,7 @@
 - [x] /closing-costs-calculator/
 - [x] /convert-salary-to-daily-wage/
 - [x] /effective-annual-interest-rate-calculator-online/
-- [ ] /return-on-investment-calculator/
+- [x] /return-on-investment-calculator/
 - [ ] /stock-price-revenue-sale/
 - [ ] /ai-word-count-calculator/
 - [ ] /character-count-tool-free/
