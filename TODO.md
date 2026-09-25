@@ -68,5 +68,5 @@
 - [x] /financial-calculators-online/
 - [x] /personal-financial-calculators/
 - [x] /home-calculators-online/
-- [ ] /free-online-statistics-calculators/
+- [x] /free-online-statistics-calculators/
 - [ ] /privacy-policy-2/

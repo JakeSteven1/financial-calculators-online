@@ -1,0 +1,27 @@
+---
+import HubLayout from '../layouts/HubLayout.astro';
+
+const faqs = [
+  {
+    q: 'What statistics calculators are available?',
+    a: 'Mean, median, mode, quartiles and IQR, standard deviation and variance, sample size, a random number generator, and random winner pickers for contests and giveaways.',
+  },
+  {
+    q: 'Can I paste data from a spreadsheet?',
+    a: 'Yes. The data calculators accept numbers separated by commas, spaces, tabs, or new lines, so you can paste a column straight from Excel or Google Sheets.',
+  },
+  {
+    q: 'How random are the random number and winner tools?',
+    a: 'They use your browser’s cryptographically secure random number generator (Web Crypto), which is suitable for fair drawings.',
+  },
+];
+---
+
+<HubLayout
+  hub="free-online-statistics-calculators"
+  contentSlug="free-online-statistics-calculators"
+  h1="Free Online Statistics Calculators"
+  intro="Descriptive statistics, sample size, and fair random selection tools. Paste your data and get results instantly."
+  description="Free statistics calculators: mean, median, mode, quartiles, standard deviation, sample size, random number generator, and random contest winner pickers."
+  faqs={faqs}
+/>
