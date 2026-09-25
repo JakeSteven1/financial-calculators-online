@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import MortgageLengthCalculator from '../components/calculators/MortgageLengthCalculator';
+
+const faqs = [
+  {
+    q: 'How long will it take to pay off my mortgage?',
+    a: 'Enter your balance, rate, and monthly principal-and-interest payment. The calculator solves n = −ln(1 − P × i ÷ M) ÷ ln(1 + i) for the number of months.',
+  },
+  {
+    q: 'How much faster will I pay off my mortgage by paying extra?',
+    a: 'Enter your higher payment to see the new payoff time. On a $250,000 balance at 6.5%, raising the payment from $1,580 (the 30-year payment) to $2,000 cuts the payoff to about 17½ years.',
+  },
+  {
+    q: 'Should I include taxes and insurance in the payment?',
+    a: 'No. Only principal and interest pay down the loan. Escrow for property taxes and insurance does not reduce your balance.',
+  },
+  {
+    q: 'What if my payment is too small?',
+    a: 'If the payment doesn’t cover the monthly interest, the balance never goes down. The calculator tells you the minimum payment needed.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="mortgage-length-calculator-online"
+  h1="Mortgage Length Calculator"
+  description="How long until your mortgage is paid off? Enter your balance, rate, and monthly payment to see payoff time, payoff date, and total interest."
+  faqs={faqs}
+>
+  <MortgageLengthCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>n = −ln(1 − P × i ÷ M) ÷ ln(1 + i)</strong></p>
+    <p>
+      <em>P</em> is the balance, <em>i</em> the monthly rate (annual ÷ 12), and <em>M</em> the monthly payment. The result
+      is rounded up to whole months. A solution exists only when M is greater than P × i, the first month’s interest.
+    </p>
+  </Fragment>
+</CalculatorLayout>

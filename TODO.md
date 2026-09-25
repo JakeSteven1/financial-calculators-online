@@ -33,7 +33,7 @@
 - [x] /monthly-loan-calculator/
 - [x] /refinance-calculator-online-free/
 - [x] /mortgage-points-calculator-online/
-- [ ] /mortgage-length-calculator-online/
+- [x] /mortgage-length-calculator-online/
 - [ ] /rent-or-buy-calculator-online-free/
 - [ ] /home-selling-price-calculator/
 - [ ] /home-renovation-roi-calculator/
