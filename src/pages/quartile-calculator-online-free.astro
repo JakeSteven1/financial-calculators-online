@@ -1,0 +1,41 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import StatsCalculator from '../components/calculators/StatsCalculator';
+
+const faqs = [
+  {
+    q: 'What are quartiles?',
+    a: 'Quartiles split sorted data into four equal parts. Q1 has 25% of values below it, Q2 is the median (50%), and Q3 has 75% below it.',
+  },
+  {
+    q: 'What is the interquartile range (IQR)?',
+    a: 'IQR = Q3 − Q1. It is the spread of the middle half of the data and, unlike the full range, is not affected by extreme values.',
+  },
+  {
+    q: 'Why do different calculators give different quartiles?',
+    a: 'There are several accepted methods. The textbook method takes the median of each half of the data; Excel’s QUARTILE.INC interpolates between values. They agree on large data sets but can differ on small ones, so this calculator lets you choose.',
+  },
+  {
+    q: 'How are outliers found?',
+    a: 'With Tukey’s fences: any value below Q1 − 1.5 × IQR or above Q3 + 1.5 × IQR is flagged as an outlier.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="quartile-calculator-online-free"
+  h1="Quartile Calculator"
+  description="Free quartile calculator. Paste a data set to get Q1, median, Q3, the interquartile range, and outliers, using the textbook or Excel method."
+  faqs={faqs}
+>
+  <StatsCalculator focus="quartiles" client:visible />
+  <Fragment slot="formula">
+    <p>Sort the data, then:</p>
+    <ul>
+      <li><strong>Q2</strong> is the median of all values.</li>
+      <li><strong>Median of halves method:</strong> Q1 is the median of the lower half and Q3 the median of the upper half, leaving out the middle value when the count is odd.</li>
+      <li><strong>Excel QUARTILE.INC method:</strong> Qk is the value at position (n − 1) × k/4 (counting from 0), interpolating between neighbors.</li>
+    </ul>
+    <p>For 6, 7, 15, 36, 39, 40, 41, 42, 43, 47, 49 the median of halves gives Q1 = 15, Q2 = 40, Q3 = 43, so IQR = 28.</p>
+  </Fragment>
+</CalculatorLayout>

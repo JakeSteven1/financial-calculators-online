@@ -11,7 +11,7 @@
 - [x] /customer-lifetime-value-calculator-online/
 - [x] /life-clock-calculator/
 - [x] /online-calculator-for-interest-plus-principal/
-- [ ] /quartile-calculator-online-free/
+- [x] /quartile-calculator-online-free/
 - [ ] /liquidity-ratio-calculator-online/
 - [ ] /rule-of-72-calculator/
 - [ ] /break-even-point-calculator/
