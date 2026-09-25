@@ -25,7 +25,7 @@
 - [x] /simple-loan-calculator/
 - [x] /profit-margin-calculator/
 - [x] /car-loan-calculator/
-- [ ] /ideal-email-subject-length/
+- [x] /ideal-email-subject-length/
 - [ ] /cost-per-lead-calculator/
 - [ ] /mean-online-calculator/
 - [ ] /mode-calculator-online/

@@ -1,0 +1,42 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import EmailSubjectTool from '../components/calculators/EmailSubjectTool';
+
+const faqs = [
+  {
+    q: 'What is the ideal email subject line length?',
+    a: 'Around six to seven words, or roughly 30 to 50 characters. That is long enough to say something specific and short enough to show in full on most phones.',
+  },
+  {
+    q: 'How many characters show in an inbox?',
+    a: 'Mobile email apps typically show 30 to 40 characters of the subject; desktop clients show about 60. Put the most important words first so they survive truncation.',
+  },
+  {
+    q: 'Which words trigger spam filters?',
+    a: 'Modern filters look at sender reputation more than individual words, but aggressive phrases like “free,” “act now,” “100%,” and “winner,” ALL CAPS, and stacked exclamation points can still hurt deliverability and trust.',
+  },
+  {
+    q: 'Should I use emojis in subject lines?',
+    a: 'Sparingly. One relevant emoji can stand out in a crowded inbox, but they render differently across clients and count as one or two characters. Test with your own audience.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="ideal-email-subject-length"
+  h1="Ideal Email Subject Length Tool"
+  description="Check your email subject line length. Get a word and character count, a grade, spam-word warnings, and a preview of how it looks on mobile and desktop."
+  faqs={faqs}
+>
+  <EmailSubjectTool client:visible />
+  <Fragment slot="formula">
+    <p>
+      The grade is based on word count: 7 words scores highest, 6 very good, 4 to 5 good, 8 fair, and 9 or more too long.
+      Words are counted by splitting on spaces; characters are counted as Unicode code points, so an emoji counts once.
+    </p>
+    <p>
+      The previews cut the subject at about 40 characters for mobile and 60 for desktop, typical limits for popular email
+      apps. Warnings flag ALL CAPS, repeated exclamation points, and common spam trigger phrases.
+    </p>
+  </Fragment>
+</CalculatorLayout>
