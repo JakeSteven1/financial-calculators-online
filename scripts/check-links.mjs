@@ -19,8 +19,8 @@ for (const file of files) {
   for (const [, attr, url] of html.matchAll(/\s(href|src|srcset|content)="([^"]+)"/g)) {
     const targets = attr === 'srcset' ? url.split(',').map((u) => u.trim().split(/\s+/)[0]) : [url];
     for (let target of targets) {
+      target = target.replace(/^https:\/\/financialcalculatoronlinefree\.com(?=\/)/, '');
       if (attr === 'content' && !target.startsWith('/')) continue;
-      target = target.replace(/^https:\/\/financialcalculatoronlinefree\.com/, '');
       if (!target.startsWith('/') || target.startsWith('//')) continue;
       const path = decodeURIComponent(target.split(/[?#]/)[0]);
       checked++;

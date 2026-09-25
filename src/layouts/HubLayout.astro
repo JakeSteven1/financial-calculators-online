@@ -5,6 +5,7 @@ import AdSlot from '../components/AdSlot.astro';
 import CalculatorGrid from '../components/CalculatorGrid.astro';
 import Faq, { type FaqItem } from '../components/Faq.astro';
 import { CALCULATORS, HUBS, getHub, type HubSlug } from '../data/calculators';
+import { getFeaturedImage } from '../data/images';
 import { SITE_NAME, SITE_URL } from '../data/site';
 
 interface Props {
@@ -56,7 +57,7 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+<BaseLayout title={title} description={description} jsonLd={jsonLd} image={getFeaturedImage(contentSlug)}>
   {hub && (
     <nav aria-label="Breadcrumb" class="flex gap-2 text-sm text-slate-500">
       <a href="/" class="text-slate-500">Home</a>

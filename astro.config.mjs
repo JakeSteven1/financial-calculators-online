@@ -9,6 +9,8 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory' },
   output: 'static',
+  // Markdown images get srcset/sizes and scale down with their container.
+  image: { layout: 'constrained' },
   integrations: [react(), sitemap()],
   vite: { plugins: [tailwindcss()] },
 });

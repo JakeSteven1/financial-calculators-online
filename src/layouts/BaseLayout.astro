@@ -1,8 +1,9 @@
 ---
 import '../styles/global.css';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import logo from '../assets/calculator-logo-trimmed.png';
 import { HUBS, hubForPath } from '../data/calculators';
+import type { SiteImage } from '../data/images';
 import { ADSENSE_CLIENT, SITE_NAME, SITE_URL } from '../data/site';
 
 interface Props {
@@ -10,11 +11,23 @@ interface Props {
   description: string;
   /** JSON-LD objects rendered as application/ld+json. */
   jsonLd?: object[];
+  /** Social share image; defaults to the logo. */
+  image?: SiteImage;
 }
 
-const { title, description, jsonLd = [] } = Astro.props;
+const { title, description, jsonLd = [], image } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 const year = new Date().getFullYear();
+// Social cards want a JPEG or PNG no wider than 1200px; WebP is not read everywhere.
+const og = image
+  ? await getImage({ src: image.src, width: Math.min(1200, image.src.width), format: 'jpeg', quality: 82 }).then((img) => ({
+      url: new URL(img.src, SITE_URL).href,
+      width: img.attributes.width as number,
+      height: img.attributes.height as number,
+      type: 'image/jpeg',
+      alt: image.alt,
+    }))
+  : { url: `${SITE_URL}/icon-512.png`, width: 512, height: 512, type: 'image/png', alt: `${SITE_NAME} logo: a sketch of a calculator` };
 const activeHub = hubForPath(Astro.url.pathname);
 const navItems = HUBS.map((hub) => ({
   ...hub,
@@ -38,6 +51,11 @@ const navItems = HUBS.map((hub) => ({
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={og.url} />
+    <meta property="og:image:type" content={og.type} />
+    <meta property="og:image:width" content={String(og.width)} />
+    <meta property="og:image:height" content={String(og.height)} />
+    <meta property="og:image:alt" content={og.alt} />
     <meta name="twitter:card" content="summary" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

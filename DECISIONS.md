@@ -140,3 +140,28 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
   and keys) and `favicon.ico` (32px, PNG-in-ICO) is rendered from it. The PNG app icons put the original artwork on white.
 - The header logo uses `astro:assets` `<Image>` (WebP, 1x/2x) with empty alt, since the site name next to it is the link text.
 - `site.webmanifest` lists the 192/512 icons; the base layout links the ICO, SVG, apple-touch icon, and manifest.
+
+### Images from WordPress (task 5)
+- `/wp-json/wp/v2/media` has 66 items (one page of 100). All were downloaded and reviewed. WordPress page content
+  had only 8 inline `<img>`s (7 calculator cards on the old front page, now the homepage prose, and the standard
+  deviation formula on the statistics hub); everything else was featured images.
+- Kept in `src/assets/images/` (21 files): every image used inline or as a featured image. File names follow the
+  originals, lowercased and without WordPress suffixes (`-e1694437250559`); two meaningless names were replaced
+  (`c01359cc-….webp` → `retirement-friends.webp`, `cropped-finanical-calculator-online.png` → `random-numbers.png`).
+  Originals wider than 1600px were scaled down, and photographic PNGs over 500KB were stored as WebP (q88); the
+  set is 2.6MB instead of 14.3MB. Astro still generates the served sizes.
+- Not kept: the site logo uploaded twice (`calculator-e1685376841301.png`, `cropped-calculator-…png`), exact duplicates
+  (`Tile-floor1.png` is the sales funnel image; `finanical-calculator-online.png`), a blank `Untitled-design4.png`, an
+  Elementor screenshot, and 34 unused Elementor template images (Business Consulting Company logos, team, testimonial,
+  and placeholder photos). The ChatGPT logo (featured image of the AI word count page) was not used: it is OpenAI's
+  trademark and would imply an affiliation, so that page falls back to the logo.
+- Inline images are Markdown images in `src/content/pages/*.md`, so astro:assets processes them: WebP, width/height,
+  `loading="lazy"`, and with `image.layout: 'constrained'` a `srcset`/`sizes`. None are above the fold (they sit in
+  the prose below the calculator or hub grid). The header logo is the only eager image.
+- Alt text was written from what each image shows; several WordPress alts were wrong (the home-loan image was
+  "retirement calculator", the calculator illustration "Calculator count tool", the numbers graphic "random numbers" on
+  a contest page). The alt texts live in `src/data/images.ts` and in the Markdown.
+- `og:image` is the page's WordPress featured image (`getFeaturedImage()`), rendered as a JPEG up to 1200px wide with
+  width, height, type, and alt tags. Pages without one, or whose featured image was the logo, use `/icon-512.png`.
+  The mode calculator's featured image is a molecule model; it was kept because it is what WordPress used.
+- `npm run check:links` now also verifies absolute `og:image` URLs on this domain.

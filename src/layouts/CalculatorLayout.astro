@@ -6,6 +6,7 @@ import Faq, { type FaqItem } from '../components/Faq.astro';
 import RelatedCalculators from '../components/RelatedCalculators.astro';
 import { getCalculator, getHub } from '../data/calculators';
 import { getRelated } from '../data/related';
+import { getFeaturedImage } from '../data/images';
 import { SITE_NAME, SITE_URL } from '../data/site';
 
 interface Props {
@@ -61,7 +62,7 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+<BaseLayout title={title} description={description} jsonLd={jsonLd} image={getFeaturedImage(slug)}>
   <nav aria-label="Breadcrumb" class="flex gap-2 text-sm text-slate-500">
     <a href="/" class="text-slate-500">Home</a>
     <span aria-hidden="true">›</span>
