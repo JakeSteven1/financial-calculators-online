@@ -49,8 +49,10 @@ function decodeEntities(s) {
 
 function convert(td, html) {
   let md = td.turndown(html);
-  // Make internal link targets root-relative; leave URLs shown as text alone.
-  md = md.replaceAll(`](${ORIGIN}/`, '](/').replaceAll(`](${ORIGIN})`, '](/)');
+  // Make internal link targets root-relative with a trailing slash (http/https, with or
+  // without www); leave URLs shown as link text alone.
+  md = md.replace(/\]\(https?:\/\/(?:www\.)?financialcalculatoronlinefree\.com(\/[^)#?\s]*)?([#?][^)\s]*)?\)/g, (_, p = '/', rest = '') =>
+    `](${p.endsWith('/') ? p : `${p}/`}${rest})`);
   md = md.replace(/^# .*$/m, ''); // the rebuilt page renders its own H1
   md = md.replace(/^(\d{1,2}|calculate)$/gm, ''); // Elementor step numbers / eyebrow labels
   md = md.replace(/[ \t]+$/gm, '').replace(/\n{3,}/g, '\n\n').trim();

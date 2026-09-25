@@ -40,6 +40,6 @@ Don’t freak out. The stat is real and it’s actually pretty intuitive. Jeter�
 
 With this in mind, if you sell a variety of products (especially if there’s a great range to the cost of the products), you’re going to want to account for segmentation. Different customers buy different products and your CLV needs to attempt to account for it.
 
-In whatever CLV [calculator](http://financialcalculatoronlinefree.com/) you use, you’ll want to add a “Customer Segment” dropdown where you can select the customer segment. Each segment should be divided by a value that acts as a multiplier in the CLV calculation. This adds another layer of granularity to your CLV calculations and can provide a more accurate representation of the CLV for different customer segments.
+In whatever CLV [calculator](/) you use, you’ll want to add a “Customer Segment” dropdown where you can select the customer segment. Each segment should be divided by a value that acts as a multiplier in the CLV calculation. This adds another layer of granularity to your CLV calculations and can provide a more accurate representation of the CLV for different customer segments.
 
 Now keep in mind, we still have the averaging problem. Simply lumping customers into these generic categories “high spending, long-term” customers is fairly simple. Depending on the type of company, the industry and the different products you have, you will likely need to adjust your formula.

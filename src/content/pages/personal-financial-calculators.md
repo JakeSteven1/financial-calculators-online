@@ -72,7 +72,7 @@ Basic formula: Years = 72 / Interest Rate
 
 ## **Monthly Loan Payment Calculator**
 
-Need help calculating a loan? Try our simple [monthly loan calculator](http://financialcalculatoronlinefree.com/monthly-loan-calculator/). This calculator will hopefully help you determine your monthly payments for a loan. When taking out a loan, whether it’s for a car, home, or any other expense, it’s crucial to understand how much you’ll be expected to pay each month to meet your loan obligation.
+Need help calculating a loan? Try our simple [monthly loan calculator](/monthly-loan-calculator/). This calculator will hopefully help you determine your monthly payments for a loan. When taking out a loan, whether it’s for a car, home, or any other expense, it’s crucial to understand how much you’ll be expected to pay each month to meet your loan obligation.
 
 The calculator requires several inputs: the total loan amount, the interest rate, and the loan term (in years or months). Once these values are provided, the calculator uses the formula for calculating the monthly payment on an installment loan, which factors in the interest rate and the duration of the loan.
 
@@ -82,7 +82,7 @@ Monthly Payment = (Principal \* Monthly Interest Rate) / (1 – (1 + Monthly Int
 
 ## **Calculate Yearly Salary From Hourly Wage**
 
-The [hourly wage to yearly salary calculator](http://financialcalculatoronlinefree.com/hourly-wage-yearly-salary-calculator/) is a allows you to estimate your annual income based on your hourly pay rate. By inputting the hourly wage and the number of hours worked per week, the calculator provides an estimate of the yearly salary. This calculation takes into account the assumption of working full-time hours for a year, typically considered as 40 hours per week for 52 weeks.
+The [hourly wage to yearly salary calculator](/hourly-wage-yearly-salary-calculator/) is a allows you to estimate your annual income based on your hourly pay rate. By inputting the hourly wage and the number of hours worked per week, the calculator provides an estimate of the yearly salary. This calculation takes into account the assumption of working full-time hours for a year, typically considered as 40 hours per week for 52 weeks.
 
 The formula used in the hourly wage to yearly salary calculator can be expressed as follows: Yearly Salary = Hourly Wage × Hours Per Week × Weeks Per Year. In this algebraic equation, the Hourly Wage represents the amount earned per hour, the Hours Per Week denotes the typical number of hours worked in a week, and the Weeks Per Year accounts for the total number of weeks in a year. By multiplying the hourly wage by the hours worked per week and then multiplying that value by the number of weeks in a year, the equation calculates the estimated yearly salary. It’s important to ensure accurate inputs for both the hourly wage and the hours per week to obtain a reliable estimate of the yearly salary.
 
@@ -92,7 +92,7 @@ Want to see how much your make in day from your yearly salary? Our [Salary to Da
 
 ## **Online Retirement Calculator**
 
-Need help calculating your retirement savings? Our [free Retirement Calculator](http://financialcalculatoronlinefree.com/retirement-calculator-online/) is a financial tool designed to estimate the value of your retirement savings at the time of your retirement. It takes into account your current retirement savings, your annual contributions, and the number of years until you retire. The calculator factors in an assumed return rate, inflation rate, and salary increase rate to project the growth of your savings over time. These variables are used in a compound interest formula which is modified to account for the influence of inflation and salary increases.
+Need help calculating your retirement savings? Our [free Retirement Calculator](/retirement-calculator-online/) is a financial tool designed to estimate the value of your retirement savings at the time of your retirement. It takes into account your current retirement savings, your annual contributions, and the number of years until you retire. The calculator factors in an assumed return rate, inflation rate, and salary increase rate to project the growth of your savings over time. These variables are used in a compound interest formula which is modified to account for the influence of inflation and salary increases.
 
 Algebraically, the formula used can be expressed as follows:
 

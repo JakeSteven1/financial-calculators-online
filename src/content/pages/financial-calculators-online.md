@@ -54,7 +54,7 @@ This financial calculator can be incredibly useful for financial analysts, inves
 ## **Loan Calculator
 **
 
-This calculator is a [Loan Calculator](http://financialcalculatoronlinefree.com/simple-loan-calculator/) that calculates monthly payment, total interest paid over the loan term, and displays an amortization schedule for a loan. Here’s what you can do with this calculator:
+This calculator is a [Loan Calculator](/simple-loan-calculator/) that calculates monthly payment, total interest paid over the loan term, and displays an amortization schedule for a loan. Here’s what you can do with this calculator:
 
 1.  **Monthly Payment**: The monthly payment is the amount that the borrower is required to pay each month until the loan is paid off. It’s calculated using the loan amount, annual interest rate, and the term of the loan in years. The formula used in your code is `(loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm))`, which is a standard formula for calculating fixed monthly payments on an amortizing loan.
 
@@ -64,7 +64,7 @@ This calculator is a [Loan Calculator](http://financialcalculatoronlinefree.com/
 
 ## **Simple Interest  Calculator**
 
-This calculator is a [Simple Interest Calculator](http://financialcalculatoronlinefree.com/online-calculator-for-interest-plus-principal/). It’s designed to calculate the total amount (Principal + Interest) after a certain period of time given a specific interest rate and initial principal amount.
+This calculator is a [Simple Interest Calculator](/online-calculator-for-interest-plus-principal/). It’s designed to calculate the total amount (Principal + Interest) after a certain period of time given a specific interest rate and initial principal amount.
 
 The Simple Interest formula used here is `Principal * (1 + Rate * Time)`. This formula calculates the accumulated amount, which includes both the initial principal and the interest earned.
 
@@ -127,7 +127,7 @@ We hope this calculator will be especially useful to anyone looking to make info
 
 ## **Car Loan Calculator**
 
-Need hep planning your car loan? Try our [Car Loan Calculator](http://financialcalculatoronlinefree.com/car-loan-calculator/). It is designed to help you estimate your monthly payments for an auto loan based on the principal loan amount, annual interest rate, and loan term in months.
+Need hep planning your car loan? Try our [Car Loan Calculator](/car-loan-calculator/). It is designed to help you estimate your monthly payments for an auto loan based on the principal loan amount, annual interest rate, and loan term in months.
 
 The formula used in the calculator to compute the monthly payment is `(Loan Amount * Monthly Interest Rate) / (1 - (1 + Monthly Interest Rate)^-Loan Term)`. It also computes the total interest paid over the course of the loan using the formula `Monthly Payment * Loan Term - Loan Amount`.
 
@@ -143,7 +143,7 @@ The calculator also creates an amortization schedule, providing a detailed view 
 
 ## **Effective Interest Rate Calculator Online**
 
-Our [Effective Interest Rate Calculator](http://financialcalculatoronlinefree.com/effective-annual-interest-rate-calculator-online/) is another user-friendly financial tool designed to help you compute the real annual rate of interest, considering the effect of compounding. This tool operates on the principle that the nominal rate, or the base interest rate stated in your contract or agreement, often doesn’t reflect the true cost or return on a loan or investment. The actual annual return or cost, often termed as the effective interest rate, is usually higher due to the phenomenon of compounding, where interest is added to the principal balance more frequently than annually. This calculator requires two inputs – the nominal interest rate and the number of compounding periods per year, and then utilizes these to calculate the effective interest rate.
+Our [Effective Interest Rate Calculator](/effective-annual-interest-rate-calculator-online/) is another user-friendly financial tool designed to help you compute the real annual rate of interest, considering the effect of compounding. This tool operates on the principle that the nominal rate, or the base interest rate stated in your contract or agreement, often doesn’t reflect the true cost or return on a loan or investment. The actual annual return or cost, often termed as the effective interest rate, is usually higher due to the phenomenon of compounding, where interest is added to the principal balance more frequently than annually. This calculator requires two inputs – the nominal interest rate and the number of compounding periods per year, and then utilizes these to calculate the effective interest rate.
 
 The formula used by the calculator is derived from the mathematical concept of compound interest, and is algebraically expressed as `r = (1+i/n)^n - 1`. In this formula, `r` stands for the effective annual rate, `i` is the nominal rate, and `n` represents the number of compounding periods per year. When the formula is applied, it calculates the effective annual rate, which provides a more accurate measure of actual interest, giving you a clearer financial picture whether you’re investing or borrowing.
 
