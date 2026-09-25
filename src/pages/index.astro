@@ -1,0 +1,26 @@
+---
+import HubLayout from '../layouts/HubLayout.astro';
+
+const faqs = [
+  {
+    q: 'Are these calculators really free?',
+    a: 'Yes. Every calculator is free to use with no sign-up. Calculations run in your browser, and nothing you enter is stored or sent to us.',
+  },
+  {
+    q: 'How accurate are the results?',
+    a: 'Each calculator uses standard, published formulas that are covered by automated tests, and every page explains the formula it uses. Results are estimates for planning; confirm important decisions with a lender, accountant, or financial advisor.',
+  },
+  {
+    q: 'Which calculator should I start with?',
+    a: 'For borrowing, try the mortgage or loan calculators. For saving and investing, start with the compound interest or retirement calculators. Business owners usually start with break-even, profit margin, or customer lifetime value.',
+  },
+];
+---
+
+<HubLayout
+  contentSlug="free-online-financial-calculators"
+  h1="Free Online Business and Financial Calculators"
+  intro="Free, private calculators for loans, mortgages, savings, retirement, business metrics, and statistics. Every tool shows its formula and works on any device."
+  description="Free online financial, business, real estate, and statistics calculators: mortgages, loans, compound interest, retirement, margins, break-even, and more."
+  faqs={faqs}
+/>

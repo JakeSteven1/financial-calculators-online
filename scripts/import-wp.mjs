@@ -49,7 +49,8 @@ function decodeEntities(s) {
 
 function convert(td, html) {
   let md = td.turndown(html);
-  md = md.replaceAll(`${ORIGIN}/`, '/').replaceAll(ORIGIN, '/');
+  // Make internal link targets root-relative; leave URLs shown as text alone.
+  md = md.replaceAll(`](${ORIGIN}/`, '](/').replaceAll(`](${ORIGIN})`, '](/)');
   md = md.replace(/^# .*$/m, ''); // the rebuilt page renders its own H1
   md = md.replace(/^(\d{1,2}|calculate)$/gm, ''); // Elementor step numbers / eyebrow labels
   md = md.replace(/[ \t]+$/gm, '').replace(/\n{3,}/g, '\n\n').trim();

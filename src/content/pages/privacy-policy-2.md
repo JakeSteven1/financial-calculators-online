@@ -8,7 +8,7 @@ modified: "2026-06-20T00:12:39"
 ---
 **Effective Date:** June 19, 2026
 
-At Financial Calculator Online Free, accessible from [/](/), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Financial Calculator Online Free and how we use it.
+At Financial Calculator Online Free, accessible from [https://financialcalculatoronlinefree.com/](/), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Financial Calculator Online Free and how we use it.
 
 ## 1\. Information We Collect
 

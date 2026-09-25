@@ -18,7 +18,7 @@ export interface Hub {
 export const HUBS: Hub[] = [
   { slug: 'financial-calculators-online', name: 'Financial Calculators', navLabel: 'Financial' },
   { slug: 'personal-financial-calculators', name: 'Personal Finance Calculators', navLabel: 'Personal' },
-  { slug: 'home-calculators-online', name: 'Real Estate Calculators', navLabel: 'Home' },
+  { slug: 'home-calculators-online', name: 'Real Estate Calculators', navLabel: 'Real Estate' },
   { slug: 'free-business-calculators', name: 'Business Calculators', navLabel: 'Business' },
   { slug: 'free-online-statistics-calculators', name: 'Statistics Calculators', navLabel: 'Statistics' },
 ];
