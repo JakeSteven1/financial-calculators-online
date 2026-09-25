@@ -45,6 +45,29 @@ Static Astro rebuild of financialcalculatoronlinefree.com, ready for Cloudflare 
 Current checks: 182 tests pass, `astro check` 0 errors, 67 pages built, 390px smoke test clean on all pages,
 0 broken internal links. Details and reasoning are in DECISIONS.md under "Design and fixes phase".
 
+## Giveaway tool phase
+- **Contest winner picker** (`/randomly-select-contest-winner-from-list-of-emails/`), the general-purpose picker: paste
+  or upload/drag-and-drop CSV/TXT (one per line or comma-separated, up to 20 MB); trims spaces, drops blanks, removes
+  duplicates (count shown), optional "Ignore invalid emails"; shows the final entry count before drawing. 1 to 50
+  winners plus 0 to 50 alternates from one draw without replacement, using `crypto.getRandomValues`. Rolling reveal that
+  is skipped under `prefers-reduced-motion`. Results show the draw date/time and entry count, with copy, a
+  `j***@gmail.com` mask for public posting, and "Download CSV". 10,000 pasted lines take about 0.2 s.
+- **Giveaways page** (`/randomly-select-emails-for-giveaways/`): the same components, framed around Instagram and
+  social giveaways, and it keeps weighted (bonus) entries. The two email pages link to each other directly under the tool.
+- **Random number generator**: the same reveal, timestamped results, copy, and CSV download.
+- **Fairness**: each page has a plain-language "How the random draw works" section, and the FAQs (with `FAQPage`
+  JSON-LD) cover whether it's random, rerunning a draw, and storage (nothing leaves the browser). The imported
+  WordPress prose, which claimed `Math.random()` and "premium" features, was rewritten on all three pages.
+- **PickSafely**: after a draw on both email pages, one line at the bottom of the results links to
+  https://www.picksafely.com/ with `utm_source=fincalc&utm_medium=tool&utm_campaign=picker` (same tab). Each fairness
+  section has one sentence about it too. There are no banners or popups, and the tool works without it.
+- Shared code: `src/lib/calc/giveaway.ts` (13 new tests) and `src/components/giveaway/`. Also fixed words that ran
+  together before inline tags on four pages ("and<em>e</em>").
+
+Current checks: 195 tests pass, `astro check` 0 errors, 67 pages built, 390px smoke test clean, 0 broken internal
+links, 0 artifact hits, axe-core clean on the three tool pages with results showing. Details are in DECISIONS.md under
+"Giveaway tool phase".
+
 ## Ads
 Every ad box serves the "Fincalc slots" display unit (`1963056538`, set as `ADSENSE_DEFAULT_SLOT` in `src/data/site.ts`):
 two per calculator page (after the formula, and after the FAQ), one per hub and on the homepage. Nothing is blocked.
