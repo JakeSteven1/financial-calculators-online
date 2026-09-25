@@ -14,3 +14,9 @@
   html { @apply bg-slate-50 text-slate-800 antialiased; }
   a { @apply text-brand-700; }
 }
+
+/* Imported WordPress prose can contain long URLs and wide tables; keep them inside the viewport. */
+@layer components {
+  .prose { overflow-wrap: anywhere; }
+  .prose table { display: block; max-width: 100%; overflow-x: auto; }
+}

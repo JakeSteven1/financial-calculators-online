@@ -4,6 +4,8 @@ import { formatCurrency, parseNumber } from '../../lib/format';
 import { CalculatorShell, EmptyResults, NumberField, Results } from '../ui/fields';
 import { formatMonths } from './RefinanceCalculator';
 
+type Payoff = { months: number; totalInterest: number; totalPaid: number; payoff: Date } | { error: string };
+
 const monthFmt = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
 
 export default function MortgageLengthCalculator() {
@@ -11,7 +13,7 @@ export default function MortgageLengthCalculator() {
   const [rate, setRate] = useState('6.5');
   const [payment, setPayment] = useState('2000');
 
-  const r = useMemo(() => {
+  const r = useMemo((): Payoff | null => {
     const p = parseNumber(balance);
     const i = parseNumber(rate);
     const m = parseNumber(payment);
@@ -36,7 +38,7 @@ export default function MortgageLengthCalculator() {
         </>
       }
       results={
-        r && 'months' in r ? (
+        r && !('error' in r) ? (
           <Results
             items={[
               { label: 'Time to pay off', value: formatMonths(r.months), primary: true },
@@ -46,7 +48,7 @@ export default function MortgageLengthCalculator() {
             ]}
           />
         ) : (
-          <EmptyResults message={r?.error} />
+          <EmptyResults message={r && 'error' in r ? r.error : undefined} />
         )
       }
     />

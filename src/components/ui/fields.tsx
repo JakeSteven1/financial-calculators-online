@@ -121,8 +121,8 @@ export function Button({ children, onClick, variant = 'primary' }: { children: R
 export function CalculatorShell({ inputs, results }: { inputs: ReactNode; results: ReactNode }) {
   return (
     <div className="grid gap-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-2 md:p-6">
-      <div className="space-y-4">{inputs}</div>
-      <div className="rounded-lg bg-brand-50 p-5" aria-live="polite">{results}</div>
+      <div className="min-w-0 space-y-4">{inputs}</div>
+      <div className="min-w-0 rounded-lg bg-brand-50 p-5" aria-live="polite">{results}</div>
     </div>
   );
 }

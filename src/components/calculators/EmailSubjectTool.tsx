@@ -8,7 +8,7 @@ function Preview({ label, subject, limit }: { label: string; subject: string; li
   const chars = [...subject];
   const shown = chars.length > limit ? `${chars.slice(0, limit).join('')}…` : subject;
   return (
-    <div className="rounded-md border border-slate-200 bg-white p-3">
+    <div className="min-w-0 rounded-md border border-slate-200 bg-white p-3">
       <p className="text-xs uppercase tracking-wide text-slate-500">{label}</p>
       <p className="mt-1 font-semibold text-slate-900">Your Company</p>
       <p className="truncate text-slate-800">{shown || 'Your subject line'}</p>
@@ -24,7 +24,7 @@ export default function EmailSubjectTool() {
     <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
       <TextField label="Email subject line" value={subject} onChange={setSubject} />
       <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div className="rounded-lg bg-brand-50 p-5" aria-live="polite">
+        <div className="min-w-0 rounded-lg bg-brand-50 p-5" aria-live="polite">
           <div className="grid grid-cols-3 gap-3 text-center">
             <div><p className="text-xs text-slate-600">Words</p><p className="text-2xl font-bold text-slate-900">{r.words}</p></div>
             <div><p className="text-xs text-slate-600">Characters</p><p className="text-2xl font-bold text-slate-900">{r.characters}</p></div>
@@ -40,7 +40,7 @@ export default function EmailSubjectTool() {
             </ul>
           )}
         </div>
-        <div className="space-y-3">
+        <div className="min-w-0 space-y-3">
           <Preview label={`Mobile inbox (~${MOBILE_VISIBLE_CHARS} characters)`} subject={subject} limit={MOBILE_VISIBLE_CHARS} />
           <Preview label={`Desktop inbox (~${DESKTOP_VISIBLE_CHARS} characters)`} subject={subject} limit={DESKTOP_VISIBLE_CHARS} />
         </div>
