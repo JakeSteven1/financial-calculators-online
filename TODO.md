@@ -57,7 +57,7 @@
 - [x] /mortgage-refinance-break-even-point-calculator-online-free/
 - [x] /amoritization-schedule-online/
 - [x] /50-30-20-budget-calculator/
-- [ ] /mortgage-rate-comparison-calculator/
+- [x] /mortgage-rate-comparison-calculator/
 - [ ] /retirement-calculator-online/
 - [ ] /customer-acquisition-cost/
 - [ ] /our-free-financial-calculator/

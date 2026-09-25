@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RateComparisonCalculator from '../components/calculators/RateComparisonCalculator';
+
+const faqs = [
+  {
+    q: 'How much does a lower mortgage rate save?',
+    a: 'On a $360,000, 30-year loan, dropping from 6.75% to 6.25% lowers principal and interest by about $118 a month and saves roughly $43,000 over the full term.',
+  },
+  {
+    q: 'Should I compare rates or APRs?',
+    a: 'Compare both. The rate sets your payment; the APR folds in lender fees and points, so it shows the true cost of borrowing. Two offers with the same rate can have very different APRs.',
+  },
+  {
+    q: 'How do points affect the comparison?',
+    a: 'Points are paid upfront to buy a lower rate. Enter the points for option 2 and the calculator adds their cost to the total and shows how many months of savings it takes to recover them.',
+  },
+  {
+    q: 'How many lenders should I get quotes from?',
+    a: 'At least three. Studies by Freddie Mac and the CFPB have found that borrowers who compare several offers often get meaningfully lower rates. Multiple mortgage inquiries within a short window count as one for most credit scores.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="mortgage-rate-comparison-calculator"
+  h1="Mortgage Rate Comparison Calculator"
+  description="Compare two mortgage rates side by side: monthly payment, total interest, points, and full cost over the loan term, including taxes, insurance, and PMI."
+  faqs={faqs}
+>
+  <RateComparisonCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Principal and interest</strong> = L × i ÷ (1 − (1 + i)<sup>−n</sup>) for each rate</li>
+      <li><strong>Monthly payment</strong> adds property tax ÷ 12, insurance ÷ 12, and PMI (loan × PMI rate ÷ 12 when down payment is under 20%)</li>
+      <li><strong>Total cost</strong> = principal and interest × months + points paid</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
