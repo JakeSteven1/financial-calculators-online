@@ -22,7 +22,7 @@ export const HUBS: Hub[] = [
   { slug: 'financial-calculators-online', name: 'Financial Calculators', navLabel: 'Financial', blurb: 'Interest, loans, investments, retirement, and financial ratios.' },
   { slug: 'free-business-calculators', name: 'Business Calculators', navLabel: 'Business', blurb: 'Pricing, margins, break-even, and marketing metrics.' },
   { slug: 'free-online-statistics-calculators', name: 'Statistics Calculators', navLabel: 'Statistics', blurb: 'Descriptive statistics, sample size, and fair random draws.' },
-  { slug: 'home-calculators-online', name: 'Real Estate Calculators', navLabel: 'Home', blurb: 'Mortgages, refinancing, affordability, equity, and home costs.' },
+  { slug: 'home-calculators-online', name: 'Real Estate Calculators', navLabel: 'Homes', blurb: 'Mortgages, refinancing, affordability, equity, and home costs.' },
   { slug: 'personal-financial-calculators', name: 'Personal Finance Calculators', navLabel: 'Personal Finance', blurb: 'Budgeting, pay, everyday loans, and retirement planning.' },
 ];
 

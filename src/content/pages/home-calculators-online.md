@@ -6,11 +6,11 @@ wpId: 919
 wpType: page
 modified: "2023-07-03T18:30:33"
 ---
-See below for a list of our ever-growing number of home-related calculators. Don’t see the calculator you need? Feel free to suggest one to us by reaching out here or on social media. Even though all our calculators are free, we’re always looking for ways to improve the site. Additionally, it’s important to note that these calculators may be missing variables relevant to you or your purchase decision. Personally, I’ve found it’s best to start with a simple calculation to get close before getting lost in the minutiae of financial calculations.
+See below for a list of our ever-growing number of home-related calculators. Don’t see the calculator you need? Feel free to suggest one to us by reaching out here or on social media. Even though all our calculators are free, we’re always looking for ways to improve the site. Also note that these calculators may be missing variables relevant to you or your purchase decision. Personally, I’ve found it’s best to start with a simple calculation to get close before getting lost in the minutiae of financial calculations.
 
 ## Mortgage Payment Calculator
 
-Our [mortgage calculator](/mortgage-loan-calculator-online/) determines the monthly payments on a mortgage. It considers factors such as the mortgage amount, interest rate, and term (length) of the mortgage. This tool can be invaluable for potential homeowners in budgeting for a home.
+Our [mortgage calculator](/mortgage-loan-calculator-online/) determines the monthly payments on a mortgage. It considers factors such as the mortgage amount, interest rate, and term (length) of the mortgage. This tool can be very useful for potential homeowners in budgeting for a home.
 
 The calculator works by implementing the mathematical formula for calculating monthly mortgage payments. This formula incorporates the principal loan amount, the interest rate, and the number of payments (loan term). In essence, it calculates the amount necessary to pay off the principal and the interest over the term of the loan in equal monthly payments.
 
@@ -41,7 +41,7 @@ The calculator compares two scenarios: one with points and a lower interest rate
 
 Home equity is the portion of the home’s value that the homeowner owns outright, without any liens or mortgages. It can be a valuable asset that homeowners can borrow against or use to fund large expenses. This calculator helps homeowners determine how much equity they have in their home.
 
-The [home equity calculator](/home-equity-calculator-online/) is simple: it subtracts the outstanding balance of all mortgages from the home’s current market value. The result is the homeowner’s equity. It’s important to note that many factors, such as home improvements, the local real estate market, and more can influence market value.
+The [home equity calculator](/home-equity-calculator-online/) is simple: it subtracts the outstanding balance of all mortgages from the home’s current market value. The result is the homeowner’s equity. Keep in mind that many factors, such as home improvements, the local real estate market, and more can influence market value.
 
 ## Mortgage Length Calculator
 

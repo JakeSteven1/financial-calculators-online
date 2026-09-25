@@ -103,10 +103,14 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
 - Two bold pseudo-headings on the CAC page became H2s.
 - Non-breaking-space runs and doubled spaces collapsed; multiplication written as `*` in prose formulas now uses `×`.
 - The Markdown in `src/content/pages/` is now hand-maintained: re-running `npm run import:wp` would overwrite these fixes.
+- Copy cleanup pass: em dashes removed from page prose (replaced with commas, colons, parentheses, or split
+  sentences) and common LLM phrasing toned down ("comprehensive", "crucial", "navigate", "it’s important to note",
+  "Whether you’re…", "not just X, it’s Y", "Ultimate Guide"/"Conclusion:" headings). Light edits only: no facts, numbers,
+  links, or frontmatter changed. Em dashes kept only as the empty-value placeholder in calculator result cells.
 
 ### Navigation (task 2)
-- Main nav is exactly Financial, Business, Statistics, Home, Personal Finance, taken from `HUBS` (order and labels are
-  locked by a unit test). The Real Estate hub keeps its page name "Real Estate Calculators"; only the nav label is "Home".
+- Main nav is exactly Financial, Business, Statistics, Homes, Personal Finance, taken from `HUBS` (order and labels are
+  locked by a unit test). The Real Estate hub keeps its page name "Real Estate Calculators"; only the nav label is "Homes".
 - Desktop (≥768px) shows an inline list; below that a `<details>`/`<summary>` "Menu" disclosure (zero JS).
 - Active hub: `hubForPath()` maps a hub page or calculator to its hub. The link gets a tinted background, with
   `aria-current="page"` on the hub page itself and `aria-current="true"` on its calculators.

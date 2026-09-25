@@ -6,7 +6,7 @@ wpId: 2088
 wpType: page
 modified: "2025-12-08T21:21:08"
 ---
-Take the guesswork out of picking giveaway winners. Whether your entries came from an Instagram post, a TikTok contest, a Facebook promotion, or a sign-up form linked in your bio, this tool picks fair winners from your list in seconds, and it's completely free.
+Take the guesswork out of picking giveaway winners. Your entries might come from an Instagram post, a TikTok contest, a Facebook promotion, or a sign-up form linked in your bio. This tool picks fair winners from your list in seconds, and it's completely free.
 
 ## Built for social media giveaways
 

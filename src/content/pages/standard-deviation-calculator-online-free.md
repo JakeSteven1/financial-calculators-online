@@ -10,7 +10,7 @@ The standard deviation is one of the most simple but important concepts in all o
 
 Standard deviation is an important [statistical](/free-online-statistics-calculators/) measure that quantifies the amount of variation or dispersion in a set of data values. Simply put, it tells us how spread out the numbers in a data set are from the average, or [mean](/mean-online-calculator/), value. A low standard deviation indicates that the values tend to be close to the mean, while a high standard deviation indicates that the values are spread out over a wider range.
 
-Understanding standard deviation is crucial as it helps to measure uncertainty and predictability. In many fields such as finance, science, or data analysis, it is used to analyze historical trends and predict future behavior. For example, in finance, the standard deviation of the returns of an investment provides a measure of the investment’s volatility. In an experimental context, standard deviation can give an indication of the reliability of the results.
+Understanding standard deviation is important as it helps to measure uncertainty and predictability. In many fields such as finance, science, or data analysis, it is used to analyze historical trends and predict future behavior. For example, in finance, the standard deviation of the returns of an investment provides a measure of the investment’s volatility. In an experimental context, standard deviation can give an indication of the reliability of the results.
 
 ## How To Use Our Free Standard Deviation Calculator
 

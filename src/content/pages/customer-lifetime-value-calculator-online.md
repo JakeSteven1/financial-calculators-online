@@ -18,13 +18,13 @@ Above is a simple (but flawed) calculator for customer lifetime value. Try it ou
 
 ## How to use our customer lifetime value calculator
 
-To get the most out of this Customer Lifetime Value calculator, start by gathering accurate data. This means looking at your sales records to determine the average amount customers spend per transaction and how often they make purchases. You’ll also need to estimate how long customers typically remain loyal to your brand. Customer retention rate, or the percentage of customers who continue to buy from you over time, is crucial as well. These figures might require some analysis and may vary depending on your specific business and industry.
+To get the most out of this Customer Lifetime Value calculator, start by gathering accurate data. This means looking at your sales records to determine the average amount customers spend per transaction and how often they make purchases. You’ll also need to estimate how long customers typically remain loyal to your brand. Customer retention rate, or the percentage of customers who continue to buy from you over time, is important as well. These figures might require some analysis and may vary depending on your specific business and industry.
 
 Once you’ve collected your data, input the values carefully into the corresponding fields in the calculator. Double-check your entries to ensure accuracy. Remember that even small errors in your input can significantly impact the calculated CLV. If you’re unsure about any of the values, consider seeking advice from a financial professional or using industry benchmarks as a reference.
 
 With your data entered, simply click the “Calculate” button. The calculator will process the information and provide you with your estimated Customer Lifetime Value. This figure represents the average revenue you can expect to generate from a typical customer throughout their relationship with your business. It’s a powerful metric that can guide your marketing and customer retention strategies.
 
-Understanding your CLV empowers you to make informed decisions about customer acquisition, retention, and overall business growth. You can use it to evaluate the effectiveness of your marketing campaigns, identify high-value customer segments, and determine how much you can afford to spend to acquire new customers. Remember that CLV is a dynamic metric; it’s essential to recalculate it periodically as your business evolves and customer behavior changes.
+Understanding your CLV helps you make informed decisions about customer acquisition, retention, and overall business growth. You can use it to evaluate the effectiveness of your marketing campaigns, identify high-value customer segments, and determine how much you can afford to spend to acquire new customers. Remember that CLV is a dynamic metric; recalculate it periodically as your business evolves and customer behavior changes.
 
 ## What Was The Problem With This CLV Calculator?
 

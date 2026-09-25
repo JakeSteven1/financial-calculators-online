@@ -7,7 +7,7 @@ type Row = { round: string; pick: string };
 const MAX_PICKS = 5;
 const blank = (): Row => ({ round: '', pick: '' });
 const TEAM_OPTIONS = [8, 10, 12, 14, 16].map((n) => ({ value: String(n), label: `${n} teams` }));
-const numOptions = (n: number, prefix: string) => [{ value: '', label: '—' }, ...Array.from({ length: n }, (_, i) => ({ value: String(i + 1), label: `${prefix} ${i + 1}` }))];
+const numOptions = (n: number, prefix: string) => [{ value: '', label: 'None' }, ...Array.from({ length: n }, (_, i) => ({ value: String(i + 1), label: `${prefix} ${i + 1}` }))];
 
 function toPicks(rows: Row[]): DraftPick[] {
   return rows.filter((r) => r.round && r.pick).map((r) => ({ round: Number(r.round), pick: Number(r.pick) }));

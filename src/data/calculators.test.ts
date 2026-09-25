@@ -13,7 +13,7 @@ describe('calculator registry', () => {
       ['Financial', '/financial-calculators-online/'],
       ['Business', '/free-business-calculators/'],
       ['Statistics', '/free-online-statistics-calculators/'],
-      ['Home', '/home-calculators-online/'],
+      ['Homes', '/home-calculators-online/'],
       ['Personal Finance', '/personal-financial-calculators/'],
     ]);
   });
