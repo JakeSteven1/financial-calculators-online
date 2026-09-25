@@ -1,0 +1,36 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import EarCalculator from '../components/calculators/EarCalculator';
+
+const faqs = [
+  {
+    q: 'What is the effective annual rate?',
+    a: 'The effective annual rate (EAR) is the interest you actually earn or pay in a year once compounding is included. It is always at least as high as the nominal rate, and higher the more often interest compounds.',
+  },
+  {
+    q: 'How do you calculate EAR?',
+    a: 'EAR = (1 + r/n)^n − 1, where r is the nominal annual rate as a decimal and n is the number of compounding periods per year. A 12% rate compounded monthly: (1 + 0.01)^12 − 1 = 12.68%.',
+  },
+  {
+    q: 'Is EAR the same as APY?',
+    a: 'Yes. Banks call it annual percentage yield (APY) on savings accounts. APR, used for loans, is usually the nominal rate and does not include compounding.',
+  },
+  {
+    q: 'What is continuous compounding?',
+    a: 'The limit as compounding becomes infinitely frequent. EAR = e^r − 1, so 10% compounded continuously is 10.52%, barely more than daily compounding.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="effective-annual-interest-rate-calculator-online"
+  h1="Effective Annual Interest Rate Calculator"
+  description="Convert a nominal interest rate (APR) to the effective annual rate (EAR or APY) for any compounding frequency, including continuous compounding."
+  faqs={faqs}
+>
+  <EarCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>EAR = (1 + r ÷ n)<sup>n</sup> − 1</strong>, and for continuous compounding <strong>EAR = e<sup>r</sup> − 1</strong>.</p>
+    <p><em>r</em> is the nominal annual rate as a decimal and <em>n</em> the number of compounding periods per year. Enter the rate as a percent; the calculator converts it.</p>
+  </Fragment>
+</CalculatorLayout>

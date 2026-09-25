@@ -42,7 +42,7 @@
 - [x] /hourly-wage-yearly-salary-calculator/
 - [x] /closing-costs-calculator/
 - [x] /convert-salary-to-daily-wage/
-- [ ] /effective-annual-interest-rate-calculator-online/
+- [x] /effective-annual-interest-rate-calculator-online/
 - [ ] /return-on-investment-calculator/
 - [ ] /stock-price-revenue-sale/
 - [ ] /ai-word-count-calculator/
