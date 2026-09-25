@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import TipCalculator from '../components/calculators/TipCalculator';
+
+const faqs = [
+  {
+    q: 'How much should I tip?',
+    a: 'In the US, 15% to 20% is standard for table service at restaurants, with 20% or more for great service. Delivery drivers, bartenders, and hairstylists commonly get 15% to 20% as well.',
+  },
+  {
+    q: 'Should I tip on the total before or after tax?',
+    a: 'Etiquette guides generally say to tip on the pre-tax amount. Enter the tax shown on your receipt and the calculator will exclude it from the tip.',
+  },
+  {
+    q: 'How do I calculate a 20% tip in my head?',
+    a: 'Move the decimal point one place left to get 10%, then double it. On an $85 bill, 10% is $8.50, so 20% is $17.',
+  },
+  {
+    q: 'How do I split the bill evenly?',
+    a: 'Enter the number of people. The calculator divides the total including tip, and can round each share up to a whole dollar so nobody needs change.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="online-tip-calculator"
+  h1="Tip Calculator"
+  description="Free tip calculator. Work out the tip and total on any bill, tip on the pre-tax amount, and split the check evenly between any number of people."
+  faqs={faqs}
+>
+  <TipCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Tip</strong> = (bill − tax) × tip %</li>
+      <li><strong>Total</strong> = bill + tip</li>
+      <li><strong>Per person</strong> = total ÷ number of people</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>

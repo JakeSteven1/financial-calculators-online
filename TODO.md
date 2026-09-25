@@ -50,7 +50,7 @@
 - [x] /tile-floor-cost-calculator/
 - [x] /home-equity-calculator-online/
 - [x] /life-insurance-coverage-estimator/
-- [ ] /online-tip-calculator/
+- [x] /online-tip-calculator/
 - [ ] /current-ratio-calculator/
 - [ ] /quick-ratio-calculator-finance/
 - [ ] /free-online-retirement-calculator/
