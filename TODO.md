@@ -30,7 +30,7 @@
 - [x] /mean-online-calculator/
 - [x] /mode-calculator-online/
 - [x] /standard-deviation-calculator-online-free/
-- [ ] /monthly-loan-calculator/
+- [x] /monthly-loan-calculator/
 - [ ] /refinance-calculator-online-free/
 - [ ] /mortgage-points-calculator-online/
 - [ ] /mortgage-length-calculator-online/

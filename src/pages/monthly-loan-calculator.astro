@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import LoanCalculator from '../components/calculators/LoanCalculator';
+
+const faqs = [
+  {
+    q: 'How is a monthly loan payment calculated?',
+    a: 'Monthly payment = P × i ÷ (1 − (1 + i)^−n), where P is the loan amount, i the monthly interest rate, and n the number of months. $20,000 at 8% for 48 months is $488.26 a month.',
+  },
+  {
+    q: 'How do extra payments help?',
+    a: 'Every extra dollar goes straight to principal, so less interest accrues afterward. Adding $100 a month to a $20,000, 8%, 48-month loan saves about $680 in interest and pays it off 9 months early.',
+  },
+  {
+    q: 'Is a longer term better?',
+    a: 'A longer term lowers the monthly payment but increases total interest. Choose the shortest term whose payment fits comfortably in your budget.',
+  },
+  {
+    q: 'Can I use this for personal, student, or auto loans?',
+    a: 'Yes. It works for any fixed-rate loan with equal monthly payments. For auto loans with a trade-in and sales tax, the car loan calculator handles those extras.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="monthly-loan-calculator"
+  h1="Monthly Loan Payment Calculator"
+  description="Find the monthly payment on any fixed-rate loan, see total interest, and learn how much extra monthly payments save, with a month-by-month schedule."
+  faqs={faqs}
+>
+  <LoanCalculator defaultAmount="20000" defaultRate="8" defaultTerm="48" defaultUnit="months" showExtra client:visible />
+  <Fragment slot="formula">
+    <p><strong>Monthly payment = P × i ÷ (1 − (1 + i)<sup>−n</sup>)</strong></p>
+    <p>
+      With an extra payment <em>E</em>, each month pays interest of balance × <em>i</em>, and M + E − interest comes off
+      the balance, so the loan ends early. The final payment is reduced to exactly clear the balance.
+    </p>
+  </Fragment>
+</CalculatorLayout>
