@@ -1,0 +1,41 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import GrossMarginCalculator from '../components/calculators/GrossMarginCalculator';
+
+const faqs = [
+  {
+    q: 'What is gross margin?',
+    a: 'Gross margin is the share of revenue left after paying the direct cost of the goods sold. A 40% gross margin means you keep $0.40 of every sales dollar to cover operating expenses and profit.',
+  },
+  {
+    q: 'How do you calculate gross margin?',
+    a: 'Gross margin = (revenue − cost of goods sold) ÷ revenue × 100. With $100 of revenue and $60 of costs: ($100 − $60) ÷ $100 = 40%.',
+  },
+  {
+    q: 'Is gross margin the same as markup?',
+    a: 'No. Margin divides profit by the selling price; markup divides it by cost. The same $40 profit on a $60 cost is a 40% margin but a 66.7% markup.',
+  },
+  {
+    q: 'What is a good gross margin?',
+    a: 'It depends on the industry. Software companies often exceed 70%, retailers typically run 25% to 50%, and grocery stores can be under 30%. Compare against businesses like yours.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="gross-margin-calculator-online"
+  h1="Gross Margin Calculator"
+  description="Calculate gross profit, gross margin percentage, and markup from revenue and cost of goods, and find the price you need to hit a target margin."
+  faqs={faqs}
+>
+  <GrossMarginCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Gross profit</strong> = revenue − (cost of goods + other direct costs)</li>
+      <li><strong>Gross margin %</strong> = gross profit ÷ revenue × 100</li>
+      <li><strong>Markup %</strong> = gross profit ÷ cost × 100</li>
+      <li><strong>Price for a target margin</strong> = cost ÷ (1 − target margin)</li>
+    </ul>
+    <p>Example: a $100 sale with $55 of product cost and $5 of shipping has $40 of gross profit, a 40% margin.</p>
+  </Fragment>
+</CalculatorLayout>
