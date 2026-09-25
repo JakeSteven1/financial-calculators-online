@@ -48,7 +48,7 @@
 - [x] /ai-word-count-calculator/
 - [x] /character-count-tool-free/
 - [x] /tile-floor-cost-calculator/
-- [ ] /home-equity-calculator-online/
+- [x] /home-equity-calculator-online/
 - [ ] /life-insurance-coverage-estimator/
 - [ ] /online-tip-calculator/
 - [ ] /current-ratio-calculator/

@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import HomeEquityCalculator from '../components/calculators/HomeEquityCalculator';
+
+const faqs = [
+  {
+    q: 'How do I calculate my home equity?',
+    a: 'Subtract everything you owe on the home from its current market value. A $400,000 home with a $250,000 mortgage has $150,000 of equity, or 37.5%.',
+  },
+  {
+    q: 'How much equity can I borrow?',
+    a: 'Lenders typically let your combined loans reach 80% to 90% of the home’s value. At 85% on a $400,000 home with $250,000 owed, that is $340,000 − $250,000 = $90,000.',
+  },
+  {
+    q: 'What is loan-to-value (LTV)?',
+    a: 'Your mortgage balance divided by the home’s value. Combined LTV (CLTV) includes every loan secured by the home. Lower LTV means more equity and usually better loan terms.',
+  },
+  {
+    q: 'How can I find my home’s current value?',
+    a: 'Online estimates give a rough idea; a comparative market analysis from a local agent or a professional appraisal is more accurate. Lenders will order their own appraisal before lending.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="home-equity-calculator-online"
+  h1="Home Equity Calculator"
+  description="Calculate your home equity, loan-to-value ratio, and how much you may be able to borrow with a home equity loan or HELOC."
+  faqs={faqs}
+>
+  <HomeEquityCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Equity</strong> = home value − mortgage balance − other liens</li>
+      <li><strong>LTV</strong> = mortgage balance ÷ home value; <strong>CLTV</strong> = all liens ÷ home value</li>
+      <li><strong>Borrowing capacity</strong> = home value × max CLTV − all liens</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
