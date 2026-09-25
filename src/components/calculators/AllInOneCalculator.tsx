@@ -21,7 +21,7 @@ export default function AllInOneCalculator() {
             role="tab"
             aria-selected={tab === t.key}
             onClick={() => setTab(t.key)}
-            className={`rounded-md px-4 py-2 font-semibold ${tab === t.key ? 'bg-brand-600 text-white' : 'border border-slate-300 bg-white text-slate-700'}`}
+            className={`rounded-md px-4 py-2 font-semibold ${tab === t.key ? 'bg-brand-600 text-white' : 'border border-gray-300 bg-white text-gray-700'}`}
           >
             {t.label}
           </button>

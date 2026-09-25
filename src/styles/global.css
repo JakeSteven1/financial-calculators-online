@@ -1,24 +1,35 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/*
+ * One accent (blue) on a neutral gray scale. The logo is monochrome ink, so the
+ * grays follow it and blue is the single brand color. brand-700 on white is 6.7:1.
+ */
 @theme {
-  --color-brand-50: #eef7f1;
-  --color-brand-100: #d5ecdd;
-  --color-brand-600: #1f7a45;
-  --color-brand-700: #17613a;
-  --color-brand-800: #124b2e;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @layer base {
-  html { @apply bg-slate-50 text-slate-800 antialiased; }
-  a { @apply text-brand-700; }
+  html { @apply bg-white text-gray-800 antialiased; }
+  body { @apply bg-white; }
+  a { @apply text-brand-700 underline-offset-2 hover:text-brand-900; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand-600; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible { outline: none; }
 }
 
-/* Imported WordPress prose can contain long URLs and wide tables; keep them inside the viewport. */
 @layer components {
-  .prose { overflow-wrap: anywhere; }
+  /* Long-form copy: ~70 characters per line. */
+  .prose { max-width: 70ch; overflow-wrap: anywhere; }
+  /* Imported WordPress tables can be wide; scroll them inside the column. */
   .prose table { display: block; max-width: 100%; overflow-x: auto; }
+  .prose img { border-radius: 0.5rem; }
 }
 
 /* Zero-JS mobile menu: hide the native disclosure marker in every engine. */

@@ -31,7 +31,7 @@ export default function WealthRatioCalculator() {
           <NumberField label="Total assets (everything you own)" prefix="$" value={v.assets} onChange={set('assets')} min="0" />
           <NumberField label="Total liabilities (everything you owe)" prefix="$" value={v.liabilities} onChange={set('liabilities')} min="0" />
           <NumberField label="Total lifetime income (everything you've earned)" prefix="$" value={v.lifetime} onChange={set('lifetime')} min="0" />
-          <h3 className="pt-2 text-sm font-semibold text-slate-900">Compare with the expected net worth (optional)</h3>
+          <h2 className="pt-2 text-sm font-semibold text-gray-900">Compare with the expected net worth (optional)</h2>
           <div className="grid grid-cols-2 gap-3">
             <NumberField label="Age" value={v.age} onChange={set('age')} min="0" />
             <NumberField label="Annual pretax income" prefix="$" value={v.income} onChange={set('income')} min="0" />

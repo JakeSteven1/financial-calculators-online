@@ -58,7 +58,7 @@ export default function StatsCalculator({ focus }: { focus: StatsFocus }) {
   const p = primary[focus];
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8">
       <div className="grid gap-6 md:grid-cols-2">
         <div className="space-y-4">
           <TextAreaField label="Data set" value={text} onChange={setText} rows={6} hint="Separate numbers with commas, spaces, or new lines. You can paste a spreadsheet column." />
@@ -86,31 +86,31 @@ export default function StatsCalculator({ focus }: { focus: StatsFocus }) {
           )}
           {data.invalid.length > 0 && <p className="text-sm text-amber-700">Ignored non-numbers: {data.invalid.slice(0, 8).join(', ')}</p>}
         </div>
-        <div className="rounded-lg bg-brand-50 p-5" aria-live="polite">
+        <div className="rounded-xl border border-brand-100 bg-brand-50 p-5" aria-live="polite">
           {n === 0 ? (
-            <p className="text-slate-600">Enter at least one number.</p>
+            <p className="text-gray-600">Enter at least one number.</p>
           ) : (
             <>
-              <p className="text-sm text-slate-600">{p.label}</p>
-              <p className="mt-1 text-4xl font-bold text-brand-800 break-all">{p.value}</p>
-              <p className="mt-2 text-sm text-slate-600">{p.detail}</p>
+              <p className="text-sm text-gray-600">{p.label}</p>
+              <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 break-all">{p.value}</p>
+              <p className="mt-2 text-sm text-gray-600">{p.detail}</p>
               {focus === 'quartiles' && q && q.outliers.length > 0 && (
-                <p className="mt-2 text-sm text-slate-700">Outliers (outside {fmt(q.lowerFence)} to {fmt(q.upperFence)}): {q.outliers.map(fmt).join(', ')}</p>
+                <p className="mt-2 text-sm text-gray-700">Outliers (outside {fmt(q.lowerFence)} to {fmt(q.upperFence)}): {q.outliers.map(fmt).join(', ')}</p>
               )}
-              <p className="mt-4 text-xs uppercase tracking-wide text-slate-500">Sorted data</p>
-              <p className="mt-1 max-h-24 overflow-auto font-mono text-sm text-slate-800 break-words">{sorted.map(fmt).join(', ')}</p>
+              <p className="mt-4 text-xs uppercase tracking-wide text-gray-600">Sorted data</p>
+              <p className="mt-1 max-h-24 overflow-auto font-mono text-sm text-gray-800 break-words">{sorted.map(fmt).join(', ')}</p>
             </>
           )}
         </div>
       </div>
       {n > 0 && (
         <div className="mt-6">
-          <h3 className="font-semibold text-slate-900">Summary statistics</h3>
+          <h2 className="font-semibold text-gray-900">Summary statistics</h2>
           <dl className="mt-2 grid gap-x-8 gap-y-1 text-sm sm:grid-cols-2">
             {summary.map(([label, value]) => (
-              <div key={label} className="flex justify-between gap-4 border-b border-slate-100 py-1">
-                <dt className="text-slate-600">{label}</dt>
-                <dd className="text-right font-medium text-slate-900 tabular-nums">{value}</dd>
+              <div key={label} className="flex justify-between gap-4 border-b border-gray-100 py-1">
+                <dt className="text-gray-600">{label}</dt>
+                <dd className="text-right font-medium text-gray-900 tabular-nums">{value}</dd>
               </div>
             ))}
           </dl>

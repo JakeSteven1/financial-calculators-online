@@ -15,7 +15,7 @@ const heights = size === 'rectangle' ? 'h-[280px]' : 'h-[100px] md:h-[90px]';
 const live = Boolean(ADSENSE_CLIENT && slot);
 ---
 
-<aside class:list={['my-8 flex w-full items-center justify-center overflow-hidden', heights, className]} aria-label="Advertisement">
+<div class:list={['my-12 flex w-full items-center justify-center overflow-hidden', heights, className]} data-ad-slot-container>
   {live ? (
     <>
       <ins
@@ -27,6 +27,6 @@ const live = Boolean(ADSENSE_CLIENT && slot);
       <script is:inline>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>
     </>
   ) : (
-    <div class="h-full w-full rounded-md border border-dashed border-slate-200" />
+    <div class="h-full w-full rounded-lg bg-gray-50" />
   )}
-</aside>
+</div>

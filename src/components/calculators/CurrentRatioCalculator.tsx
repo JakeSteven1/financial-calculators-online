@@ -22,10 +22,10 @@ export default function CurrentRatioCalculator() {
       results={
         Number.isFinite(ratio) ? (
           <div>
-            <p className="text-sm text-slate-600">Current ratio</p>
-            <p className="text-4xl font-bold text-brand-800">{formatNumber(ratio, 2)}<RatioBadge health={rateRatio('current', ratio)} /></p>
-            <p className="mt-3 text-slate-700">You have {formatCurrency(ratio)} of current assets for every $1 of current liabilities.</p>
-            <p className="mt-2 text-sm text-slate-600">Working capital: {formatCurrency(a - l, { whole: true })}</p>
+            <p className="text-sm text-gray-600">Current ratio</p>
+            <p className="text-4xl font-bold tracking-tight text-gray-900">{formatNumber(ratio, 2)}<RatioBadge health={rateRatio('current', ratio)} /></p>
+            <p className="mt-3 text-gray-700">You have {formatCurrency(ratio)} of current assets for every $1 of current liabilities.</p>
+            <p className="mt-2 text-sm text-gray-600">Working capital: {formatCurrency(a - l, { whole: true })}</p>
           </div>
         ) : (
           <EmptyResults message="Current liabilities must be greater than zero." />

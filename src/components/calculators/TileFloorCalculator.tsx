@@ -24,7 +24,7 @@ export default function TileFloorCalculator() {
   }, [length, width, material, waste, labor, opts]);
 
   const checkbox = (k: keyof typeof opts, label: string) => (
-    <label className="flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" checked={opts[k]} onChange={() => toggle(k)} />{label}</label>
+    <label className="flex items-center gap-2 text-sm text-gray-700"><input type="checkbox" checked={opts[k]} onChange={() => toggle(k)} />{label}</label>
   );
 
   return (
@@ -50,7 +50,7 @@ export default function TileFloorCalculator() {
           <div>
             <Results items={[{ label: 'Estimated total cost', value: formatCurrency(r.total, { whole: true }), primary: true }, { label: 'Cost per square foot', value: formatCurrency(r.perSqFt) }]} />
             <ul className="mt-4 space-y-1 border-t border-brand-100 pt-3 text-sm">
-              {r.lines.map((l) => <li key={l.label} className="flex justify-between gap-3"><span className="text-slate-600">{l.label}</span><span className="tabular-nums">{formatCurrency(l.amount, { whole: true })}</span></li>)}
+              {r.lines.map((l) => <li key={l.label} className="flex justify-between gap-3"><span className="text-gray-600">{l.label}</span><span className="tabular-nums">{formatCurrency(l.amount, { whole: true })}</span></li>)}
             </ul>
           </div>
         ) : (

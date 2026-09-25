@@ -6,7 +6,7 @@ wpId: 1281
 wpType: page
 modified: "2025-04-03T17:21:52"
 ---
-See below for a list of our ever-growing number business calculators. We’ve tried to organize these tools in order of need of how you should be doing the calculations but feel free to skip to the one you need. Speaking of which, don’t see the calculator you need? Feel free to suggest one to us by reaching out here or on social media.
+See below for a list of our ever-growing number of business calculators. We’ve tried to organize these tools in order of need of how you should be doing the calculations but feel free to skip to the one you need. Speaking of which, don’t see the calculator you need? Feel free to suggest one to us by reaching out here or on social media.
 
 ## Customer Lifetime Value Calculator
 

@@ -27,9 +27,9 @@ export default function QuickRatioCalculator() {
       results={
         Number.isFinite(ratio) ? (
           <div>
-            <p className="text-sm text-slate-600">Quick ratio (acid test)</p>
-            <p className="text-4xl font-bold text-brand-800">{formatNumber(ratio, 2)}<RatioBadge health={rateRatio('quick', ratio)} /></p>
-            <p className="mt-3 text-slate-700">{ratio >= 1 ? 'Liquid assets cover current liabilities without selling inventory.' : 'Liquid assets alone would not cover current liabilities.'}</p>
+            <p className="text-sm text-gray-600">Quick ratio (acid test)</p>
+            <p className="text-4xl font-bold tracking-tight text-gray-900">{formatNumber(ratio, 2)}<RatioBadge health={rateRatio('quick', ratio)} /></p>
+            <p className="mt-3 text-gray-700">{ratio >= 1 ? 'Liquid assets cover current liabilities without selling inventory.' : 'Liquid assets alone would not cover current liabilities.'}</p>
           </div>
         ) : (
           <EmptyResults message="Current liabilities must be greater than zero." />

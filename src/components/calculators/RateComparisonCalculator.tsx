@@ -24,15 +24,15 @@ export default function RateComparisonCalculator() {
   }, [v]);
 
   const row = (label: string, a: string, b: string, strong = false) => (
-    <tr className={strong ? 'font-semibold text-slate-900' : ''}>
-      <td className="py-2 pr-3 text-slate-600">{label}</td>
+    <tr className={strong ? 'font-semibold text-gray-900' : ''}>
+      <td className="py-2 pr-3 text-gray-600">{label}</td>
       <td className="py-2 text-right tabular-nums">{a}</td>
       <td className="py-2 text-right tabular-nums">{b}</td>
     </tr>
   );
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <NumberField label="Home price" prefix="$" value={v.price} onChange={set('price')} min="0" />
         <NumberField label="Down payment" prefix="$" value={v.down} onChange={set('down')} min="0" />
@@ -45,10 +45,10 @@ export default function RateComparisonCalculator() {
         <NumberField label="PMI rate (if < 20% down)" suffix="%" value={v.pmi} onChange={set('pmi')} min="0" />
       </div>
       {r ? (
-        <div className="mt-6 overflow-x-auto rounded-lg bg-brand-50 p-5" aria-live="polite">
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100 bg-brand-50 p-5" aria-live="polite">
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-left"><th className="py-2" /><th className="py-2 text-right">Option 1 ({v.rate1}%)</th><th className="py-2 text-right">Option 2 ({v.rate2}%)</th></tr>
+              <tr className="text-left"><th className="py-2"><span className="sr-only">Measure</span></th><th className="py-2 text-right">Option 1 ({v.rate1}%)</th><th className="py-2 text-right">Option 2 ({v.rate2}%)</th></tr>
             </thead>
             <tbody className="divide-y divide-brand-100">
               {row('Principal and interest', formatCurrency(r.a.principalAndInterest), formatCurrency(r.b.principalAndInterest))}
@@ -59,14 +59,14 @@ export default function RateComparisonCalculator() {
               {row('Total P&I + points', formatCurrency(r.totalA, { whole: true }), formatCurrency(r.totalB, { whole: true }), true)}
             </tbody>
           </table>
-          <p className="mt-4 font-medium text-slate-800">
+          <p className="mt-4 font-medium text-gray-800">
             {Math.abs(r.monthlyDiff) < 0.005
               ? 'Both options have the same monthly payment.'
               : `Option ${r.monthlyDiff > 0 ? 2 : 1} saves ${formatCurrency(Math.abs(r.monthlyDiff))} a month and ${formatCurrency(Math.abs(r.totalA - r.totalB), { whole: true })} over the full term${r.pointsCost && r.monthlyDiff > 0 ? `; the points pay for themselves in ${Math.ceil(r.pointsCost / r.monthlyDiff)} months` : ''}.`}
           </p>
         </div>
       ) : (
-        <p className="mt-6 text-slate-600">Check the home price and down payment.</p>
+        <p className="mt-6 text-gray-600">Check the home price and down payment.</p>
       )}
     </div>
   );

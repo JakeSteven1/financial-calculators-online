@@ -31,7 +31,7 @@ export default function SalesCalculator() {
     <CalculatorShell
       inputs={
         <>
-          <p className="text-sm text-slate-600">Enter any two values and leave the rest blank. If you fill in more, the first two are used.</p>
+          <p className="text-sm text-gray-600">Enter any two values and leave the rest blank. If you fill in more, the first two are used.</p>
           <NumberField label={`${LABELS.cost} per unit`} prefix="$" value={values.cost} onChange={set('cost')} />
           <NumberField label={`${LABELS.revenue} per unit`} prefix="$" value={values.revenue} onChange={set('revenue')} />
           <NumberField label={`${LABELS.profit} per unit`} prefix="$" value={values.profit} onChange={set('profit')} />

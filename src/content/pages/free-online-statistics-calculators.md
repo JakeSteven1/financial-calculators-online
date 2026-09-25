@@ -6,7 +6,7 @@ wpId: 1231
 wpType: page
 modified: "2023-07-02T12:40:01"
 ---
-See below for a list of our ever-growing number statistics calculators. First let’s start with the basics and then we’ll get to some of our more complex calculators.
+See below for a list of our ever-growing number of statistics calculators. First let’s start with the basics and then we’ll get to some of our more complex calculators.
 
 ## Mean
 

@@ -33,7 +33,7 @@ export default function EarCalculator() {
           <div>
             <Results items={[{ label: 'Effective annual rate (EAR / APY)', value: formatPercent(ear, 4), primary: true }]} />
             <table className="mt-4 w-full text-sm">
-              <thead><tr className="text-left text-slate-600"><th className="py-1">Compounding</th><th className="py-1 text-right">EAR at {formatPercent(nominal)}</th></tr></thead>
+              <thead><tr className="text-left text-gray-600"><th className="py-1">Compounding</th><th className="py-1 text-right">EAR at {formatPercent(nominal)}</th></tr></thead>
               <tbody>
                 {FREQS.map((f) => (
                   <tr key={f.value} className={f.value === freq ? 'font-semibold text-brand-800' : ''}>

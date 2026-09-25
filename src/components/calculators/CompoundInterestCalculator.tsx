@@ -59,8 +59,8 @@ export default function CompoundInterestCalculator() {
           title="Balance by year: contributions and interest"
           bars={result.schedule.map((y) => ({ label: `Yr ${y.year}`, values: [y.totalContributions, Math.max(0, y.totalInterest)] }))}
           series={[
-            { label: 'Contributions', color: '#94a3b8' },
-            { label: 'Interest', color: '#1f7a45' },
+            { label: 'Contributions', color: '#6b7280' },
+            { label: 'Interest', color: '#2563eb' },
           ]}
           formatValue={(v) => formatCurrency(v, { whole: true })}
         />

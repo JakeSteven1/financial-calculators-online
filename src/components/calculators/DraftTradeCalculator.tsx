@@ -18,14 +18,14 @@ function Side({ title, rows, setRows, teams }: { title: string; rows: Row[]; set
   const update = (i: number, patch: Partial<Row>) => setRows(rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
   return (
     <fieldset className="space-y-3">
-      <legend className="text-lg font-semibold text-slate-900">{title}</legend>
+      <legend className="text-lg font-semibold text-gray-900">{title}</legend>
       {rows.map((row, i) => {
         const value = row.round && row.pick ? pickValue({ round: Number(row.round), pick: Number(row.pick) }, teams) : null;
         return (
           <div key={i} className="grid grid-cols-[1fr_1fr_4rem] items-end gap-2">
             <SelectField label={`Pick ${i + 1} round`} value={row.round} onChange={(v) => update(i, { round: v })} options={numOptions(rounds, 'Round')} />
             <SelectField label="Pick in round" value={row.pick} onChange={(v) => update(i, { pick: v })} options={numOptions(teams, 'Pick')} />
-            <span className="pb-2 text-right text-sm tabular-nums text-slate-600">{value === null ? '' : formatNumber(value, 1)}</span>
+            <span className="pb-2 text-right text-sm tabular-nums text-gray-600">{value === null ? '' : formatNumber(value, 1)}</span>
           </div>
         );
       })}
@@ -48,7 +48,7 @@ export default function DraftTradeCalculator() {
         : `Side ${result.verdict} gives up ${formatNumber(Math.abs(result.difference), 1)} more points (${formatNumber(result.differencePct, 1)}%). The team receiving side ${result.verdict} wins the trade.`;
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8">
       <div className="max-w-xs">
         <SelectField label="League size" value={teams} onChange={(v) => { setTeams(v); setA(a.map(blank)); setB(b.map(blank)); }} options={TEAM_OPTIONS} />
       </div>
@@ -56,12 +56,12 @@ export default function DraftTradeCalculator() {
         <Side title="Side A picks" rows={a} setRows={setA} teams={n} />
         <Side title="Side B picks" rows={b} setRows={setB} teams={n} />
       </div>
-      <div className="mt-6 rounded-lg bg-brand-50 p-5" aria-live="polite">
+      <div className="mt-6 rounded-xl border border-brand-100 bg-brand-50 p-5" aria-live="polite">
         <div className="grid grid-cols-2 gap-4 text-center">
-          <div><p className="text-sm text-slate-600">Side A value</p><p className="text-3xl font-bold text-brand-800 tabular-nums">{formatNumber(result.valueA, 1)}</p></div>
-          <div><p className="text-sm text-slate-600">Side B value</p><p className="text-3xl font-bold text-brand-800 tabular-nums">{formatNumber(result.valueB, 1)}</p></div>
+          <div><p className="text-sm text-gray-600">Side A value</p><p className="text-4xl font-bold tracking-tight text-gray-900 tabular-nums">{formatNumber(result.valueA, 1)}</p></div>
+          <div><p className="text-sm text-gray-600">Side B value</p><p className="text-4xl font-bold tracking-tight text-gray-900 tabular-nums">{formatNumber(result.valueB, 1)}</p></div>
         </div>
-        <p className="mt-4 text-center font-medium text-slate-800">{verdict}</p>
+        <p className="mt-4 text-center font-medium text-gray-800">{verdict}</p>
       </div>
       <div className="mt-4">
         <Button variant="secondary" onClick={() => { setA(a.map(blank)); setB(b.map(blank)); }}>Clear picks</Button>

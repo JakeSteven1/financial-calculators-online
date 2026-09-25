@@ -8,10 +8,10 @@ const DEFAULTS: Record<ModularCostKey, string> = {
   electrical: '6000', foundation: '20000', modules: '150000', setup: '25000', driveway: '10000', custom: '5000',
 };
 const GROUPS: { key: ModularGroup; label: string; color: string }[] = [
-  { key: 'structure', label: 'Home structure', color: '#1f7a45' },
-  { key: 'site', label: 'Land and site', color: '#0ea5e9' },
-  { key: 'utilities', label: 'Utilities', color: '#f59e0b' },
-  { key: 'extras', label: 'Extras', color: '#94a3b8' },
+  { key: 'structure', label: 'Home structure', color: '#2563eb' },
+  { key: 'site', label: 'Land and site', color: '#d97706' },
+  { key: 'utilities', label: 'Utilities', color: '#0d9488' },
+  { key: 'extras', label: 'Extras', color: '#9333ea' },
 ];
 
 export default function ModularHomeCalculator() {
@@ -28,7 +28,7 @@ export default function ModularHomeCalculator() {
   }, [costs, sqFt, down, rate, years]);
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8">
       <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
         <div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -37,14 +37,14 @@ export default function ModularHomeCalculator() {
             ))}
             <NumberField label="Home size" suffix="sq ft" value={sqFt} onChange={setSqFt} min="0" />
           </div>
-          <h3 className="mt-6 font-semibold text-slate-900">Financing</h3>
+          <h2 className="mt-6 font-semibold text-gray-900">Financing</h2>
           <div className="mt-2 grid gap-4 sm:grid-cols-3">
             <NumberField label="Down payment" prefix="$" value={down} onChange={setDown} min="0" />
             <NumberField label="Interest rate" suffix="%" value={rate} onChange={setRate} min="0" />
             <NumberField label="Loan term" suffix="years" value={years} onChange={setYears} min="1" />
           </div>
         </div>
-        <div className="h-fit rounded-lg bg-brand-50 p-5 lg:sticky lg:top-4" aria-live="polite">
+        <div className="h-fit rounded-xl border border-brand-100 bg-brand-50 p-5 lg:sticky lg:top-4" aria-live="polite">
           <Results
             items={[
               { label: 'Total project cost', value: formatCurrency(r.total, { whole: true }), primary: true },
@@ -66,7 +66,7 @@ export default function ModularHomeCalculator() {
               ))}
             </ul>
             {Number.isFinite(r.siteToStructurePct) && (
-              <p className="mt-3 text-sm text-slate-600">Site, utility, and extra costs are {formatNumber(r.siteToStructurePct, 0)}% of the home structure cost.</p>
+              <p className="mt-3 text-sm text-gray-600">Site, utility, and extra costs are {formatNumber(r.siteToStructurePct, 0)}% of the home structure cost.</p>
             )}
           </div>
         </div>

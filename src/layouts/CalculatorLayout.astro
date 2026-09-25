@@ -2,6 +2,7 @@
 import { getEntry, render } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import AdSlot from '../components/AdSlot.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Faq, { type FaqItem } from '../components/Faq.astro';
 import RelatedCalculators from '../components/RelatedCalculators.astro';
 import { getCalculator, getHub } from '../data/calculators';
@@ -63,27 +64,25 @@ const jsonLd = [
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd} image={getFeaturedImage(slug)}>
-  <nav aria-label="Breadcrumb" class="flex gap-2 text-sm text-slate-500">
-    <a href="/" class="text-slate-500">Home</a>
-    <span aria-hidden="true">›</span>
-    <a href={`/${hub.slug}/`} class="text-slate-500">{hub.name}</a>
-  </nav>
-  <h1 class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{h1}</h1>
-  <p class="mt-3 max-w-3xl text-lg text-slate-600">{description}</p>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: hub.name, href: `/${hub.slug}/` }, { label: calc.name }]} />
+  <header class="mt-3 max-w-[70ch]">
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{h1}</h1>
+    <p class="mt-3 text-lg text-gray-600">{description}</p>
+  </header>
 
   <div class="mt-8">
     <slot />
   </div>
 
-  <AdSlot />
-
-  <section class="prose prose-slate max-w-none" aria-labelledby="formula-heading">
+  <section class="prose prose-gray mt-12" aria-labelledby="formula-heading">
     <h2 id="formula-heading">How it's calculated</h2>
     <slot name="formula" />
   </section>
 
+  <AdSlot />
+
   {Prose && (
-    <article class="prose prose-slate mt-10 max-w-none">
+    <article class="prose prose-gray">
       <Prose />
     </article>
   )}

@@ -34,7 +34,7 @@ export default function CacCalculator() {
           <NumberField label="Sales spend" prefix="$" value={v.sales} onChange={set('sales')} min="0" hint="Sales salaries, commissions, tools." />
           <NumberField label="Other acquisition costs" prefix="$" value={v.other} onChange={set('other')} min="0" />
           <NumberField label="New customers acquired" value={v.customers} onChange={set('customers')} min="0" step="1" />
-          <h3 className="pt-2 text-sm font-semibold text-slate-900">Optional: payback and LTV</h3>
+          <h2 className="pt-2 text-sm font-semibold text-gray-900">Optional: payback and LTV</h2>
           <div className="grid grid-cols-2 gap-3">
             <NumberField label="Monthly revenue per customer" prefix="$" value={v.arpu} onChange={set('arpu')} min="0" />
             <NumberField label="Gross margin" suffix="%" value={v.margin} onChange={set('margin')} min="0" />

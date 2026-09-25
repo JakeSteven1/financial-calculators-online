@@ -20,16 +20,16 @@ export default function TipCalculator() {
           <NumberField label="Bill amount" prefix="$" value={bill} onChange={setBill} min="0" />
           <NumberField label="Tax included in bill (optional)" prefix="$" value={tax} onChange={setTax} min="0" hint="Tip is calculated on the amount before tax." />
           <div>
-            <span className="block text-sm font-medium text-slate-700">Tip percentage</span>
+            <span className="block text-sm font-medium text-gray-700">Tip percentage</span>
             <div className="mt-1 flex flex-wrap gap-2">
               {PRESETS.map((p) => (
-                <button key={p} type="button" onClick={() => setPct(p)} className={`rounded-md px-3 py-2 text-sm font-semibold ${pct === p ? 'bg-brand-600 text-white' : 'border border-slate-300 bg-white text-slate-700'}`}>{p}%</button>
+                <button key={p} type="button" onClick={() => setPct(p)} className={`rounded-md px-3 py-2 text-sm font-semibold ${pct === p ? 'bg-brand-600 text-white' : 'border border-gray-300 bg-white text-gray-700'}`}>{p}%</button>
               ))}
             </div>
             <div className="mt-2"><NumberField label="Custom tip" suffix="%" value={pct} onChange={setPct} min="0" /></div>
           </div>
           <NumberField label="Split between" suffix="people" value={people} onChange={setPeople} min="1" step="1" />
-          <label className="flex items-center gap-2 text-sm text-slate-700"><input type="checkbox" checked={roundUp} onChange={(e) => setRoundUp(e.target.checked)} /> Round each share up to the nearest dollar</label>
+          <label className="flex items-center gap-2 text-sm text-gray-700"><input type="checkbox" checked={roundUp} onChange={(e) => setRoundUp(e.target.checked)} /> Round each share up to the nearest dollar</label>
         </>
       }
       results={

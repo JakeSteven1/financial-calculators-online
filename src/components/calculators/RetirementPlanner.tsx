@@ -41,11 +41,11 @@ export default function RetirementPlanner() {
   }, [v]);
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8">
       <div className="grid gap-6 lg:grid-cols-3">
         {['You', 'Saving', 'Retirement'].map((group) => (
           <fieldset key={group} className="space-y-3">
-            <legend className="font-semibold text-slate-900">{group}</legend>
+            <legend className="font-semibold text-gray-900">{group}</legend>
             {FIELDS.filter((f) => f.group === group).map((f) => (
               <NumberField key={f.key} label={f.label} prefix={f.prefix} suffix={f.suffix} value={v[f.key]} onChange={(val) => setV((s) => ({ ...s, [f.key]: val }))} />
             ))}
@@ -55,7 +55,7 @@ export default function RetirementPlanner() {
       {r ? (
         <>
           <div className={`mt-6 rounded-lg p-5 ${r.dd.depletedAge ? 'bg-amber-50' : 'bg-brand-50'}`} aria-live="polite">
-            <p className="text-lg font-semibold text-slate-900">
+            <p className="text-lg font-semibold text-gray-900">
               {r.dd.depletedAge ? `Your savings run out at age ${r.dd.depletedAge}.` : `Your savings last past age ${r.n.lifeExpectancy}.`}
             </p>
             <div className="mt-4 grid gap-6 md:grid-cols-2">
@@ -78,12 +78,12 @@ export default function RetirementPlanner() {
           <BarChart
             title="Projected savings by age, in today's dollars"
             bars={[...r.acc.map((a) => ({ label: String(a.age), values: [a.balance, 0] })), ...r.dd.balances.map((b) => ({ label: String(b.age), values: [0, b.balance] }))]}
-            series={[{ label: 'Saving', color: '#1f7a45' }, { label: 'Retired', color: '#0ea5e9' }]}
+            series={[{ label: 'Saving', color: '#2563eb' }, { label: 'Retired', color: '#d97706' }]}
             formatValue={(x) => formatCurrency(x, { whole: true })}
           />
         </>
       ) : (
-        <p className="mt-6 text-slate-600">Check that retirement age is after your current age and before the plan-until age.</p>
+        <p className="mt-6 text-gray-600">Check that retirement age is after your current age and before the plan-until age.</p>
       )}
     </div>
   );

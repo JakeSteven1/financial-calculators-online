@@ -33,10 +33,10 @@ export default function HomeEquityCalculator() {
               ]}
             />
             <div className="mt-4 flex h-4 overflow-hidden rounded-full bg-white">
-              <div className="bg-slate-400" style={{ width: `${Math.min(100, r.cltv)}%` }} />
+              <div className="bg-gray-400" style={{ width: `${Math.min(100, r.cltv)}%` }} />
               <div className="bg-brand-600" style={{ width: `${Math.max(0, Math.min(100, r.equityPct))}%` }} />
             </div>
-            <p className="mt-1 flex justify-between text-xs text-slate-600"><span>Owed</span><span>Equity</span></p>
+            <p className="mt-1 flex justify-between text-xs text-gray-600"><span>Owed</span><span>Equity</span></p>
           </div>
         ) : (
           <EmptyResults message="Enter your home's current value." />

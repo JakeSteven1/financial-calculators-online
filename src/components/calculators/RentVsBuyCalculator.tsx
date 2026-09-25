@@ -38,18 +38,18 @@ export default function RentVsBuyCalculator() {
   const buyWins = r.totalBuyCost < r.totalRentCost;
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8">
       <div className="grid gap-6 lg:grid-cols-3">
         {(['Renting', 'Buying', 'Assumptions'] as const).map((group) => (
           <fieldset key={group} className="space-y-3">
-            <legend className="font-semibold text-slate-900">{group}</legend>
+            <legend className="font-semibold text-gray-900">{group}</legend>
             {FIELDS.filter((f) => f.group === group).map((f) => (
               <NumberField key={f.key} label={f.label} prefix={f.prefix} suffix={f.suffix} value={v[f.key]} onChange={(val) => setV((s) => ({ ...s, [f.key]: val }))} />
             ))}
           </fieldset>
         ))}
       </div>
-      <div className="mt-6 grid gap-6 rounded-lg bg-brand-50 p-5 md:grid-cols-2" aria-live="polite">
+      <div className="mt-6 grid gap-6 rounded-xl border border-brand-100 bg-brand-50 p-5 md:grid-cols-2" aria-live="polite">
         <Results
           items={[
             { label: `Over ${r.timeline.length} years, ${buyWins ? 'buying' : 'renting'} is cheaper by`, value: formatCurrency(Math.abs(r.totalRentCost - r.totalBuyCost), { whole: true }), primary: true },
@@ -60,12 +60,12 @@ export default function RentVsBuyCalculator() {
           ]}
           note={<p>{r.breakEvenYear ? `Buying becomes cheaper than renting in year ${r.breakEvenYear}.` : 'Buying never becomes cheaper within this time frame.'}</p>}
         />
-        <div className="max-h-80 overflow-auto rounded-md bg-white">
+        <div className="max-h-80 overflow-auto rounded-md bg-white" tabIndex={0} role="region" aria-label="Year-by-year cost of renting and buying">
           <table className="w-full text-sm">
-            <thead className="sticky top-0 bg-slate-50">
+            <thead className="sticky top-0 bg-gray-50">
               <tr><th className="px-3 py-2 text-left">Year</th><th className="px-3 py-2 text-right">Rent cost</th><th className="px-3 py-2 text-right">Buy cost</th></tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-gray-100">
               {r.timeline.map((t) => (
                 <tr key={t.year} className={t.buyCumulative < t.rentCumulative ? 'text-brand-800' : ''}>
                   <td className="px-3 py-1.5">{t.year}</td>

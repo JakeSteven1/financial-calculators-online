@@ -24,7 +24,7 @@ export default function ProfitMarginCalculator() {
             <NumberField label="Manufacturing overhead per unit" prefix="$" value={v.overhead} onChange={set('overhead')} min="0" />
             <NumberField label="Other direct costs per unit" prefix="$" value={v.other} onChange={set('other')} min="0" />
           </div>
-          <h3 className="pt-2 text-sm font-semibold text-slate-900">For net profit margin (optional)</h3>
+          <h2 className="pt-2 text-sm font-semibold text-gray-900">For net profit margin (optional)</h2>
           <div className="grid grid-cols-2 gap-3">
             <NumberField label="Units sold" value={v.units} onChange={set('units')} min="0" />
             <NumberField label="Operating expenses" prefix="$" value={v.opex} onChange={set('opex')} min="0" />

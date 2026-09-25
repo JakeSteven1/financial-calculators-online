@@ -49,7 +49,7 @@ export default function SimpleRetirementCalculator() {
         <BarChart
           title="Retirement savings by age"
           bars={rows.map((r) => ({ label: String(r.age), values: [r.totalContributions, Math.max(0, r.totalGrowth)] }))}
-          series={[{ label: 'Contributions', color: '#94a3b8' }, { label: 'Growth', color: '#1f7a45' }]}
+          series={[{ label: 'Contributions', color: '#6b7280' }, { label: 'Growth', color: '#2563eb' }]}
           formatValue={(x) => formatCurrency(x, { whole: true })}
         />
       )}

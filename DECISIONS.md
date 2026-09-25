@@ -175,3 +175,32 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
 - Every page now has `og:locale`, `og:image` with type/size/alt (task 5), and `twitter:site`, `twitter:title`,
   `twitter:description`, `twitter:image`, `twitter:image:alt`. `twitter:card` is `summary_large_image` for wide
   featured images and `summary` for the square logo fallback.
+
+### Design refresh (task 7)
+- **Color**: white body (the old `bg-slate-50` tint is gone), Tailwind's neutral `gray` scale for text and borders
+  (replacing the blue-tinted `slate`), and one accent. The logo is monochrome ink with no hue to derive from, so the grays
+  follow its ink and the accent is blue (`brand-600` #2563eb, links `brand-700` #1d4ed8 at 6.7:1 on white). Blue
+  replaced the old green because green and red also carry gain/loss meaning in results.
+- **Charts** use a fixed categorical order validated with the dataviz palette checker (lightness, chroma, CVD
+  separation, contrast all pass): blue #2563eb, amber #d97706, teal #0d9488, violet #9333ea. "Contributions" in
+  contributions-vs-growth charts is a deliberate neutral gray (#6b7280). Stacked segments have a 2px white gap, charts sit
+  in their own card with a visible title and legend, and the bar chart draws at its container's pixel width so axis text
+  stays 12px (it was ~8px at 390px). Break-even lines are 2px blue/amber.
+- **Calculator pages**: breadcrumb (Home / hub / calculator), H1 and summary capped at 70ch, then the calculator card
+  (rounded-2xl, border, soft shadow), inputs on the left and a tinted results panel with the headline number at 36px.
+  Order below: formula, ad, prose, FAQ, ad, related calculators. Ads never sit inside the card or between inputs and
+  results; the first ad moved from directly under the calculator to after the formula section.
+- **Prose** is capped at 70ch (`.prose { max-width: 70ch }`); FAQ at `max-w-3xl`.
+- **Hubs**: breadcrumb, intro, card grid (name + one-line blurb). **Homepage**: intro, category jump links, then the
+  five hubs in nav order, each with a heading, one-line blurb (`Hub.blurb`), "All N …" link, and its calculator grid.
+- **Footer**: logo and disclaimer, hub links, privacy policy, X/Twitter link, copyright row.
+- **Ad placeholders** are a plain `bg-gray-50` box (was a dashed outline, which looked broken) and are no longer
+  `<aside>` landmarks: two per page with the same label failed axe's `landmark-unique`.
+- **Accessibility**: axe-core (WCAG 2 A/AA + best practice) on all 66 pages reports no violations. Fixes made on the way:
+  `text-gray-500` on the blue results tint (4.44:1) → `gray-600`; headings inside calculators promoted from H3 to H2
+  (they came before any H2); the amortization and rent-vs-buy scroll areas are focusable labeled regions; the empty
+  corner header of the rate comparison table has screen-reader text. `:focus-visible` shows a 2px blue outline;
+  inputs show a blue ring. Every input already had a `<label for>` via `useId()`.
+- Screenshots (1280px and 390px) of the homepage, the real estate hub, and the mortgage, compound interest, and mean
+  calculators are in `screenshots/before/` and `screenshots/after/` (gitignored; `npm run screenshots <label>`).
+- Copy: "ever-growing number financial calculators" → "number of financial calculators" on four hubs.

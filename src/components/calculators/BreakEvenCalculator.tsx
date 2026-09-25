@@ -12,20 +12,23 @@ function BreakEvenChart({ fixed, price, variable, units }: { fixed: number; pric
   const x = (u: number) => pad.l + (u / maxUnits) * (w - pad.l - pad.r);
   const y = (v: number) => pad.t + (1 - v / maxY) * (h - pad.t - pad.b);
   return (
-    <figure className="mt-6">
-      <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto h-auto w-full max-w-3xl" role="img" aria-label="Break-even chart of revenue and total cost">
-        <line x1={pad.l} y1={y(0)} x2={w - pad.r} y2={y(0)} stroke="#cbd5e1" />
-        <line x1={pad.l} y1={pad.t} x2={pad.l} y2={y(0)} stroke="#cbd5e1" />
-        <line x1={x(0)} y1={y(fixed)} x2={x(maxUnits)} y2={y(fixed + variable * maxUnits)} stroke="#b91c1c" strokeWidth="3" />
-        <line x1={x(0)} y1={y(0)} x2={x(maxUnits)} y2={y(price * maxUnits)} stroke="#1f7a45" strokeWidth="3" />
-        <circle cx={x(units)} cy={y(price * units)} r="6" fill="#124b2e" />
-        <text x={x(units)} y={h - 12} textAnchor="middle" fontSize="14" fill="#334155">{formatNumber(units, 0)} units</text>
-        <text x={pad.l - 6} y={y(price * units) + 5} textAnchor="end" fontSize="14" fill="#334155">{formatCurrency(price * units, { whole: true })}</text>
-      </svg>
-      <figcaption className="mt-2 flex gap-4 text-sm text-slate-600">
-        <span className="inline-flex items-center gap-2"><span className="h-1 w-4 bg-[#1f7a45]" />Revenue</span>
-        <span className="inline-flex items-center gap-2"><span className="h-1 w-4 bg-[#b91c1c]" />Total cost</span>
+    <figure className="mt-6 rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+      <figcaption className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+        <span className="font-semibold text-gray-900">Revenue and total cost by units sold</span>
+        <span className="flex gap-4 text-sm text-gray-600">
+          <span className="inline-flex items-center gap-2"><span className="h-0.5 w-4 bg-[#2563eb]" />Revenue</span>
+          <span className="inline-flex items-center gap-2"><span className="h-0.5 w-4 bg-[#d97706]" />Total cost</span>
+        </span>
       </figcaption>
+      <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto mt-4 h-auto w-full" role="img" aria-label="Break-even chart of revenue and total cost">
+        <line x1={pad.l} y1={y(0)} x2={w - pad.r} y2={y(0)} stroke="#d1d5db" />
+        <line x1={pad.l} y1={pad.t} x2={pad.l} y2={y(0)} stroke="#d1d5db" />
+        <line x1={x(0)} y1={y(fixed)} x2={x(maxUnits)} y2={y(fixed + variable * maxUnits)} stroke="#d97706" strokeWidth="2" />
+        <line x1={x(0)} y1={y(0)} x2={x(maxUnits)} y2={y(price * maxUnits)} stroke="#2563eb" strokeWidth="2" />
+        <circle cx={x(units)} cy={y(price * units)} r="6" fill="#1e40af" stroke="#fff" strokeWidth="2" />
+        <text x={x(units)} y={h - 12} textAnchor="middle" fontSize="14" fill="#374151">{formatNumber(units, 0)} units</text>
+        <text x={pad.l - 6} y={y(price * units) + 5} textAnchor="end" fontSize="14" fill="#374151">{formatCurrency(price * units, { whole: true })}</text>
+      </svg>
     </figure>
   );
 }

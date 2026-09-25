@@ -34,19 +34,19 @@ export default function RefinanceCalculator({ focus = 'savings' }: Props) {
     <CalculatorShell
       inputs={
         <>
-          <h3 className="text-sm font-semibold text-slate-900">Current loan</h3>
+          <h2 className="text-sm font-semibold text-gray-900">Current loan</h2>
           <NumberField label="Remaining balance" prefix="$" value={v.balance} onChange={set('balance')} min="0" />
           <div className="grid grid-cols-2 gap-3">
             <NumberField label="Current rate" suffix="%" value={v.rate} onChange={set('rate')} min="0" />
             <NumberField label="Years remaining" value={v.years} onChange={set('years')} min="1" />
           </div>
-          <h3 className="pt-2 text-sm font-semibold text-slate-900">New loan</h3>
+          <h2 className="pt-2 text-sm font-semibold text-gray-900">New loan</h2>
           <div className="grid grid-cols-2 gap-3">
             <NumberField label="New rate" suffix="%" value={v.newRate} onChange={set('newRate')} min="0" />
             <NumberField label="New term" suffix="years" value={v.newYears} onChange={set('newYears')} min="1" />
           </div>
           <NumberField label="Closing costs" prefix="$" value={v.costs} onChange={set('costs')} min="0" />
-          <label className="flex items-center gap-2 text-sm text-slate-700">
+          <label className="flex items-center gap-2 text-sm text-gray-700">
             <input type="checkbox" checked={rollIn} onChange={(e) => setRollIn(e.target.checked)} /> Roll closing costs into the new loan
           </label>
         </>

@@ -45,14 +45,14 @@ export default function LiquidityRatioCalculator() {
           <div className="space-y-4">
             {rows.map(([label, value, health, note]) => (
               <div key={label} className="border-b border-brand-100 pb-3">
-                <p className="text-sm text-slate-600">{label}</p>
-                <p className="text-3xl font-bold text-brand-800">{formatNumber(value, 2)}<RatioBadge health={health} /></p>
-                <p className="text-xs text-slate-500">{note}</p>
+                <p className="text-sm text-gray-600">{label}</p>
+                <p className="text-4xl font-bold tracking-tight text-gray-900 tabular-nums">{formatNumber(value, 2)}<RatioBadge health={health} /></p>
+                <p className="text-xs text-gray-600">{note}</p>
               </div>
             ))}
             <div className="flex justify-between">
-              <span className="text-sm text-slate-600">Working capital</span>
-              <span className="font-semibold text-slate-900">{formatCurrency(result.workingCapital)}</span>
+              <span className="text-sm text-gray-600">Working capital</span>
+              <span className="font-semibold text-gray-900">{formatCurrency(result.workingCapital)}</span>
             </div>
           </div>
         ) : (

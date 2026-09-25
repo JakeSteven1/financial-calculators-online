@@ -35,14 +35,14 @@ export default function ClosingCostsCalculator() {
   }, [v]);
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8">
       <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
         <div className="grid gap-4 sm:grid-cols-2">
           {FIELDS.map((f) => (
             <NumberField key={f.key} label={f.label} prefix={f.prefix} suffix={f.suffix} value={v[f.key]} min="0" onChange={(val) => setV((s) => ({ ...s, [f.key]: val }))} />
           ))}
         </div>
-        <div className="h-fit rounded-lg bg-brand-50 p-5" aria-live="polite">
+        <div className="h-fit rounded-xl border border-brand-100 bg-brand-50 p-5" aria-live="polite">
           <Results
             items={[
               { label: 'Estimated closing costs', value: formatCurrency(r.total, { whole: true }), primary: true },
@@ -54,7 +54,7 @@ export default function ClosingCostsCalculator() {
           />
           <ul className="mt-4 space-y-1 border-t border-brand-100 pt-3 text-sm">
             {r.items.filter((i) => i.amount > 0).map((i) => (
-              <li key={i.key} className="flex justify-between gap-3"><span className="text-slate-600">{i.label}</span><span className="tabular-nums">{formatCurrency(i.amount, { whole: true })}</span></li>
+              <li key={i.key} className="flex justify-between gap-3"><span className="text-gray-600">{i.label}</span><span className="tabular-nums">{formatCurrency(i.amount, { whole: true })}</span></li>
             ))}
           </ul>
         </div>
