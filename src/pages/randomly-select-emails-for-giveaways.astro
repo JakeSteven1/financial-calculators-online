@@ -1,0 +1,43 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import EmailWinnerPicker from '../components/calculators/EmailWinnerPicker';
+
+const faqs = [
+  {
+    q: 'How do weighted entries work?',
+    a: 'Turn on weighted entries and list an email once per entry it earned. Someone listed three times has three times the chance of someone listed once, but can still only win once per draw.',
+  },
+  {
+    q: 'Is the drawing fair?',
+    a: 'Yes. Winners are drawn with your browser’s cryptographically secure random number generator. With weighting off, every unique email has an equal chance.',
+  },
+  {
+    q: 'Can the same person win twice?',
+    a: 'No. Once an email is drawn it is removed from the pool, so every winner in a draw is unique.',
+  },
+  {
+    q: 'Do you store my participant list?',
+    a: 'No. Everything runs in your browser. Your list is never uploaded or saved.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="randomly-select-emails-for-giveaways"
+  h1="Randomly Select Emails for Giveaways"
+  description="Pick fair giveaway winners from a list of emails. Optional weighted entries give repeat entrants extra chances while keeping every winner unique."
+  faqs={faqs}
+>
+  <EmailWinnerPicker allowWeighting client:visible />
+  <Fragment slot="formula">
+    <p>
+      Without weighting, each unique email has probability <strong>1 / N</strong> of being drawn first, where <em>N</em>
+      is the number of unique valid emails.
+    </p>
+    <p>
+      With weighting, an email that appears <em>w</em> times has probability <strong>w / W</strong> of being drawn, where
+      <em>W</em> is the total number of valid entries. After each winner is drawn, all of that person’s entries are
+      removed and the next winner is drawn from the rest.
+    </p>
+  </Fragment>
+</CalculatorLayout>
