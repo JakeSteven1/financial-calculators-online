@@ -2,7 +2,7 @@
 
 ## Tier 1: pages with traction
 - [x] /randomly-select-contest-winner-from-list-of-emails/
-- [ ] /random-number-generator-online-free/
+- [x] /random-number-generator-online-free/
 - [ ] /randomly-select-emails-for-giveaways/
 - [ ] /fair-fantasy-trade-value-draft-picks/
 - [ ] /life-seconds-calculator/

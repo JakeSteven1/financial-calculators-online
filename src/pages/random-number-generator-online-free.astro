@@ -1,0 +1,43 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RandomNumberGenerator from '../components/calculators/RandomNumberGenerator';
+
+const faqs = [
+  {
+    q: 'Are the numbers truly random?',
+    a: 'They come from your browser’s cryptographically secure generator (crypto.getRandomValues), which is suitable for drawings, games, and sampling. It is far less predictable than Math.random().',
+  },
+  {
+    q: 'Are the minimum and maximum included?',
+    a: 'Yes. A range of 1 to 10 can return 1, 10, or any whole number in between, each with equal probability.',
+  },
+  {
+    q: 'How do I generate numbers without repeats?',
+    a: 'Leave “Allow repeats” unchecked. Each number in the range can then appear at most once, like drawing numbered tickets from a hat. You cannot ask for more unique numbers than the range contains.',
+  },
+  {
+    q: 'Can I use negative numbers?',
+    a: 'Yes. Any whole-number range works, for example −50 to 50.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="random-number-generator-online-free"
+  h1="Random Number Generator"
+  description="Free random number generator. Pick one or many random whole numbers in any range, with or without repeats, using a cryptographically secure source."
+  faqs={faqs}
+>
+  <RandomNumberGenerator client:visible />
+  <Fragment slot="formula">
+    <p>
+      For a range from <em>min</em> to <em>max</em>, each draw returns <strong>min + ⌊u × (max − min + 1)⌋</strong>,
+      where <em>u</em> is a uniform random value in [0, 1) from <code>crypto.getRandomValues</code>. Every whole number in
+      the range has probability 1 / (max − min + 1).
+    </p>
+    <p>
+      Without repeats, the tool shuffles the full range with a Fisher-Yates shuffle and takes the first <em>k</em>
+      numbers, so no number can be picked twice.
+    </p>
+  </Fragment>
+</CalculatorLayout>
