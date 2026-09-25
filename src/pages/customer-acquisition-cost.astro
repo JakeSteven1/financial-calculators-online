@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import CacCalculator from '../components/calculators/CacCalculator';
+
+const faqs = [
+  {
+    q: 'How do you calculate customer acquisition cost?',
+    a: 'CAC = total sales and marketing spend ÷ new customers acquired in the same period. Spending $40,000 to win 200 customers is a CAC of $200.',
+  },
+  {
+    q: 'What costs should be included in CAC?',
+    a: 'Everything spent to win new customers: advertising, content, events, agency fees, sales salaries and commissions, and the software used by marketing and sales. Leave out costs of serving existing customers.',
+  },
+  {
+    q: 'What is the CAC payback period?',
+    a: 'How many months of gross profit from a customer it takes to earn back their acquisition cost: CAC ÷ (monthly revenue × gross margin). $200 ÷ ($50 × 80%) = 5 months.',
+  },
+  {
+    q: 'What is a good LTV to CAC ratio?',
+    a: 'Around 3:1 is the widely used benchmark. Below 1:1 you lose money on every customer; well above 5:1 can mean you could grow faster by spending more on acquisition.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="customer-acquisition-cost"
+  h1="Customer Acquisition Cost Calculator"
+  description="Calculate your customer acquisition cost (CAC) from marketing and sales spend, plus CAC payback period and LTV:CAC ratio."
+  faqs={faqs}
+>
+  <CacCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>CAC</strong> = (marketing + sales + other acquisition costs) ÷ new customers</li>
+      <li><strong>Payback period</strong> = CAC ÷ (monthly revenue per customer × gross margin)</li>
+      <li><strong>LTV:CAC</strong> = customer lifetime value ÷ CAC</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>

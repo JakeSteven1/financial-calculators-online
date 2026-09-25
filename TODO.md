@@ -59,7 +59,7 @@
 - [x] /50-30-20-budget-calculator/
 - [x] /mortgage-rate-comparison-calculator/
 - [x] /retirement-calculator-online/
-- [ ] /customer-acquisition-cost/
+- [x] /customer-acquisition-cost/
 - [ ] /our-free-financial-calculator/
 
 ## Hub and static pages (build last)
