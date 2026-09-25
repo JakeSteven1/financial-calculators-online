@@ -53,7 +53,7 @@
 - [x] /online-tip-calculator/
 - [x] /current-ratio-calculator/
 - [x] /quick-ratio-calculator-finance/
-- [ ] /free-online-retirement-calculator/
+- [x] /free-online-retirement-calculator/
 - [ ] /mortgage-refinance-break-even-point-calculator-online-free/
 - [ ] /amoritization-schedule-online/
 - [ ] /50-30-20-budget-calculator/

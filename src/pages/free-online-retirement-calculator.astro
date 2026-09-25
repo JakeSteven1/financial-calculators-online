@@ -1,0 +1,36 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import SimpleRetirementCalculator from '../components/calculators/SimpleRetirementCalculator';
+
+const faqs = [
+  {
+    q: 'How much will I have saved for retirement?',
+    a: 'It depends on your starting balance, how much you add each year, your return, and how many years until you retire. Starting at 30 with $20,000 and adding $6,000 a year at 7%, you would have about $1.04 million at 65.',
+  },
+  {
+    q: 'What return should I assume?',
+    a: 'A diversified stock-heavy portfolio has historically returned around 7% to 10% a year before inflation. Many planners use 5% to 7% to stay conservative, especially as you shift toward bonds near retirement.',
+  },
+  {
+    q: 'What is the 4% rule?',
+    a: 'A guideline that withdrawing 4% of your savings in the first year of retirement, then adjusting for inflation, has historically lasted about 30 years. $1 million supports roughly $40,000 a year.',
+  },
+  {
+    q: 'Why does starting early matter so much?',
+    a: 'Compound growth needs time. In the example above, $230,000 of contributions grows into more than $1 million, and most of that growth happens in the final decades.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="free-online-retirement-calculator"
+  h1="Free Retirement Calculator"
+  description="Project your retirement savings from your age, current balance, yearly contributions, and expected return, and see the income it could support."
+  faqs={faqs}
+>
+  <SimpleRetirementCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Savings at retirement = S × (1 + r)<sup>n</sup> + C × [((1 + r)<sup>n</sup> − 1) ÷ r]</strong></p>
+    <p><em>S</em> is current savings, <em>C</em> the yearly contribution (added at year end), <em>r</em> the annual return, and <em>n</em> the years until retirement. Retirement income uses the 4% rule: savings × 0.04.</p>
+  </Fragment>
+</CalculatorLayout>
