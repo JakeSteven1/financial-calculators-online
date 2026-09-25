@@ -1,0 +1,36 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import HomeSellingPriceCalculator from '../components/calculators/HomeSellingPriceCalculator';
+
+const faqs = [
+  {
+    q: 'How do I figure out what to sell my house for?',
+    a: 'Start from what the market will pay, based on recent comparable sales. This calculator answers the other half: the minimum price you need to cover what you put in, your selling costs, and the profit you want.',
+  },
+  {
+    q: 'Why isn’t the price just cost plus profit?',
+    a: 'Agent commission is a percentage of the sale price, so it grows as the price grows. Dividing by (1 − commission rate) accounts for that. Netting $376,000 with a 6% commission requires a price of $400,000, not $398,560.',
+  },
+  {
+    q: 'What closing costs do sellers pay?',
+    a: 'Beyond commission, sellers commonly pay transfer taxes, title insurance for the buyer, attorney or escrow fees, prorated property taxes, and any credits negotiated with the buyer. Together they often run 1% to 3% of the price.',
+  },
+  {
+    q: 'What is the cash to me at closing?',
+    a: 'The sale price minus commission, closing costs, and the payoff of any mortgage or home equity loan. It is what gets wired to you, not your profit.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="home-selling-price-calculator"
+  h1="Home Selling Price Calculator"
+  description="Find the minimum price to sell your home for to cover your purchase price, improvements, commission, and closing costs and still hit your profit goal."
+  faqs={faqs}
+>
+  <HomeSellingPriceCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Selling price = (purchase price + improvements + desired profit + closing costs) ÷ (1 − commission rate)</strong></p>
+    <p>Cash at closing = selling price − commission − closing costs − mortgage payoff.</p>
+  </Fragment>
+</CalculatorLayout>

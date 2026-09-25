@@ -35,7 +35,7 @@
 - [x] /mortgage-points-calculator-online/
 - [x] /mortgage-length-calculator-online/
 - [x] /rent-or-buy-calculator-online-free/
-- [ ] /home-selling-price-calculator/
+- [x] /home-selling-price-calculator/
 - [ ] /home-renovation-roi-calculator/
 - [ ] /home-affordability-calculator/
 - [ ] /lifetime-wealth-ratio-calculator/
