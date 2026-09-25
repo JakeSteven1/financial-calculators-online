@@ -24,7 +24,7 @@
 - [x] /representative-sample-calculator/
 - [x] /simple-loan-calculator/
 - [x] /profit-margin-calculator/
-- [ ] /car-loan-calculator/
+- [x] /car-loan-calculator/
 - [ ] /ideal-email-subject-length/
 - [ ] /cost-per-lead-calculator/
 - [ ] /mean-online-calculator/

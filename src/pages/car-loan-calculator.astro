@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import CarLoanCalculator from '../components/calculators/CarLoanCalculator';
+
+const faqs = [
+  {
+    q: 'How is a car loan payment calculated?',
+    a: 'First find the amount financed: price + sales tax + fees − down payment − trade-in equity. Then apply the loan formula M = P × i ÷ (1 − (1 + i)^−n) with the monthly rate i and number of months n.',
+  },
+  {
+    q: 'Does a trade-in reduce sales tax?',
+    a: 'In most US states, yes: sales tax is charged on the price minus the trade-in value. A few states tax the full price, so check your state’s rules.',
+  },
+  {
+    q: 'What if I owe more on my trade-in than it is worth?',
+    a: 'That negative equity is usually added to the new loan. Enter the payoff amount in “Owed on trade-in” and the calculator includes the difference in the amount financed.',
+  },
+  {
+    q: 'Is a 72- or 84-month car loan a good idea?',
+    a: 'Longer terms lower the payment but cost more interest and raise the risk of owing more than the car is worth. Many advisors suggest keeping car loans to 60 months or less.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="car-loan-calculator"
+  h1="Car Loan Calculator"
+  description="Estimate your monthly car payment including sales tax, fees, down payment, and trade-in, plus total interest and the full cost of the vehicle."
+  faqs={faqs}
+>
+  <CarLoanCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Sales tax</strong> = (price − trade-in value) × tax rate</li>
+      <li><strong>Amount financed</strong> = price + sales tax + fees − down payment − (trade-in value − amount owed)</li>
+      <li><strong>Monthly payment</strong> = P × i ÷ (1 − (1 + i)<sup>−n</sup>)</li>
+    </ul>
+    <p>A $35,000 car with $5,000 down, 6% tax, and $500 in fees finances $32,600; at 7% for 60 months that is $645.52 a month.</p>
+  </Fragment>
+</CalculatorLayout>
