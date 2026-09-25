@@ -18,7 +18,7 @@
 - [x] /online-median-calculator/
 
 ## Tier 2: everything else
-- [ ] /modular-home-cost-calculator/
+- [x] /modular-home-cost-calculator/
 - [ ] /gross-margin-calculator-online/
 - [ ] /mortgage-loan-calculator-online/
 - [ ] /representative-sample-calculator/

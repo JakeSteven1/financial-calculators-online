@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import ModularHomeCalculator from '../components/calculators/ModularHomeCalculator';
+
+const faqs = [
+  {
+    q: 'How much does a modular home cost?',
+    a: 'The modules themselves often run roughly $80 to $160 per square foot, but land, foundation, transport, utilities, and finishing can add 30% to 60% or more. That is why this calculator totals every cost category, not just the base price.',
+  },
+  {
+    q: 'What costs are people most likely to forget?',
+    a: 'Site work and utilities: clearing and grading, a well or water line, a septic system, electrical service, the crane and set crew, and the driveway. On rural lots these can rival the cost of the modules.',
+  },
+  {
+    q: 'Is cost per square foot calculated with land?',
+    a: 'No. Cost per square foot excludes land so you can compare building costs across lots and builders. The total project cost includes land.',
+  },
+  {
+    q: 'Can I finance a modular home with a regular mortgage?',
+    a: 'Usually yes. Modular homes built to local building codes on a permanent foundation qualify for conventional, FHA, VA, and USDA loans, often starting with a construction-to-permanent loan.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="modular-home-cost-calculator"
+  h1="Modular Home Cost Calculator"
+  description="Estimate the full cost of a modular home: land, site prep, utilities, foundation, modules, and finishing, plus cost per square foot and your monthly payment."
+  faqs={faqs}
+>
+  <ModularHomeCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Total cost</strong> = land + site work + utilities + structure (foundation, modules, setup) + extras</li>
+      <li><strong>Cost per sq ft</strong> = (total cost − land) ÷ home size</li>
+      <li><strong>Monthly payment</strong> = L × i ÷ (1 − (1 + i)<sup>−n</sup>), where L is total cost minus down payment, i the monthly rate, and n the number of months</li>
+    </ul>
+    <p>The default figures are placeholders; replace them with quotes from your builder and local contractors.</p>
+  </Fragment>
+</CalculatorLayout>
