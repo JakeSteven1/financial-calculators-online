@@ -165,3 +165,13 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
   width, height, type, and alt tags. Pages without one, or whose featured image was the logo, use `/icon-512.png`.
   The mode calculator's featured image is a molecule model; it was kept because it is what WordPress used.
 - `npm run check:links` now also verifies absolute `og:image` URLs on this domain.
+
+### Social and identity (task 6)
+- `TWITTER_HANDLE`, `TWITTER_URL`, and `LOGO_URL` live in `src/data/site.ts`.
+- Footer: an inline-SVG X/Twitter icon linking to https://twitter.com/FinCalcsOnline, with
+  `aria-label="Follow @FinCalcsOnline on X (Twitter)"` and `rel="me"`. The icon is the current X mark, since the
+  twitter.com URL now redirects to x.com.
+- Homepage JSON-LD adds `Organization` (name, url, logo = `/icon-512.png`, sameAs = the Twitter URL) next to `WebSite`.
+- Every page now has `og:locale`, `og:image` with type/size/alt (task 5), and `twitter:site`, `twitter:title`,
+  `twitter:description`, `twitter:image`, `twitter:image:alt`. `twitter:card` is `summary_large_image` for wide
+  featured images and `summary` for the square logo fallback.

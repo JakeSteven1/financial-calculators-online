@@ -4,7 +4,7 @@ import { Image, getImage } from 'astro:assets';
 import logo from '../assets/calculator-logo-trimmed.png';
 import { HUBS, hubForPath } from '../data/calculators';
 import type { SiteImage } from '../data/images';
-import { ADSENSE_CLIENT, SITE_NAME, SITE_URL } from '../data/site';
+import { ADSENSE_CLIENT, LOGO_URL, SITE_NAME, SITE_URL, TWITTER_HANDLE, TWITTER_URL } from '../data/site';
 
 interface Props {
   title: string;
@@ -27,7 +27,9 @@ const og = image
       type: 'image/jpeg',
       alt: image.alt,
     }))
-  : { url: `${SITE_URL}/icon-512.png`, width: 512, height: 512, type: 'image/png', alt: `${SITE_NAME} logo: a sketch of a calculator` };
+  : { url: LOGO_URL, width: 512, height: 512, type: 'image/png', alt: `${SITE_NAME} logo: a sketch of a calculator` };
+// Wide images get the large card; the square logo fallback reads better as a small one.
+const twitterCard = og.width >= og.height * 1.3 ? 'summary_large_image' : 'summary';
 const activeHub = hubForPath(Astro.url.pathname);
 const navItems = HUBS.map((hub) => ({
   ...hub,
@@ -47,6 +49,7 @@ const navItems = HUBS.map((hub) => ({
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -56,7 +59,12 @@ const navItems = HUBS.map((hub) => ({
     <meta property="og:image:width" content={String(og.width)} />
     <meta property="og:image:height" content={String(og.height)} />
     <meta property="og:image:alt" content={og.alt} />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:site" content={TWITTER_HANDLE} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={og.url} />
+    <meta name="twitter:image:alt" content={og.alt} />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -120,9 +128,14 @@ const navItems = HUBS.map((hub) => ({
     <footer class="border-t border-slate-200 bg-white text-sm text-slate-500">
       <div class="mx-auto flex max-w-5xl flex-wrap justify-between gap-4 px-4 py-6">
         <p>&copy; {year} {SITE_NAME}. For informational purposes only; not financial advice.</p>
-        <ul class="flex flex-wrap gap-4">
+        <ul class="flex flex-wrap items-center gap-4">
           {HUBS.map((hub) => <li><a href={`/${hub.slug}/`} class="text-slate-500">{hub.name}</a></li>)}
           <li><a href="/privacy-policy-2/" class="text-slate-500">Privacy Policy</a></li>
+          <li>
+            <a href={TWITTER_URL} rel="me" class="inline-flex items-center text-slate-500" aria-label={`Follow ${TWITTER_HANDLE} on X (Twitter)`}>
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+            </a>
+          </li>
         </ul>
       </div>
     </footer>
