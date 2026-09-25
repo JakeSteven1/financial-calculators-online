@@ -5,7 +5,7 @@
 - [x] /random-number-generator-online-free/
 - [x] /randomly-select-emails-for-giveaways/
 - [x] /fair-fantasy-trade-value-draft-picks/
-- [ ] /life-seconds-calculator/
+- [x] /life-seconds-calculator/
 - [ ] /tvm-calculator-online/
 - [ ] /sales-calculator-online/
 - [ ] /customer-lifetime-value-calculator-online/

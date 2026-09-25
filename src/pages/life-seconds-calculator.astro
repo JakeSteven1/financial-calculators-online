@@ -1,0 +1,43 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import LifeSecondsCalculator from '../components/calculators/LifeSecondsCalculator';
+
+const faqs = [
+  {
+    q: 'How many seconds are in a year?',
+    a: 'A 365-day year has 31,536,000 seconds. Averaged over leap years (365.25 days), a year has 31,557,600 seconds.',
+  },
+  {
+    q: 'At what age do you turn 1 billion seconds old?',
+    a: 'One billion seconds is about 31 years, 8 months, and 9 days. The calculator shows the exact date you reach it.',
+  },
+  {
+    q: 'How is the count calculated?',
+    a: 'It subtracts your birthdate (midnight, local time) from the current time and converts the difference into seconds, minutes, hours, and days. It updates every second.',
+  },
+  {
+    q: 'Is my birthdate stored?',
+    a: 'No. The calculation happens in your browser and nothing is sent or saved.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="life-seconds-calculator"
+  h1="Life Seconds Calculator"
+  description="How many seconds have you been alive? Enter your birthdate for a live count of seconds, minutes, hours, and days, plus your billion-second milestones."
+  faqs={faqs}
+>
+  <LifeSecondsCalculator client:visible />
+  <Fragment slot="formula">
+    <p>
+      <strong>Seconds lived = (now − birthdate) ÷ 1,000</strong> when times are measured in milliseconds. Minutes, hours,
+      and days divide that by 60, 3,600, and 86,400. Months use the average month length of 30.44 days, and years count
+      completed birthdays.
+    </p>
+    <p>
+      The progress bar compares your age with the US average life expectancy of 78.4 years (CDC, 2023). Someone who is
+      exactly 30 has lived about 946,728,000 seconds, roughly 38% of that average.
+    </p>
+  </Fragment>
+</CalculatorLayout>
