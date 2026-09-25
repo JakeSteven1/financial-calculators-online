@@ -1,0 +1,41 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import LoanCalculator from '../components/calculators/LoanCalculator';
+
+const faqs = [
+  {
+    q: 'What is an amortization schedule?',
+    a: 'A table showing every payment over the life of a loan, split into interest and principal, with the balance remaining after each one. It shows how your loan is paid down over time.',
+  },
+  {
+    q: 'Why is so much of my early payment interest?',
+    a: 'Interest is calculated on the remaining balance, which is largest at the start. On a 30-year mortgage at 6.5%, about 86% of the first payment goes to interest; by the final years it is almost all principal.',
+  },
+  {
+    q: 'How do extra payments change the schedule?',
+    a: 'Extra payments go straight to principal, so every later payment has less interest and more principal. The schedule gets shorter and total interest drops.',
+  },
+  {
+    q: 'Can I see the schedule by year?',
+    a: 'Yes. Switch between the yearly summary and the full month-by-month table above the schedule.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="amoritization-schedule-online"
+  h1="Amortization Schedule Calculator"
+  description="Create a free amortization schedule for any mortgage or loan. See each payment's principal and interest, the remaining balance, and the effect of extra payments."
+  faqs={faqs}
+>
+  <LoanCalculator defaultAmount="300000" defaultRate="6.5" defaultTerm="30" showExtra scheduleOpen client:visible />
+  <Fragment slot="formula">
+    <p>Each month:</p>
+    <ul>
+      <li><strong>Interest</strong> = remaining balance × annual rate ÷ 12</li>
+      <li><strong>Principal</strong> = payment − interest (+ any extra payment)</li>
+      <li><strong>New balance</strong> = balance − principal</li>
+    </ul>
+    <p>The payment itself is M = P × i ÷ (1 − (1 + i)<sup>−n</sup>). On $300,000 at 6.5% for 30 years it is $1,896.20, and the first month’s interest is $1,625.</p>
+  </Fragment>
+</CalculatorLayout>

@@ -11,9 +11,11 @@ interface Props {
   defaultUnit?: 'years' | 'months';
   /** Show the optional extra monthly payment input. */
   showExtra?: boolean;
+  /** Expand the amortization schedule by default. */
+  scheduleOpen?: boolean;
 }
 
-export default function LoanCalculator({ defaultAmount = '10000', defaultRate = '7', defaultTerm = '5', defaultUnit = 'years', showExtra = false }: Props) {
+export default function LoanCalculator({ defaultAmount = '10000', defaultRate = '7', defaultTerm = '5', defaultUnit = 'years', showExtra = false, scheduleOpen = false }: Props) {
   const [amount, setAmount] = useState(defaultAmount);
   const [rate, setRate] = useState(defaultRate);
   const [term, setTerm] = useState(defaultTerm);
@@ -68,7 +70,7 @@ export default function LoanCalculator({ defaultAmount = '10000', defaultRate = 
           )
         }
       />
-      {active && <AmortizationTable rows={active.rows} />}
+      {active && <AmortizationTable rows={active.rows} defaultOpen={scheduleOpen} />}
     </div>
   );
 }
