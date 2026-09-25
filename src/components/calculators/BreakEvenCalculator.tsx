@@ -13,7 +13,7 @@ function BreakEvenChart({ fixed, price, variable, units }: { fixed: number; pric
   const y = (v: number) => pad.t + (1 - v / maxY) * (h - pad.t - pad.b);
   return (
     <figure className="mt-6">
-      <svg viewBox={`0 0 ${w} ${h}`} className="h-auto w-full" role="img" aria-label="Break-even chart of revenue and total cost">
+      <svg viewBox={`0 0 ${w} ${h}`} className="mx-auto h-auto w-full max-w-3xl" role="img" aria-label="Break-even chart of revenue and total cost">
         <line x1={pad.l} y1={y(0)} x2={w - pad.r} y2={y(0)} stroke="#cbd5e1" />
         <line x1={pad.l} y1={pad.t} x2={pad.l} y2={y(0)} stroke="#cbd5e1" />
         <line x1={x(0)} y1={y(fixed)} x2={x(maxUnits)} y2={y(fixed + variable * maxUnits)} stroke="#b91c1c" strokeWidth="3" />

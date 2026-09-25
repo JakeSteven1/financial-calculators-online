@@ -27,7 +27,7 @@ export function BarChart({ bars, series, formatValue, title }: BarChartProps) {
 
   return (
     <figure className="mt-6">
-      <svg viewBox={`0 0 ${width} ${height}`} className="h-auto w-full" role="img" aria-label={title}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="mx-auto h-auto w-full max-w-3xl" role="img" aria-label={title}>
         {ticks.map((t) => {
           const y = pad.top + innerH * (1 - t);
           return (
