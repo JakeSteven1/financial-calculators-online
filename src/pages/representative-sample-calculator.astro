@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import SampleSizeCalculator from '../components/calculators/SampleSizeCalculator';
+
+const faqs = [
+  {
+    q: 'How many people do I need for a representative sample?',
+    a: 'For a large population at 95% confidence and a ±5% margin of error, you need 385 responses. Smaller populations need fewer: 278 for a population of 1,000.',
+  },
+  {
+    q: 'Why does population size matter so little?',
+    a: 'Once the population is much larger than the sample, precision depends almost entirely on sample size. A sample of 385 is equally precise for a city of 100,000 or a country of 300 million.',
+  },
+  {
+    q: 'What does the expected proportion do?',
+    a: 'It is your best guess of the share who will give a particular answer. 50% produces the largest, safest sample size; if you expect a result near 10% or 90%, you can use a smaller sample.',
+  },
+  {
+    q: 'Does a large sample guarantee a representative one?',
+    a: 'No. Sample size controls random error only. The sample must also be selected randomly from the population; a biased sample stays biased no matter how large it is.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="representative-sample-calculator"
+  h1="Representative Sample Size Calculator"
+  description="Find how many survey responses you need for a representative sample, based on confidence level, margin of error, and population size."
+  faqs={faqs}
+>
+  <SampleSizeCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>n₀ = z² × p(1 − p) ÷ e²</strong>, then for a population of size N: <strong>n = n₀ ÷ (1 + (n₀ − 1) ÷ N)</strong>.</p>
+    <p>
+      <em>z</em> is the z-score for the confidence level (1.96 for 95%), <em>p</em> the expected proportion, and
+      <em>e</em> the margin of error as a decimal. At 95% and ±5%: 1.96² × 0.25 ÷ 0.0025 = 384.2, rounded up to 385.
+    </p>
+  </Fragment>
+</CalculatorLayout>

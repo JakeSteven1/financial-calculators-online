@@ -21,7 +21,7 @@
 - [x] /modular-home-cost-calculator/
 - [x] /gross-margin-calculator-online/
 - [x] /mortgage-loan-calculator-online/
-- [ ] /representative-sample-calculator/
+- [x] /representative-sample-calculator/
 - [ ] /simple-loan-calculator/
 - [ ] /profit-margin-calculator/
 - [ ] /car-loan-calculator/
