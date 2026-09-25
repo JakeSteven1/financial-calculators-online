@@ -252,3 +252,20 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
 - `Button` gained a `disabled` prop. `check-artifacts` now lets masked emails (`j***@`) through its bold-markup check.
 - Fixed a pre-existing rendering bug: Astro drops the line break before an inline tag at the start of a source line,
   gluing words ("and<em>e</em>"). Fixed on the representative sample, both giveaway pages, and the unlisted picker.
+
+### Giveaway page and random number generator (task 2)
+- **Giveaways page** (`/randomly-select-emails-for-giveaways/`): same `EmailWinnerPicker` with `allowWeighting`,
+  reframed around Instagram and social giveaways: bonus entries for tags and shares, @handles with the email filter off,
+  alternates for winners who don't reply, masked results for posts and stories. Weighted entries stay off by default so a
+  plain list behaves the same as on the contest page. The old "Premium features" copy (saved contests, ad-free) described
+  things that don't exist and was replaced by a feature rundown and an Instagram giveaway how-to (including Instagram's
+  "not sponsored by Instagram" requirement). Hub blurb updated.
+- **Contest winner page** stays the general-purpose picker (newsletter contests, raffles, sweepstakes).
+- **Cross-links**: `CalculatorLayout` has an optional `after-tool` slot directly under the tool. Each email page points
+  to the other there with a one-line reason to switch, and the number generator points to both. The rewritten prose on
+  all three pages links the others too. Links in that slot are underlined (axe `link-in-text-block`).
+- **Random number generator**: same `useDrawReveal` (rolling numbers from the range), draw time, "Copy numbers", and
+  "Download CSV" (`Draw, Number, Drawn at, Min, Max`; min and max are separate numeric columns so a negative range isn't
+  apostrophe-escaped). Up to 50 numbers show as cards that fade in; more show as a scrollable, focusable list. FAQ adds
+  rerun, storage, and raffle questions. The imported prose said the tool was pseudo-random; it now explains the secure
+  generator and has a raffle how-to. No PickSafely mention here (task 3 scopes it to the email pages).

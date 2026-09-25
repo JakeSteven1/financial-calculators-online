@@ -4,20 +4,36 @@ import EmailWinnerPicker from '../components/calculators/EmailWinnerPicker';
 
 const faqs = [
   {
-    q: 'How do weighted entries work?',
-    a: 'Turn on weighted entries and list an email once per entry it earned. Someone listed three times has three times the chance of someone listed once, but can still only win once per draw.',
+    q: 'Is the giveaway draw random?',
+    a: 'Yes. Winners are drawn with your browser’s cryptographically secure random number generator (crypto.getRandomValues), not Math.random. With weighted entries off, every entrant has exactly the same chance.',
   },
   {
-    q: 'Is the drawing fair?',
-    a: 'Yes. Winners are drawn with your browser’s cryptographically secure random number generator. With weighting off, every unique email has an equal chance.',
+    q: 'How do weighted entries work?',
+    a: 'Turn on weighted entries and list an email once for every entry that person earned. Someone listed three times has three times the chance of someone listed once, but can still win only once per draw.',
+  },
+  {
+    q: 'How do I give bonus entries for tagging friends or sharing?',
+    a: 'Add the person’s email to your list once for their base entry and once more for each bonus they earned, for example one extra line per friend tagged or per share. Then turn on weighted entries. The results panel shows how many extra entries came from repeats.',
+  },
+  {
+    q: 'Can I pick from Instagram handles instead of emails?',
+    a: 'Yes. Turn off “Ignore invalid emails” and paste one @handle per line, or upload a CSV of commenters. Duplicate handles are removed, or count as extra entries if weighted entries are on.',
+  },
+  {
+    q: 'Can I run the draw again?',
+    a: 'Yes, every press of Draw again is a new, independent draw. To keep your giveaway fair, count the first draw and use the alternates if a winner doesn’t reply, rather than redrawing until you get a result you like.',
   },
   {
     q: 'Can the same person win twice?',
-    a: 'No. Once an email is drawn it is removed from the pool, so every winner in a draw is unique.',
+    a: 'No. Winners and alternates come from one draw without replacement, so each entrant can appear only once, even with weighted entries.',
   },
   {
     q: 'Do you store my participant list?',
-    a: 'No. Everything runs in your browser. Your list is never uploaded or saved.',
+    a: 'No. Nothing leaves your browser. Your list is read, cleaned, and drawn from on your own device, and the CSV download is created there too. Close the page and it is gone.',
+  },
+  {
+    q: 'How do I announce the winners without sharing their emails?',
+    a: 'Turn on “Mask entries for public posting” after the draw. Winners show as j***@gmail.com, and the copied text and CSV use the same masked view, ready for a story, post, or comment.',
   },
 ];
 ---
@@ -25,18 +41,33 @@ const faqs = [
 <CalculatorLayout
   slug="randomly-select-emails-for-giveaways"
   h1="Randomly Select Emails for Giveaways"
-  description="Pick fair giveaway winners from a list of emails. Optional weighted entries give repeat entrants extra chances while keeping every winner unique."
+  description="Pick Instagram and social media giveaway winners from your entry list. Give bonus entries with weighted draws, add alternates, and post masked results."
   faqs={faqs}
+  formulaHeading="How the giveaway draw works"
 >
-  <EmailWinnerPicker allowWeighting client:visible />
+  <EmailWinnerPicker allowWeighting entriesLabel="Giveaway entries" client:visible />
+  <p slot="after-tool">
+    Just need one fair pick per person for a newsletter contest, raffle, or sweepstakes? The <a href="/randomly-select-contest-winner-from-list-of-emails/">contest winner picker</a> is the general-purpose
+    version of this tool.
+  </p>
   <Fragment slot="formula">
     <p>
-      Without weighting, each unique email has probability <strong>1 / N</strong> of being drawn first, where <em>N</em>
-      is the number of unique valid emails.
+      First the list is cleaned up: entries are split one per line or at commas, spaces and blank lines are dropped, and
+      anything that isn’t an email is skipped unless you turn that filter off. Then the draw uses your browser’s
+      cryptographically secure random number generator (<code>crypto.getRandomValues</code>), so nobody, including us,
+      can predict or steer the result.
     </p>
     <p>
-      With weighting, an email that appears <em>w</em> times has probability <strong>w / W</strong> of being drawn, where <em>W</em> is the total number of valid entries. After each winner is drawn, all of that person’s entries are
-      removed and the next winner is drawn from the rest.
+      <strong>Without weighting</strong>, duplicates are removed and every unique entrant has the same chance. With <em>N</em> entrants, each one has a <strong>1 / N</strong> chance of being drawn first.
+    </p>
+    <p>
+      <strong>With weighting</strong>, someone listed <em>w</em> times has a <strong>w / W</strong> chance of being drawn
+      first, where <em>W</em> is the total number of entries. Once someone is drawn, all of their entries are removed
+      and the next winner is drawn from everyone left, so nobody wins twice.
+    </p>
+    <p>
+      The rolling animation is only for show (and for screen recordings): the winners are fixed the moment you press
+      Draw. If your device is set to reduce motion, they appear straight away.
     </p>
   </Fragment>
 </CalculatorLayout>

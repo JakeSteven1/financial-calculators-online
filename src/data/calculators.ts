@@ -95,8 +95,8 @@ export const CALCULATORS: CalculatorEntry[] = [
   { slug: 'character-count-tool-free', name: 'Character Count Tool', hub: 'free-business-calculators', blurb: 'Count characters, words, and sentences.', category: 'UtilitiesApplication' },
 
   // Statistics
-  { slug: 'randomly-select-contest-winner-from-list-of-emails', name: 'Random Contest Winner Picker', hub: 'free-online-statistics-calculators', blurb: 'Pick fair winners from a list of emails.', category: 'UtilitiesApplication' },
-  { slug: 'randomly-select-emails-for-giveaways', name: 'Random Email Selector for Giveaways', hub: 'free-online-statistics-calculators', blurb: 'Draw giveaway winners, with optional weighted entries.', category: 'UtilitiesApplication' },
+  { slug: 'randomly-select-contest-winner-from-list-of-emails', name: 'Random Contest Winner Picker', hub: 'free-online-statistics-calculators', blurb: 'Pick fair winners and alternates from a list of emails.', category: 'UtilitiesApplication' },
+  { slug: 'randomly-select-emails-for-giveaways', name: 'Random Email Selector for Giveaways', hub: 'free-online-statistics-calculators', blurb: 'Instagram and social giveaway winners, with bonus entries.', category: 'UtilitiesApplication' },
   { slug: 'random-number-generator-online-free', name: 'Random Number Generator', hub: 'free-online-statistics-calculators', blurb: 'Random numbers in any range, with or without repeats.', category: 'UtilitiesApplication' },
   { slug: 'quartile-calculator-online-free', name: 'Quartile Calculator', hub: 'free-online-statistics-calculators', blurb: 'Q1, median, Q3, and interquartile range.', category: 'EducationalApplication' },
   { slug: 'online-median-calculator', name: 'Median Calculator', hub: 'free-online-statistics-calculators', blurb: 'The middle value of a data set.', category: 'EducationalApplication' },

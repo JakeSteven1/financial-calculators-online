@@ -76,6 +76,12 @@ const jsonLd = [
     <slot />
   </div>
 
+  {Astro.slots.has('after-tool') && (
+    <div class="mt-4 max-w-[70ch] text-gray-700 [&_a]:underline">
+      <slot name="after-tool" />
+    </div>
+  )}
+
   <section class="prose prose-gray mt-12" aria-labelledby="formula-heading">
     <h2 id="formula-heading">{formulaHeading}</h2>
     <slot name="formula" />

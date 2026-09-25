@@ -6,40 +6,33 @@ wpId: 721
 wpType: page
 modified: "2025-12-08T23:37:22"
 ---
-Use our FREE random number generator! Simply input the minimum number you want to appear (usually 1) and the maximum number that the random number should fall between.
+Use our FREE random number generator! Set the smallest and largest number you want, choose how many numbers you need, and press Generate. It works for raffles, prize drawings, picking a random line from a spreadsheet, choosing who goes first, or anything else that needs a fair, unpredictable number.
 
-Understanding the concept of randomness and its application in computing can be a fascinating subject. When we think of randomness, we often associate it with unpredictability, such as the outcome of a dice roll or a lottery drawing. These events, driven by natural or physical randomness, seem impossible to anticipate. However, when it comes to computers, generating true randomness can be a challenge. Computers are _deterministic_ machines, designed to perform tasks predictably and consistently. This leads us to question: how can a device, built on the principles of predictability and consistency, generate a value that’s truly random?
+## How random is it?
 
-In reality, most random numbers used in computer program calculators are not truly random in the sense that you probably assume. They are known as pseudo-random numbers. Pseudo-random numbers are generated in a predictable manner using a mathematical formula or a precalculated table. A pseudo-random number generator (PRNG), given the same initial conditions or “seed”, will produce a sequence of numbers that appears random, but is entirely predictable. This kind of “randomness” is sufficient for many applications, such as simulations, cryptography, and games, but it’s important to note that these aren’t random in the way natural phenomena are. Our Random Number Generator here uses a similar method – it generates pseudo-random numbers within a given range based on your input. Although not entirely random in the strictest sense, it’s plenty random for most applications you’ll need it for. Running a giveaway? Use our other free tool if you’re running a giveaway and need to [randomly select a winner from a list of emails](/randomly-select-contest-winner-from-list-of-emails/).
+Computers are built to be predictable, so producing a truly unpredictable number takes some care. Many online generators use a **pseudo-random** function like JavaScript's `Math.random()`, which produces a sequence that looks random but is generated from a starting value, or seed. That's fine for a game, but it isn't designed to be unpredictable.
 
-## How To Use Our Random Number Generator
+This generator uses your browser's **cryptographically secure** random number generator instead. It is the same source browsers use to create encryption keys, seeded by the operating system from hard-to-predict hardware and system events. Nobody, including us, can predict or influence the numbers it gives you, and every whole number in your range has exactly the same chance of coming up.
 
-### Input the Minimum Number
+## How to use the random number generator
 
-The first step in using this random number generator is to input your minimum number. This is the lowest number that could possibly be generated. Enter the value into the field labeled "Minimum Number".
+### Set the range
 
-### Input the Maximum Number
+Enter the **minimum** and **maximum**. Both are included, so a range of 1 to 100 can return 1, 100, or anything in between. Negative numbers work too.
 
-The second step is to input your maximum number. This is the highest number that could possibly be generated. Enter this value into the field labeled "Maximum Number". Ensure that the maximum number is greater than the minimum number, otherwise, an error message will appear.
+### Choose how many numbers
 
-### Generate the Random Number
+Generate a single number or up to 10,000 at once. Leave **Allow repeats** off to get unique numbers, like drawing tickets from a hat, or turn it on if the same number can come up more than once, like rolling a die several times. Tick **Sort results** to list them from smallest to largest.
 
-Once you've entered the minimum and maximum numbers, click the "Generate" button. The generator will produce a pseudo-random number that falls within the range of your specified minimum and maximum numbers. The generated number will be displayed on the screen. If you want to generate another number with the same or different range, simply adjust the input fields as desired and click the "Generate" button again.
+### Generate and save the result
 
-## You might also be interested in these Calculators
+Press **Generate**. The result shows the date and time of the draw, and you can copy the numbers or download them as a CSV to keep a record.
 
-### Randomly Select Winner From List of Emails
+## Using it for a raffle
 
-### Randomly Select Winner From List of Emails
+1. Number your tickets, starting at 1.
+2. Set the minimum to 1 and the maximum to your last ticket number, with repeats off.
+3. Set "How many numbers" to the number of prizes, plus a few extra in case a winner can't be reached.
+4. Generate once and keep the CSV as a record of the draw.
 
-Running a giveaway and want to randomly and safely pick a winner from a list of numbers? Use our free tool
-
-[Open the Random Contest Winner Picker](/randomly-select-contest-winner-from-list-of-emails/)
-
-### Representative Sample Calculator
-
-### Running a poll?
-
-Use our Representative Sample Calculator and make sure your poll is reaching a representative sample of the population.
-
-[Open the Sample Size Calculator](/representative-sample-calculator/)
+Running a giveaway from a list of entries rather than numbered tickets? Use our other free tool to [randomly select a winner from a list of emails](/randomly-select-contest-winner-from-list-of-emails/), or the [giveaway picker](/randomly-select-emails-for-giveaways/) if your social media giveaway has bonus entries.

@@ -1,35 +1,37 @@
 ---
 title: "Randomly Select Emails For Giveaways"
 seoTitle: "Randomly Select Emails For Giveaways - Free Financial Calculator Online"
-description: "Randomly Select Emails For Giveaways Take the guesswork out of picking winners! Our tool provides a simple and fair way to randomly select winners from your list of email entries. Upgrade to Premium for enhanced features designed to save you time and add flexibility to your contests. Premium Features Weighted Entries Want to give participants [&hellip;]"
+description: "Pick Instagram and social media giveaway winners from your entry list, with weighted bonus entries and alternates."
 wpId: 2088
 wpType: page
 modified: "2025-12-08T21:21:08"
 ---
-Take the guesswork out of picking winners! Our tool provides a simple and fair way to randomly select winners from your list of email entries. Upgrade to Premium for enhanced features designed to save you time and add flexibility to your contests.
+Take the guesswork out of picking giveaway winners. Whether your entries came from an Instagram post, a TikTok contest, a Facebook promotion, or a sign-up form linked in your bio, this tool picks fair winners from your list in seconds, and it's completely free.
 
-## Premium Features
+## Built for social media giveaways
 
-### Weighted Entries
+### Weighted bonus entries
 
-Want to give participants extra chances to win for specific actions? Enable weighted entries! Simply include an email address multiple times in your list, and each instance increases that person's odds in the random draw, while still ensuring unique winners are selected per draw.
+Many giveaways reward extra actions: tag a friend, share to your story, follow a partner account, or enter every day. Turn on **weighted entries** and list a person once for every entry they earned. Someone with three entries gets three times the chance of someone with one, and still can't win twice.
 
-### Save & Load Past Contests
+### Emails or handles
 
-Stop hunting for old lists! Save your contest setup (name, participant emails, settings, and winners) directly in your browser. Load previous contests anytime to easily re-run a similar giveaway, check past results, or reuse participant lists.
+Collected emails through a form? Paste them or upload the CSV export, and the tool skips header rows and anything that isn't an email. Picking from commenters instead? Turn off the email filter and paste one @handle per line.
 
-Note: Contest data is saved using your browser's local storage. It remains private on your computer but can be lost if you clear your browser data. Storage limits may apply for very large or numerous saved contests.
+### Alternates
 
-### Ad-Free Experience
+Giveaway winners don't always reply. Draw a few alternates at the same time, in order, so you can move to the next person without a second draw.
 
-Enjoy a clean, focused workspace. The premium version provides an entirely ad-free interface for managing your contests and selecting winners without distractions.
+### Results you can post
 
-### Enhanced Statistics
+Mask the winners (j***@gmail.com) before you share them in a post or story, copy the list, or download a CSV with the draw date and time for your records.
 
-Get clearer insights into your entry list with improved statistics display, showing total entries, unique valid emails, duplicates (if weighting is off), invalid formats, and the final number of eligible participants in the draw.
+## How to run a fair Instagram giveaway
 
-### Guaranteed Unique Winners
+1. **Post clear rules.** Say how to enter, what earns bonus entries, when entries close, how many winners there will be, and when you'll announce them. Instagram also requires a statement that the promotion isn't sponsored or endorsed by Instagram.
+2. **Collect entries in one place.** A form that asks for an email makes the draw and follow-up easy. If people enter by commenting, export or copy the commenters' handles once entries close.
+3. **Close entries, then build the list.** Add one line per entry. For bonus entries, repeat the person's email or handle once per extra entry.
+4. **Draw once, with alternates.** Turn on weighted entries if your rules include bonus entries, choose your winners and alternates, and press Draw. Screen-record it if you'd like to share the moment.
+5. **Announce and contact.** Post the masked results, message each winner, and move to the next alternate if someone doesn't reply by your deadline.
 
-Rest assured that the random selection process ensures fairness by picking unique winners for each draw, even when using the weighted entries option.
-
-[Randomly Select The Winner](/randomly-select-contest-winner-from-list-of-emails/)
+Running a newsletter contest or raffle where everyone gets exactly one chance? The [contest winner picker](/randomly-select-contest-winner-from-list-of-emails/) is the simpler, general-purpose version. For numbered raffle tickets, use the [random number generator](/random-number-generator-online-free/).
