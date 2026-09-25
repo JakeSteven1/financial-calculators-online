@@ -19,7 +19,7 @@ const navItems = HUBS.map((hub) => ({
   href: `/${hub.slug}/`,
   active: hub.slug === activeHub,
   // The hub page itself is the current page; on a calculator the hub is the current section.
-  current: hub.slug === activeHub ? (Astro.url.pathname === `/${hub.slug}/` ? 'page' : 'true') : undefined,
+  current: hub.slug === activeHub ? (Astro.url.pathname === `/${hub.slug}/` ? ('page' as const) : ('true' as const)) : undefined,
 }));
 ---
 
