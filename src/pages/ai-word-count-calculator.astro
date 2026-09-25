@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import AiContextCalculator from '../components/calculators/AiContextCalculator';
+
+const faqs = [
+  {
+    q: 'Why does ChatGPT forget the beginning of a conversation?',
+    a: 'AI chat models can only read a fixed amount of text at once, called the context window, measured in tokens. When a conversation grows past it, the oldest messages are dropped or summarized, so the model no longer “remembers” them.',
+  },
+  {
+    q: 'What is a token?',
+    a: 'A chunk of text the model processes, often a word or part of a word. In English, one token averages about four characters, or roughly three quarters of a word, so 1,000 tokens is about 750 words.',
+  },
+  {
+    q: 'How big is a context window?',
+    a: 'It depends on the model and plan. Older models had 4K to 32K tokens; many current models offer 128K to 200K tokens, and some reach 1 million. Check your provider’s documentation for the exact figure.',
+  },
+  {
+    q: 'How accurate is the token estimate?',
+    a: 'It is an approximation based on four characters per token. Each model family uses its own tokenizer, and code, numbers, and non-English text often use more tokens per character.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="ai-word-count-calculator"
+  h1="Has ChatGPT Forgotten? AI Conversation Length Calculator"
+  description="Paste an AI chat to estimate its token count and see how much of the model's context window it uses, so you know when the AI starts forgetting."
+  faqs={faqs}
+>
+  <AiContextCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Estimated tokens</strong> = characters ÷ 4 (rounded up)</li>
+      <li><strong>Context used</strong> = estimated tokens ÷ context window × 100</li>
+      <li><strong>Complexity score</strong> = simple words × 1 + moderate × 2 + complex × 3</li>
+    </ul>
+    <p>Your text is analyzed in your browser and is never uploaded.</p>
+  </Fragment>
+</CalculatorLayout>

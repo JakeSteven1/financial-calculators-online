@@ -45,7 +45,7 @@
 - [x] /effective-annual-interest-rate-calculator-online/
 - [x] /return-on-investment-calculator/
 - [x] /stock-price-revenue-sale/
-- [ ] /ai-word-count-calculator/
+- [x] /ai-word-count-calculator/
 - [ ] /character-count-tool-free/
 - [ ] /tile-floor-cost-calculator/
 - [ ] /home-equity-calculator-online/
