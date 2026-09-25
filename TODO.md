@@ -49,7 +49,7 @@
 - [x] /character-count-tool-free/
 - [x] /tile-floor-cost-calculator/
 - [x] /home-equity-calculator-online/
-- [ ] /life-insurance-coverage-estimator/
+- [x] /life-insurance-coverage-estimator/
 - [ ] /online-tip-calculator/
 - [ ] /current-ratio-calculator/
 - [ ] /quick-ratio-calculator-finance/

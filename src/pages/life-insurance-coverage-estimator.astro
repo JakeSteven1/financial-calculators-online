@@ -1,0 +1,36 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import LifeInsuranceCalculator from '../components/calculators/LifeInsuranceCalculator';
+
+const faqs = [
+  {
+    q: 'How much life insurance do I need?',
+    a: 'Enough to replace your income for the years your family would depend on it, pay off debts and the mortgage, fund education, and cover final expenses, minus savings and coverage you already have. Many people land at 10 to 15 times their income.',
+  },
+  {
+    q: 'What is the DIME method?',
+    a: 'DIME stands for Debt, Income, Mortgage, and Education, the four big needs life insurance usually covers. This calculator adds final expenses and subtracts existing resources.',
+  },
+  {
+    q: 'How does age affect how much coverage I need?',
+    a: 'Younger people usually need more years of income replaced; the default here is the number of years until 65, between 5 and 20. As you age, savings grow and debts shrink, so the need typically falls.',
+  },
+  {
+    q: 'Should I get term or whole life insurance?',
+    a: 'Term life covers a set period, such as 20 or 30 years, and is far cheaper per dollar of coverage, which suits income replacement. Whole life lasts for life and builds cash value but costs much more.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="life-insurance-coverage-estimator"
+  h1="Life Insurance Coverage Calculator"
+  description="Estimate how much life insurance you need based on your age, income, debts, mortgage, dependents, and education costs, minus coverage you already have."
+  faqs={faqs}
+>
+  <LifeInsuranceCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Coverage = income × years + debts + mortgage + dependents × education cost + final expenses − (existing coverage + savings)</strong></p>
+    <p>Example: $80,000 × 20 years + $20,000 + $250,000 + 2 × $50,000 + $15,000 − $25,000 = $1,960,000.</p>
+  </Fragment>
+</CalculatorLayout>
