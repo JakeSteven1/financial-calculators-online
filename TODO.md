@@ -26,7 +26,7 @@
 - [x] /profit-margin-calculator/
 - [x] /car-loan-calculator/
 - [x] /ideal-email-subject-length/
-- [ ] /cost-per-lead-calculator/
+- [x] /cost-per-lead-calculator/
 - [ ] /mean-online-calculator/
 - [ ] /mode-calculator-online/
 - [ ] /standard-deviation-calculator-online-free/

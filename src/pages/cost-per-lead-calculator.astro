@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import CostPerLeadCalculator from '../components/calculators/CostPerLeadCalculator';
+
+const faqs = [
+  {
+    q: 'How do you calculate cost per lead?',
+    a: 'Divide total marketing spend by the number of leads it produced. $5,000 that generates 200 leads is a cost per lead of $25.',
+  },
+  {
+    q: 'How do I get cost per lead from cost per click?',
+    a: 'Divide cost per click by the click-to-lead conversion rate. At $2 per click and a 10% conversion rate, each lead costs $2 ÷ 0.10 = $20.',
+  },
+  {
+    q: 'What is the most I should pay per click?',
+    a: 'Your break-even cost per click is lead conversion rate × customer conversion rate × customer value. With 10%, 20%, and $500, each click is worth $10, so paying more than $10 per click loses money.',
+  },
+  {
+    q: 'What is a good cost per lead?',
+    a: 'It depends entirely on what a customer is worth. A $200 lead is cheap for enterprise software and far too expensive for a $20 product. Judge CPL against customer lifetime value and close rate.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="cost-per-lead-calculator"
+  h1="Cost Per Lead Calculator"
+  description="Calculate cost per lead from spend and leads, or work through your ad funnel to find cost per customer, break-even cost per click, and campaign ROI."
+  faqs={faqs}
+>
+  <CostPerLeadCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Cost per lead</strong> = marketing spend ÷ leads = cost per click ÷ click-to-lead rate</li>
+      <li><strong>Cost per customer</strong> = cost per click ÷ (click-to-lead rate × lead-to-customer rate)</li>
+      <li><strong>Break-even cost per click</strong> = click-to-lead rate × lead-to-customer rate × customer value</li>
+      <li><strong>Return on ad spend</strong> = (revenue per click − cost per click) ÷ cost per click</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
