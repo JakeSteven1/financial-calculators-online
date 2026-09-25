@@ -60,7 +60,7 @@
 - [x] /mortgage-rate-comparison-calculator/
 - [x] /retirement-calculator-online/
 - [x] /customer-acquisition-cost/
-- [ ] /our-free-financial-calculator/
+- [x] /our-free-financial-calculator/
 
 ## Hub and static pages (build last)
 - [ ] / (homepage)

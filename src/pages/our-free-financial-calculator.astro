@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import AllInOneCalculator from '../components/calculators/AllInOneCalculator';
+
+const faqs = [
+  {
+    q: 'What can this financial calculator do?',
+    a: 'It combines the three calculations people need most: loan payments with an amortization schedule, investment growth with compound interest and monthly contributions, and full mortgage payments including taxes, insurance, and PMI.',
+  },
+  {
+    q: 'How is the loan payment calculated?',
+    a: 'With the standard amortization formula M = P × i ÷ (1 − (1 + i)^−n), where P is the amount borrowed, i the monthly rate, and n the number of months.',
+  },
+  {
+    q: 'How is investment growth calculated?',
+    a: 'The starting amount compounds at your chosen frequency, and monthly contributions are added at the end of each month: A = P(1 + r/n)^(nt) plus the future value of the contributions.',
+  },
+  {
+    q: 'Is my data saved or shared?',
+    a: 'No. All calculations run in your browser and nothing you enter is sent anywhere.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="our-free-financial-calculator"
+  h1="Our Free Financial Calculator"
+  description="One free financial calculator for loans, investments, and mortgages: payments, amortization, compound growth, and full monthly housing costs."
+  faqs={faqs}
+>
+  <AllInOneCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Loan</strong>: M = P × i ÷ (1 − (1 + i)<sup>−n</sup>)</li>
+      <li><strong>Investment</strong>: A = P(1 + r/n)<sup>nt</sup> + monthly contributions compounded to the end date</li>
+      <li><strong>Mortgage</strong>: principal and interest plus property tax, insurance, HOA, and PMI</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
