@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import StatsCalculator from '../components/calculators/StatsCalculator';
+
+const faqs = [
+  {
+    q: 'How do you find the mode?',
+    a: 'Count how many times each value appears. The mode is the value that appears most often. In 1, 3, 3, 6, 7, 3, 9 the mode is 3.',
+  },
+  {
+    q: 'Can a data set have more than one mode?',
+    a: 'Yes. If two values tie for most frequent, the data is bimodal; with more, it is multimodal. The calculator lists every tied value.',
+  },
+  {
+    q: 'What if no number repeats?',
+    a: 'Then there is no mode. Every value appears exactly once, so none is more common than the others.',
+  },
+  {
+    q: 'When is the mode most useful?',
+    a: 'For categories and discrete counts, such as the most common shoe size sold or the most frequent rating in a survey, where a mean or median would not make sense.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="mode-calculator-online"
+  h1="Mode Calculator"
+  description="Find the mode of any data set online for free. Paste your numbers to see the most frequent value, including ties, along with mean and median."
+  faqs={faqs}
+>
+  <StatsCalculator focus="mode" client:visible />
+  <Fragment slot="formula">
+    <p>
+      Count the frequency of each distinct value. <strong>The mode is every value whose frequency equals the highest
+      frequency</strong>, as long as that frequency is greater than 1.
+    </p>
+    <p>For 2, 4, 4, 4, 5, 5, 7, 9 the value 4 appears three times, more than any other, so the mode is 4.</p>
+  </Fragment>
+</CalculatorLayout>

@@ -28,7 +28,7 @@
 - [x] /ideal-email-subject-length/
 - [x] /cost-per-lead-calculator/
 - [x] /mean-online-calculator/
-- [ ] /mode-calculator-online/
+- [x] /mode-calculator-online/
 - [ ] /standard-deviation-calculator-online-free/
 - [ ] /monthly-loan-calculator/
 - [ ] /refinance-calculator-online-free/
