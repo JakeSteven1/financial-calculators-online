@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import ProfitMarginCalculator from '../components/calculators/ProfitMarginCalculator';
+
+const faqs = [
+  {
+    q: 'What is the difference between gross, operating, and net profit margin?',
+    a: 'Gross margin subtracts only the direct cost of making the product. Operating margin also subtracts operating expenses like rent and salaries. Net margin subtracts everything, including taxes, and is what the business actually keeps.',
+  },
+  {
+    q: 'How do I calculate profit margin?',
+    a: 'Profit margin = profit ÷ revenue × 100. Selling at $100 with $60 of direct costs gives a 40% gross margin.',
+  },
+  {
+    q: 'What counts as a direct cost?',
+    a: 'Costs that rise with each unit you make: materials, the labor to produce it, manufacturing overhead allocated per unit, and other per-unit costs like packaging.',
+  },
+  {
+    q: 'What is a good net profit margin?',
+    a: 'Around 10% is often called healthy, 20% high, and 5% low, but norms vary widely by industry: grocery stores run near 2%, while software companies can exceed 20%.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="profit-margin-calculator"
+  h1="Profit Margin Calculator"
+  description="Calculate gross, operating, and net profit margin from your selling price, per-unit costs, sales volume, operating expenses, and tax rate."
+  faqs={faqs}
+>
+  <ProfitMarginCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Gross margin</strong> = (price − direct cost per unit) ÷ price × 100</li>
+      <li><strong>Operating margin</strong> = (gross profit − operating expenses) ÷ revenue × 100</li>
+      <li><strong>Net margin</strong> = (operating profit − taxes) ÷ revenue × 100</li>
+    </ul>
+    <p>1,000 units at $100 with $60 of direct cost and $20,000 of operating expenses: 40% gross, 20% operating, and 15.8% net at a 21% tax rate.</p>
+  </Fragment>
+</CalculatorLayout>
