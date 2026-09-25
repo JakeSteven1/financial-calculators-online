@@ -1,0 +1,42 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import EmailWinnerPicker from '../components/calculators/EmailWinnerPicker';
+
+const faqs = [
+  {
+    q: 'How is the winner chosen?',
+    a: 'Every unique, valid email gets exactly one entry. The tool uses your browser’s cryptographic random number generator (Web Crypto) and a Fisher-Yates shuffle, so each entry has the same chance of winning.',
+  },
+  {
+    q: 'What happens to duplicate emails?',
+    a: 'Duplicates are removed before the draw, ignoring capitalization, so someone who entered twice still has one chance. If you want repeats to count as extra entries, use the weighted giveaway picker.',
+  },
+  {
+    q: 'Can I pick more than one winner?',
+    a: 'Yes. Set the number of winners and the tool draws that many different emails. Nobody can win twice in the same draw.',
+  },
+  {
+    q: 'Are my email lists uploaded anywhere?',
+    a: 'No. The list is processed entirely in your browser and is never sent to our server or stored.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="randomly-select-contest-winner-from-list-of-emails"
+  h1="Randomly Select a Contest Winner From a List of Emails"
+  description="Paste a list of emails and pick one or more random contest winners. Duplicates and invalid addresses are removed automatically. Free and private."
+  faqs={faqs}
+>
+  <EmailWinnerPicker client:visible />
+  <Fragment slot="formula">
+    <p>
+      The list is split on new lines, commas, and semicolons, then each entry is checked against a standard email
+      pattern. Valid emails are lowercased and deduplicated, leaving <em>N</em> eligible entries.
+    </p>
+    <p>
+      Winners are drawn with a Fisher-Yates shuffle driven by <code>crypto.getRandomValues</code>, so every entry has a
+      probability of exactly <strong>k / N</strong> of being among <em>k</em> winners.
+    </p>
+  </Fragment>
+</CalculatorLayout>

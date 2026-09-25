@@ -1,7 +1,7 @@
 # Rebuild checklist (priority order)
 
 ## Tier 1: pages with traction
-- [ ] /randomly-select-contest-winner-from-list-of-emails/
+- [x] /randomly-select-contest-winner-from-list-of-emails/
 - [ ] /random-number-generator-online-free/
 - [ ] /randomly-select-emails-for-giveaways/
 - [ ] /fair-fantasy-trade-value-draft-picks/
