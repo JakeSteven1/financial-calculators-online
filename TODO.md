@@ -14,7 +14,7 @@
 - [x] /quartile-calculator-online-free/
 - [x] /liquidity-ratio-calculator-online/
 - [x] /rule-of-72-calculator/
-- [ ] /break-even-point-calculator/
+- [x] /break-even-point-calculator/
 - [ ] /online-median-calculator/
 
 ## Tier 2: everything else
