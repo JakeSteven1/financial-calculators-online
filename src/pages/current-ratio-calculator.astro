@@ -1,0 +1,36 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import CurrentRatioCalculator from '../components/calculators/CurrentRatioCalculator';
+
+const faqs = [
+  {
+    q: 'What is the current ratio?',
+    a: 'Current assets divided by current liabilities. It shows whether a company has enough short-term resources to pay the bills coming due within a year.',
+  },
+  {
+    q: 'What is a good current ratio?',
+    a: 'Generally 1.5 to 3. Below 1 means short-term obligations exceed short-term assets, which can signal cash-flow trouble. Well above 3 can mean cash or inventory is not being put to work.',
+  },
+  {
+    q: 'How is the current ratio different from the quick ratio?',
+    a: 'The quick ratio leaves out inventory and prepaid expenses, which can’t be turned into cash quickly. It is a stricter test of liquidity.',
+  },
+  {
+    q: 'Where do I find current assets and liabilities?',
+    a: 'On the balance sheet. Both are usually shown as subtotals labeled “Total current assets” and “Total current liabilities.”',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="current-ratio-calculator"
+  h1="Current Ratio Calculator"
+  description="Calculate the current ratio from current assets and current liabilities to check a company's short-term liquidity, with a quick health rating."
+  faqs={faqs}
+>
+  <CurrentRatioCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Current ratio = current assets ÷ current liabilities</strong></p>
+    <p>$250,000 of current assets and $125,000 of current liabilities give a current ratio of 2.0.</p>
+  </Fragment>
+</CalculatorLayout>

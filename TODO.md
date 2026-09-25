@@ -51,7 +51,7 @@
 - [x] /home-equity-calculator-online/
 - [x] /life-insurance-coverage-estimator/
 - [x] /online-tip-calculator/
-- [ ] /current-ratio-calculator/
+- [x] /current-ratio-calculator/
 - [ ] /quick-ratio-calculator-finance/
 - [ ] /free-online-retirement-calculator/
 - [ ] /mortgage-refinance-break-even-point-calculator-online-free/
