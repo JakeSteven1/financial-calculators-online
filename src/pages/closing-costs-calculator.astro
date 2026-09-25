@@ -1,0 +1,41 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import ClosingCostsCalculator from '../components/calculators/ClosingCostsCalculator';
+
+const faqs = [
+  {
+    q: 'How much are closing costs for a buyer?',
+    a: 'Typically 2% to 5% of the loan amount. On a $320,000 mortgage that is roughly $6,400 to $16,000, depending on your lender, state, and how much is collected up front for escrow.',
+  },
+  {
+    q: 'What is included in closing costs?',
+    a: 'Lender fees (origination, appraisal, credit report), third-party fees (title insurance, escrow or attorney, inspection, recording), taxes (transfer taxes in some states), and prepaid items (homeowners insurance, property tax escrow, and interest until your first payment).',
+  },
+  {
+    q: 'What is cash to close?',
+    a: 'Your down payment plus closing costs, minus any credits from the seller or lender and your earnest money deposit. It is the amount you wire or bring to the closing table.',
+  },
+  {
+    q: 'Can I lower my closing costs?',
+    a: 'Compare Loan Estimates from several lenders, shop for title insurance and settlement services where allowed, ask the seller for closing-cost credits, or close near the end of the month to reduce prepaid interest.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="closing-costs-calculator"
+  h1="Closing Costs Calculator"
+  description="Estimate buyer closing costs item by item: lender fees, title, escrow, prepaid taxes, insurance, and interest, plus your total cash needed to close."
+  faqs={faqs}
+>
+  <ClosingCostsCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li>Origination fee = loan amount × origination %; title insurance and transfer tax = price × their rates</li>
+      <li>Tax escrow = price × tax rate ÷ 12 × months collected</li>
+      <li>Prepaid interest = loan × rate ÷ 365 × days until month end</li>
+      <li><strong>Cash to close</strong> = down payment + all closing costs</li>
+    </ul>
+    <p>Defaults are typical national figures; your Loan Estimate lists the actual amounts.</p>
+  </Fragment>
+</CalculatorLayout>

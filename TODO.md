@@ -40,7 +40,7 @@
 - [x] /home-affordability-calculator/
 - [x] /lifetime-wealth-ratio-calculator/
 - [x] /hourly-wage-yearly-salary-calculator/
-- [ ] /closing-costs-calculator/
+- [x] /closing-costs-calculator/
 - [ ] /convert-salary-to-daily-wage/
 - [ ] /effective-annual-interest-rate-calculator-online/
 - [ ] /return-on-investment-calculator/
