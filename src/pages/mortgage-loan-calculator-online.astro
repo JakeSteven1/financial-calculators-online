@@ -1,0 +1,41 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import MortgageCalculator from '../components/calculators/MortgageCalculator';
+
+const faqs = [
+  {
+    q: 'How is a monthly mortgage payment calculated?',
+    a: 'Principal and interest use M = P × i ÷ (1 − (1 + i)^−n), where P is the loan amount, i the monthly rate, and n the number of payments. Property tax, insurance, HOA dues, and PMI are then added to get the full monthly payment.',
+  },
+  {
+    q: 'What is PMI and when do I pay it?',
+    a: 'Private mortgage insurance protects the lender on conventional loans with less than 20% down. It typically costs 0.3% to 1.5% of the loan per year and can be removed once you reach 20% equity.',
+  },
+  {
+    q: 'What is the payment on a $300,000 mortgage?',
+    a: 'At 6.5% for 30 years, principal and interest are about $1,896 per month. Taxes, insurance, and any PMI or HOA dues come on top.',
+  },
+  {
+    q: 'Should I choose a 15-year or 30-year mortgage?',
+    a: 'A 15-year loan has a higher payment but usually a lower rate and far less total interest. A 30-year loan keeps payments lower and leaves more room in your budget.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="mortgage-loan-calculator-online"
+  h1="Mortgage Loan Calculator"
+  description="Calculate your monthly mortgage payment with principal, interest, property tax, insurance, HOA, and PMI, plus total interest and a full amortization schedule."
+  faqs={faqs}
+>
+  <MortgageCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>M = P × i ÷ (1 − (1 + i)<sup>−n</sup>)</strong></p>
+    <p>
+      <em>P</em> is the loan amount (price − down payment), <em>i</em> the annual rate ÷ 12, and <em>n</em> the number of
+      monthly payments. The total monthly payment adds 1/12 of annual property tax and insurance, HOA dues, and PMI (loan
+      × PMI rate ÷ 12) when the down payment is under 20%.
+    </p>
+    <p>A $320,000 loan at 6.5% for 30 years has a principal-and-interest payment of $2,022.62.</p>
+  </Fragment>
+</CalculatorLayout>
