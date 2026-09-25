@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import BudgetCalculator from '../components/calculators/BudgetCalculator';
+
+const faqs = [
+  {
+    q: 'What is the 50/30/20 budget rule?',
+    a: 'A simple way to divide take-home pay: 50% for needs, 30% for wants, and 20% for savings and extra debt payments. It was popularized by Senator Elizabeth Warren in the book “All Your Worth.”',
+  },
+  {
+    q: 'Should I use gross or take-home pay?',
+    a: 'Take-home pay: what lands in your bank account after taxes. If you only know your gross salary, choose “Before tax” and enter an estimated tax rate; the calculator subtracts it first.',
+  },
+  {
+    q: 'What counts as a need versus a want?',
+    a: 'Needs are bills you must pay to live and work: rent or mortgage, utilities, groceries, insurance, transportation, and minimum debt payments. Wants are everything else, like restaurants, streaming, and vacations.',
+  },
+  {
+    q: 'What if my needs are more than 50%?',
+    a: 'That is common in high-cost areas. Adjust the percentages, for example 60/20/20, and look for ways to lower fixed costs over time. Try to protect the savings share.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="50-30-20-budget-calculator"
+  h1="50/30/20 Budget Calculator"
+  description="Split your income with the 50/30/20 rule: see how much to spend on needs, wants, and savings each month and year, with adjustable percentages."
+  faqs={faqs}
+>
+  <BudgetCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Take-home pay</strong> = gross income × (1 − tax rate), or your after-tax income as entered</li>
+      <li><strong>Needs</strong> = take-home × 50%; <strong>wants</strong> = × 30%; <strong>savings</strong> = × 20%</li>
+    </ul>
+    <p>On $5,000 a month of take-home pay: $2,500 for needs, $1,500 for wants, and $1,000 for savings.</p>
+  </Fragment>
+</CalculatorLayout>
