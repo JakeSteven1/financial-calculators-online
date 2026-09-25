@@ -1,0 +1,27 @@
+---
+import HubLayout from '../layouts/HubLayout.astro';
+
+const faqs = [
+  {
+    q: 'What financial calculators are available?',
+    a: 'Compound interest, time value of money, simple and effective interest rates, loans and car loans, retirement savings, life insurance needs, stock sale profit, and company liquidity ratios.',
+  },
+  {
+    q: 'What is the difference between APR and effective annual rate?',
+    a: 'APR is the nominal yearly rate. The effective annual rate includes compounding, so a 12% APR compounded monthly is really 12.68% a year. Use the effective annual rate calculator to convert.',
+  },
+  {
+    q: 'Do these calculators replace a financial advisor?',
+    a: 'No. They are for estimates and learning. For decisions involving taxes, investments, or large loans, confirm the numbers with a qualified professional.',
+  },
+];
+---
+
+<HubLayout
+  hub="financial-calculators-online"
+  contentSlug="financial-calculators-online"
+  h1="Financial Calculators Online"
+  intro="Calculators for interest, loans, investments, retirement, and financial ratios, each with the formula explained."
+  description="Free online financial calculators: compound interest, TVM, loan payments, effective annual rate, retirement savings, liquidity ratios, and more."
+  faqs={faqs}
+/>
