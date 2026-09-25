@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import WealthRatioCalculator from '../components/calculators/WealthRatioCalculator';
+
+const faqs = [
+  {
+    q: 'What is the lifetime wealth ratio?',
+    a: 'It is your net worth divided by everything you have ever earned. It measures how much of your lifetime income you have kept, regardless of how high that income was.',
+  },
+  {
+    q: 'What is a good lifetime wealth ratio?',
+    a: 'There is no official benchmark, but higher is better. A ratio of 20% means you have kept one dollar of every five earned. Early in a career the ratio is naturally low; it should climb over time as savings compound.',
+  },
+  {
+    q: 'How do I estimate my lifetime income?',
+    a: 'Add up your gross income for every year you have worked. Your Social Security statement at ssa.gov lists your earnings history, which is a convenient starting point.',
+  },
+  {
+    q: 'What is the expected net worth formula?',
+    a: 'From “The Millionaire Next Door”: age × annual pretax income ÷ 10. At 45 earning $95,000, the expected net worth is $427,500. Twice that marks a prodigious accumulator of wealth; half or less an under accumulator.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="lifetime-wealth-ratio-calculator"
+  h1="Lifetime Wealth Ratio Calculator"
+  description="How much of what you've earned have you kept? Calculate your lifetime wealth ratio and compare your net worth with the expected level for your age and income."
+  faqs={faqs}
+>
+  <WealthRatioCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Net worth</strong> = total assets − total liabilities</li>
+      <li><strong>Lifetime wealth ratio</strong> = net worth ÷ total lifetime income × 100</li>
+      <li><strong>Expected net worth</strong> = age × annual pretax income ÷ 10</li>
+    </ul>
+    <p>$650,000 in assets, $250,000 in debts, and $1.8 million earned gives a net worth of $400,000 and a ratio of 22.2%.</p>
+  </Fragment>
+</CalculatorLayout>

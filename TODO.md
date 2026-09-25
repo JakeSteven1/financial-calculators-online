@@ -38,7 +38,7 @@
 - [x] /home-selling-price-calculator/
 - [x] /home-renovation-roi-calculator/
 - [x] /home-affordability-calculator/
-- [ ] /lifetime-wealth-ratio-calculator/
+- [x] /lifetime-wealth-ratio-calculator/
 - [ ] /hourly-wage-yearly-salary-calculator/
 - [ ] /closing-costs-calculator/
 - [ ] /convert-salary-to-daily-wage/
