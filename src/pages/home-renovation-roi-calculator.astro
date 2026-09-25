@@ -1,0 +1,38 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RenovationRoiCalculator from '../components/calculators/RenovationRoiCalculator';
+
+const faqs = [
+  {
+    q: 'How do you calculate renovation ROI?',
+    a: 'ROI = (increase in home value − renovation cost) ÷ renovation cost × 100. A $30,000 kitchen remodel that adds $24,000 of value has an ROI of −20%, recovering 80% of its cost.',
+  },
+  {
+    q: 'Which renovations have the best return?',
+    a: 'Industry surveys consistently rank smaller, exterior projects highest: garage door and entry door replacements, stone veneer, and minor kitchen updates often recover most or all of their cost. Large upscale additions and luxury bathrooms usually recover the least.',
+  },
+  {
+    q: 'Is a negative ROI a bad investment?',
+    a: 'Not necessarily. If you will live in the home for years, the comfort and function you gain have real value that ROI at sale doesn’t measure. ROI matters most if you plan to sell soon.',
+  },
+  {
+    q: 'How do I estimate the increase in value?',
+    a: 'Compare recent sale prices of similar homes with and without the upgrade, or ask a local agent or appraiser. Avoid over-improving beyond what homes in your neighborhood sell for.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="home-renovation-roi-calculator"
+  h1="Home Renovation ROI Calculator"
+  description="Calculate the return on a home renovation: enter the project cost and expected increase in home value to see ROI, cost recovered, and net gain."
+  faqs={faqs}
+>
+  <RenovationRoiCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>ROI</strong> = (value increase − cost) ÷ cost × 100</li>
+      <li><strong>Cost recovered</strong> = value increase ÷ cost × 100</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
