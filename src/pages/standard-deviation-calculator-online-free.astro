@@ -1,0 +1,42 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import StatsCalculator from '../components/calculators/StatsCalculator';
+
+const faqs = [
+  {
+    q: 'What does standard deviation measure?',
+    a: 'How spread out values are around the mean. A small standard deviation means values cluster near the average; a large one means they are widely scattered.',
+  },
+  {
+    q: 'Should I use sample or population standard deviation?',
+    a: 'Use population (divide by n) when your data includes every member of the group you care about. Use sample (divide by n − 1) when your data is a sample used to estimate a larger population, which is the usual case.',
+  },
+  {
+    q: 'Why divide by n − 1 for a sample?',
+    a: 'A sample’s values are closer to the sample mean than to the true population mean, so dividing by n underestimates spread. Dividing by n − 1 (Bessel’s correction) removes that bias in the variance.',
+  },
+  {
+    q: 'What is the standard deviation of 2, 4, 4, 4, 5, 5, 7, 9?',
+    a: 'The mean is 5 and the squared deviations sum to 32. Population standard deviation is √(32 ÷ 8) = 2; sample standard deviation is √(32 ÷ 7) ≈ 2.138.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="standard-deviation-calculator-online-free"
+  h1="Standard Deviation Calculator"
+  description="Free standard deviation calculator. Paste your data to get sample or population standard deviation, variance, mean, and a full set of summary statistics."
+  faqs={faqs}
+>
+  <StatsCalculator focus="stdev" client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Population:</strong> σ = √( Σ(x − μ)² ÷ N )</li>
+      <li><strong>Sample:</strong> s = √( Σ(x − x̄)² ÷ (n − 1) )</li>
+    </ul>
+    <p>
+      Find the mean, subtract it from each value, square the differences, add them up, divide by N (or n − 1), and take
+      the square root. Variance is the result before the square root.
+    </p>
+  </Fragment>
+</CalculatorLayout>

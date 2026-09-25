@@ -29,7 +29,7 @@
 - [x] /cost-per-lead-calculator/
 - [x] /mean-online-calculator/
 - [x] /mode-calculator-online/
-- [ ] /standard-deviation-calculator-online-free/
+- [x] /standard-deviation-calculator-online-free/
 - [ ] /monthly-loan-calculator/
 - [ ] /refinance-calculator-online-free/
 - [ ] /mortgage-points-calculator-online/
