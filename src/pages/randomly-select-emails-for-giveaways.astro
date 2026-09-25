@@ -1,6 +1,7 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 import EmailWinnerPicker from '../components/calculators/EmailWinnerPicker';
+import { PICKSAFELY_URL } from '../data/site';
 
 const faqs = [
   {
@@ -45,7 +46,7 @@ const faqs = [
   faqs={faqs}
   formulaHeading="How the giveaway draw works"
 >
-  <EmailWinnerPicker allowWeighting entriesLabel="Giveaway entries" client:visible />
+  <EmailWinnerPicker allowWeighting entriesLabel="Giveaway entries" promo client:visible />
   <p slot="after-tool">
     Just need one fair pick per person for a newsletter contest, raffle, or sweepstakes? The <a href="/randomly-select-contest-winner-from-list-of-emails/">contest winner picker</a> is the general-purpose
     version of this tool.
@@ -68,6 +69,10 @@ const faqs = [
     <p>
       The rolling animation is only for show (and for screen recordings): the winners are fixed the moment you press
       Draw. If your device is set to reduce motion, they appear straight away.
+    </p>
+    <p>
+      For a giveaway that needs public, verifiable results, <a href={PICKSAFELY_URL}>PickSafely</a> records each draw with
+      a timestamp and a cryptographic hash so anyone can confirm the winners afterward.
     </p>
   </Fragment>
 </CalculatorLayout>

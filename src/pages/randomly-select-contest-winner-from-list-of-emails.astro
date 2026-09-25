@@ -1,6 +1,7 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 import EmailWinnerPicker from '../components/calculators/EmailWinnerPicker';
+import { PICKSAFELY_URL } from '../data/site';
 
 const faqs = [
   {
@@ -45,7 +46,7 @@ const faqs = [
   faqs={faqs}
   formulaHeading="How the random draw works"
 >
-  <EmailWinnerPicker entriesLabel="Email entries" client:visible />
+  <EmailWinnerPicker entriesLabel="Email entries" promo client:visible />
   <p slot="after-tool">
     Running an Instagram, TikTok, or other social giveaway where people earn bonus entries? Use the <a href="/randomly-select-emails-for-giveaways/">giveaway picker with weighted entries</a>.
   </p>
@@ -75,6 +76,10 @@ const faqs = [
     <p>
       For a draw your entrants can trust, publish the rules and the draw date ahead of time, stop accepting entries before
       you draw, count the first result, and save the CSV (it records the date, time, and entry count).
+    </p>
+    <p>
+      For a giveaway that needs public, verifiable results, <a href={PICKSAFELY_URL}>PickSafely</a> records each draw with
+      a timestamp and a cryptographic hash so anyone can confirm the winners afterward.
     </p>
   </Fragment>
 </CalculatorLayout>

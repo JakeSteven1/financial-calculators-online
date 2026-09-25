@@ -1,6 +1,7 @@
 import { useDeferredValue, useMemo, useState } from 'react';
 import { MAX_ALTERNATES, MAX_WINNERS, clampCount, cleanEntries, drawWinners } from '../../lib/calc/giveaway';
 import { cryptoRng } from '../../lib/calc/random';
+import { PICKSAFELY_URL } from '../../data/site';
 import { Button, NumberField } from '../ui/fields';
 import EntryInput from '../giveaway/EntryInput';
 import WinnerResults, { type FinishedDraw } from '../giveaway/WinnerResults';
@@ -11,11 +12,13 @@ interface Props {
   allowWeighting?: boolean;
   /** Label for the entries box. */
   entriesLabel?: string;
+  /** Show the one-line PickSafely mention under finished results. */
+  promo?: boolean;
 }
 
 const fmt = (n: number) => n.toLocaleString('en-US');
 
-export default function EmailWinnerPicker({ allowWeighting = false, entriesLabel = 'Entries' }: Props) {
+export default function EmailWinnerPicker({ allowWeighting = false, entriesLabel = 'Entries', promo = false }: Props) {
   const [text, setText] = useState('');
   const [emailsOnly, setEmailsOnly] = useState(true);
   const [weighted, setWeighted] = useState(false);
@@ -117,7 +120,15 @@ export default function EmailWinnerPicker({ allowWeighting = false, entriesLabel
           {rolling !== null ? (
             <RollingDisplay value={rolling} />
           ) : draw ? (
-            <WinnerResults key={draw.drawnAt.getTime()} draw={draw} />
+            <WinnerResults draw={draw}>
+              {promo && (
+                <p className="mt-5 border-t border-brand-200 pt-4 text-sm text-gray-600">
+                  If you want entrants to be able to check the draw for themselves,{' '}
+                  <a href={PICKSAFELY_URL} className="underline">PickSafely</a> runs giveaways with timestamped results
+                  anyone can verify.
+                </p>
+              )}
+            </WinnerResults>
           ) : (
             <p className="text-gray-600">{entrants ? 'Ready to draw.' : 'Paste your entries or upload a file to get started.'}</p>
           )}

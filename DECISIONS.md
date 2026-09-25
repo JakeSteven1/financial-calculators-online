@@ -269,3 +269,18 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
   apostrophe-escaped). Up to 50 numbers show as cards that fade in; more show as a scrollable, focusable list. FAQ adds
   rerun, storage, and raffle questions. The imported prose said the tool was pseudo-random; it now explains the secure
   generator and has a raffle how-to. No PickSafely mention here (task 3 scopes it to the email pages).
+
+### PickSafely cross-promotion (task 3)
+- The link given was `picksafel.com`, which doesn't resolve; `picksafely.com` is live and matches the brand, so that is
+  the target. The apex 307-redirects to `www`, so the link goes straight to
+  `https://www.picksafely.com/?utm_source=fincalc&utm_medium=tool&utm_campaign=picker` (`PICKSAFELY_URL` in
+  `src/data/site.ts`) and the UTM tags don't depend on the redirect keeping them. The site is live, so the "coming soon"
+  fallback wasn't needed.
+- **After a draw** (both email pages, via `EmailWinnerPicker promo`): one small gray line at the bottom of the results:
+  "If you want entrants to be able to check the draw for themselves, PickSafely runs giveaways with timestamped results
+  anyone can verify." Only "PickSafely" is linked; standard same-tab link. It isn't rendered before a draw.
+- **Fairness section** (both email pages): "For a giveaway that needs public, verifiable results, PickSafely records each
+  draw with a timestamp and a cryptographic hash so anyone can confirm the winners afterward." The claims match what
+  picksafely.com says about itself (hashed, timestamped, publicly verifiable).
+- Not shown on the random number generator or the unlisted `/random-email-picker-iloamelkm/` page. No banners, popups,
+  or interstitials; the picker works the same with the PickSafely domain blocked (tested).
