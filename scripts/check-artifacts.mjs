@@ -9,7 +9,8 @@ const DIST = new URL('../dist/', import.meta.url).pathname;
 
 const CHECKS = [
   ['stray #', /(^|[^\w&/])#(?![\d])|#{2,}/],
-  ['stray markdown', /\*\*|(^|\s)\*(\s|$)|(^|\s)__?\S|\\[#*_.()[\]]/],
+  // (?<!…)/(?!…) let masked emails like j***@gmail.com through.
+  ['stray markdown', /(?<![\w*])\*\*(?![*@])|(^|\s)\*(\s|$)|(^|\s)__?\S|\\[#*_.()[\]]/],
   ['pound sign', /£/],
   ['broken link markup', /^\[$|^\]\(|\]\(\/[^)\s]*\)/],
   ['entity as text', /&(?:[a-z]{2,8}|#\d{2,5}|#x[\da-f]{2,4});/i],

@@ -26,19 +26,32 @@ export function sampleWithoutReplacement<T>(items: readonly T[], count: number, 
 }
 
 /**
- * Picks `count` distinct keys where each key's chance is proportional to its
- * weight. After a key wins, it is removed and the draw repeats on the rest.
+ * Picks `count` distinct indexes where each index's chance is proportional to
+ * its weight. After an index wins, its weight drops to zero and the draw
+ * repeats on the rest. O(n) per pick, so fine for large lists and few winners.
  */
-export function weightedSampleWithoutReplacement(weights: ReadonlyMap<string, number>, count: number, rng: Rng = cryptoRng): string[] {
-  const pool = [...weights].filter(([, w]) => w > 0);
-  const winners: string[] = [];
-  while (winners.length < count && pool.length > 0) {
-    const total = pool.reduce((s, [, w]) => s + w, 0);
+export function weightedSampleIndexes(weights: readonly number[], count: number, rng: Rng = cryptoRng): number[] {
+  const w = weights.map((x) => (x > 0 ? x : 0));
+  let total = w.reduce((s, x) => s + x, 0);
+  const picked: number[] = [];
+  while (picked.length < count && total > 0) {
     let target = rng() * total;
-    let idx = pool.findIndex(([, w]) => (target -= w) < 0);
-    if (idx === -1) idx = pool.length - 1; // floating point guard
-    winners.push(pool[idx]![0]);
-    pool.splice(idx, 1);
+    let idx = -1;
+    for (let i = 0; i < w.length; i++) {
+      if (w[i]! === 0) continue;
+      idx = i; // last positive weight doubles as the floating point guard
+      if ((target -= w[i]!) < 0) break;
+    }
+    if (idx === -1) break;
+    picked.push(idx);
+    total -= w[idx]!;
+    w[idx] = 0;
   }
-  return winners;
+  return picked;
+}
+
+/** Map-keyed wrapper around weightedSampleIndexes. */
+export function weightedSampleWithoutReplacement(weights: ReadonlyMap<string, number>, count: number, rng: Rng = cryptoRng): string[] {
+  const keys = [...weights.keys()];
+  return weightedSampleIndexes([...weights.values()], count, rng).map((i) => keys[i]!);
 }

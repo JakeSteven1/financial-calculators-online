@@ -222,3 +222,33 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
   snippet are deliberately omitted: with them, AdSense can resize the ad after load and shift content. Without them it
   fills the fixed-height `<ins>` box (90/100px banner, 280px rectangle), which is Google's documented way to fix the size
   of a responsive unit. The loader script from the snippet was already in `<head>`.
+
+## Giveaway tool phase
+
+### Contest winner picker (task 1)
+- Shared pieces: `src/lib/calc/giveaway.ts` (cleanup, draw, mask, CSV; tested) and `src/components/giveaway/`
+  (`EntryInput` paste/upload/drop box, `useDrawReveal` + `RollingDisplay`, `WinnerResults`, `ResultActions`).
+  `EmailWinnerPicker` is rebuilt on them and still powers all three email pages, including the unlisted one.
+- **Parsing**: entries split on new lines, commas, semicolons, and tabs (not spaces, so "Jane Doe" stays one entry).
+  CSV quotes are stripped. Duplicates are matched case-insensitively and the first spelling is kept.
+- **"Ignore invalid emails"** is on by default: it drops CSV header rows and name columns from an uploaded export.
+  Turned off, any text is a valid entry (names, ticket numbers, social handles).
+- **Limits**: 1 to 50 winners, 0 to 50 alternates (typed values are clamped). Uploads up to 20 MB. Winners and
+  alternates are one draw without replacement, so nobody can appear twice.
+- **Randomness**: the existing `cryptoRng` (53 bits from `crypto.getRandomValues`) and partial Fisher-Yates shuffle.
+  The float-to-index bias is below n / 2^53, far too small to matter, so no rejection sampling. Weighted draws moved to
+  an array-based `weightedSampleIndexes` (O(n) per pick, zeroing the winner's weight) so 100k entries stay fast.
+- **Reveal**: the result is decided before the animation starts. 1.4 s of rolling entries (picked with `cryptoRng`,
+  hidden from screen readers), then winners fade up in turn via `motion-safe:animate-reveal`. With
+  `prefers-reduced-motion: reduce` the results appear immediately and the fade is off.
+- **Results**: draw time in the visitor's locale with time zone; the CSV has an ISO timestamp. The mask toggle
+  (`j***@gmail.com`, `@j***` for handles, `J***` for names) applies to the screen, copied text, and CSV together, so
+  what you see is what you share. CSV fields starting with `= + - @` get a leading apostrophe (formula injection).
+- **Performance** (headless Chromium): pasting 10,000 lines takes about 0.2 s, typing afterwards ~30 ms per key; 50,000
+  lines paste in ~1 s. The stats use `useDeferredValue` so typing isn't blocked by re-parsing.
+- **Copy**: the imported WordPress prose claimed `Math.random()`, no duplicate checking, and "premium" features; it was
+  rewritten as a how-to and fairness tips. Title and H1 are unchanged for SEO; the meta description was rewritten.
+  `CalculatorLayout` gained `formulaHeading` so this section reads "How the random draw works".
+- `Button` gained a `disabled` prop. `check-artifacts` now lets masked emails (`j***@`) through its bold-markup check.
+- Fixed a pre-existing rendering bug: Astro drops the line break before an inline tag at the start of a source line,
+  gluing words ("and<em>e</em>"). Fixed on the representative sample, both giveaway pages, and the unlisted picker.

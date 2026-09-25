@@ -1,98 +1,127 @@
-import { useMemo, useState } from 'react';
-import { analyzeEmailList } from '../../lib/calc/email-list';
-import { sampleWithoutReplacement, weightedSampleWithoutReplacement } from '../../lib/calc/random';
-import { Button, NumberField, TextAreaField } from '../ui/fields';
+import { useDeferredValue, useMemo, useState } from 'react';
+import { MAX_ALTERNATES, MAX_WINNERS, clampCount, cleanEntries, drawWinners } from '../../lib/calc/giveaway';
+import { cryptoRng } from '../../lib/calc/random';
+import { Button, NumberField } from '../ui/fields';
+import EntryInput from '../giveaway/EntryInput';
+import WinnerResults, { type FinishedDraw } from '../giveaway/WinnerResults';
+import { RollingDisplay, useDrawReveal } from '../giveaway/reveal';
 
 interface Props {
   /** Offer the "duplicates count as extra entries" option. */
   allowWeighting?: boolean;
+  /** Label for the entries box. */
+  entriesLabel?: string;
 }
 
-export default function EmailWinnerPicker({ allowWeighting = false }: Props) {
+const fmt = (n: number) => n.toLocaleString('en-US');
+
+export default function EmailWinnerPicker({ allowWeighting = false, entriesLabel = 'Entries' }: Props) {
   const [text, setText] = useState('');
-  const [count, setCount] = useState('1');
+  const [emailsOnly, setEmailsOnly] = useState(true);
   const [weighted, setWeighted] = useState(false);
-  const [winners, setWinners] = useState<string[]>([]);
-  const [copied, setCopied] = useState(false);
+  const [winnersIn, setWinnersIn] = useState('1');
+  const [alternatesIn, setAlternatesIn] = useState('0');
+  const [draw, setDraw] = useState<FinishedDraw | null>(null);
+  const { rolling, run } = useDrawReveal();
 
-  const analysis = useMemo(() => analyzeEmailList(text), [text]);
-  const numWinners = Math.max(1, Math.floor(Number(count) || 1));
-  const eligible = analysis.unique.length;
+  // Deferred so typing stays responsive with very large lists.
+  const deferredText = useDeferredValue(text);
+  const list = useMemo(() => cleanEntries(deferredText, { emailsOnly }), [deferredText, emailsOnly]);
   const useWeights = allowWeighting && weighted;
+  const entrants = list.entries.length;
+  const tickets = useWeights ? list.found - list.invalid : entrants;
+  const numWinners = clampCount(winnersIn, 1, MAX_WINNERS);
+  const numAlternates = clampCount(alternatesIn, 0, MAX_ALTERNATES);
 
-  function draw() {
-    setCopied(false);
-    setWinners(
-      useWeights
-        ? weightedSampleWithoutReplacement(analysis.counts, numWinners)
-        : sampleWithoutReplacement(analysis.unique, numWinners),
-    );
+  function reset<T>(setter: (v: T) => void) {
+    return (v: T) => { setter(v); setDraw(null); };
   }
 
-  async function copyWinners() {
-    try {
-      await navigator.clipboard.writeText(winners.join('\n'));
-      setCopied(true);
-    } catch {
-      setCopied(false);
-    }
+  function start() {
+    // Use the live text in case the deferred value hasn't caught up yet.
+    const current = deferredText === text ? list : cleanEntries(text, { emailsOnly });
+    if (current.entries.length === 0) return;
+    const result = drawWinners(current.entries, numWinners, numAlternates, useWeights ? current.counts : undefined);
+    const finished: FinishedDraw = {
+      ...result,
+      drawnAt: new Date(),
+      entrants: current.entries.length,
+      tickets: useWeights ? current.counts.reduce((s, c) => s + c, 0) : current.entries.length,
+      weighted: useWeights,
+      requestedWinners: numWinners,
+      requestedAlternates: numAlternates,
+    };
+    setDraw(null);
+    const pool = current.entries;
+    run(() => pool[Math.floor(cryptoRng() * pool.length)]!, () => setDraw(finished));
   }
 
-  const stats = [
-    ['Total entries', analysis.total],
-    ['Eligible (unique valid)', eligible],
-    [useWeights ? 'Extra entries from repeats' : 'Duplicates removed', analysis.duplicates],
-    ['Invalid', analysis.invalid.length],
-  ] as const;
+  const stats: [string, number][] = [
+    ['Entries found', list.found],
+    useWeights ? ['Extra entries from repeats', list.duplicates] : ['Duplicates removed', list.duplicates],
+    ['Invalid emails removed', list.invalid],
+  ];
+  if (useWeights) stats.push(['Unique entrants', entrants]);
 
   return (
-    <div className="grid gap-6 rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:p-8 md:grid-cols-2 md:gap-8">
-      <div className="space-y-4">
-        <TextAreaField
-          label="Email entries (one per line, or separated by commas)"
+    <div className="grid gap-6 rounded-2xl border border-gray-200 bg-white p-5 shadow-md shadow-gray-200/60 md:grid-cols-2 md:gap-8 md:p-8">
+      <div className="min-w-0 space-y-4">
+        <EntryInput
+          label={entriesLabel}
           value={text}
-          onChange={(v) => { setText(v); setWinners([]); }}
-          rows={10}
+          onChange={reset(setText)}
           placeholder={'jane@example.com\njohn@example.com\nsam@example.com'}
         />
-        <NumberField label="Number of winners" value={count} onChange={setCount} min="1" step="1" />
+        <label className="flex items-start gap-2 text-sm text-gray-700">
+          <input type="checkbox" className="mt-1" checked={emailsOnly} onChange={(e) => reset(setEmailsOnly)(e.target.checked)} />
+          <span>Ignore invalid emails. Turn off to draw from names, handles, or any other text.</span>
+        </label>
         {allowWeighting && (
           <label className="flex items-start gap-2 text-sm text-gray-700">
-            <input type="checkbox" className="mt-1" checked={weighted} onChange={(e) => { setWeighted(e.target.checked); setWinners([]); }} />
-            <span>Weighted entries: an email listed more than once gets one extra chance per repeat. Winners are still unique.</span>
+            <input type="checkbox" className="mt-1" checked={weighted} onChange={(e) => reset(setWeighted)(e.target.checked)} />
+            <span>Weighted entries: an entry listed more than once gets one extra chance per repeat. Winners are still unique.</span>
           </label>
         )}
+        <div className="grid grid-cols-2 gap-4">
+          <NumberField label="Winners" value={winnersIn} onChange={reset(setWinnersIn)} min="1" max={String(MAX_WINNERS)} step="1" hint={`1 to ${MAX_WINNERS}`} />
+          <NumberField label="Alternates" value={alternatesIn} onChange={reset(setAlternatesIn)} min="0" max={String(MAX_ALTERNATES)} step="1" hint="Backups, optional" />
+        </div>
+        <p className="text-sm text-gray-600">No duplicate winners: each entry can be drawn at most once.</p>
         <div className="flex flex-wrap gap-3">
-          <Button onClick={draw}>{numWinners > 1 ? 'Select winners' : 'Select winner'}</Button>
-          <Button variant="secondary" onClick={() => { setText(''); setWinners([]); }}>Clear</Button>
+          <Button onClick={start} disabled={entrants === 0 || rolling !== null}>
+            {draw ? 'Draw again' : numWinners > 1 ? 'Draw winners' : 'Draw winner'}
+          </Button>
+          <Button variant="secondary" onClick={() => { setText(''); setDraw(null); }}>Clear</Button>
         </div>
       </div>
-      <div className="rounded-xl border border-brand-100 bg-brand-50 p-5" aria-live="polite">
-        <dl className="grid grid-cols-2 gap-3 text-sm">
+
+      <div className="min-w-0 self-start rounded-xl border border-brand-100 bg-brand-50 p-5 md:p-6">
+        <div className="border-b border-brand-200 pb-4">
+          <p className="text-sm font-medium text-gray-700">Final entries in the draw</p>
+          <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 tabular-nums">{fmt(tickets)}</p>
+        </div>
+        <dl className="mt-3 space-y-2 text-sm">
           {stats.map(([label, value]) => (
-            <div key={label}>
+            <div key={label} className="flex items-baseline justify-between gap-4">
               <dt className="text-gray-600">{label}</dt>
-              <dd className="text-xl font-semibold text-gray-900">{value}</dd>
+              <dd className="font-semibold text-gray-900 tabular-nums">{fmt(value)}</dd>
             </div>
           ))}
         </dl>
-        {winners.length > 0 ? (
-          <div className="mt-5 border-t border-brand-100 pt-4">
-            <h2 className="font-semibold text-gray-900">{winners.length > 1 ? 'Winners' : 'Winner'}</h2>
-            <ol className="mt-2 list-decimal space-y-1 pl-6 text-lg font-semibold text-brand-800">
-              {winners.map((w) => <li key={w} className="break-all">{w}</li>)}
-            </ol>
-            {winners.length < numWinners && (
-              <p className="mt-2 text-sm text-gray-600">Only {winners.length} eligible entries, so fewer winners were drawn.</p>
-            )}
-            <div className="mt-3"><Button variant="secondary" onClick={copyWinners}>{copied ? 'Copied' : 'Copy winners'}</Button></div>
-          </div>
-        ) : (
-          <p className="mt-5 text-gray-600">{eligible ? 'Ready to draw.' : 'Paste your entries to get started.'}</p>
+        {list.invalidSamples.length > 0 && (
+          <p className="mt-2 break-all text-xs text-gray-600">
+            Skipped: {list.invalidSamples.join(', ')}{list.invalid > list.invalidSamples.length ? '…' : ''}
+          </p>
         )}
-        {analysis.invalid.length > 0 && (
-          <p className="mt-4 text-xs text-gray-600 break-all">Skipped: {analysis.invalid.slice(0, 5).join(', ')}{analysis.invalid.length > 5 ? '…' : ''}</p>
-        )}
+        <div className="mt-5 border-t border-brand-200 pt-4" aria-live="polite">
+          {rolling !== null ? (
+            <RollingDisplay value={rolling} />
+          ) : draw ? (
+            <WinnerResults key={draw.drawnAt.getTime()} draw={draw} />
+          ) : (
+            <p className="text-gray-600">{entrants ? 'Ready to draw.' : 'Paste your entries or upload a file to get started.'}</p>
+          )}
+        </div>
       </div>
     </div>
   );

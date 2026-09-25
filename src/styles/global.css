@@ -14,6 +14,12 @@
   --color-brand-800: #1e40af;
   --color-brand-900: #1e3a8a;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Giveaway results fade up one by one (used as motion-safe:animate-reveal). */
+  --animate-reveal: reveal 350ms ease-out both;
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
 }
 
 @layer base {

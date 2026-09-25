@@ -105,13 +105,20 @@ export function SelectField<T extends string>({ label, value, onChange, options 
   );
 }
 
-export function Button({ children, onClick, variant = 'primary' }: { children: ReactNode; onClick: () => void; variant?: 'primary' | 'secondary' }) {
+interface ButtonProps {
+  children: ReactNode;
+  onClick: () => void;
+  variant?: 'primary' | 'secondary';
+  disabled?: boolean;
+}
+
+export function Button({ children, onClick, variant = 'primary', disabled }: ButtonProps) {
   const styles =
     variant === 'primary'
       ? 'bg-brand-600 text-white hover:bg-brand-700'
       : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50';
   return (
-    <button type="button" onClick={onClick} className={`rounded-md px-4 py-2 font-semibold shadow-sm ${styles}`}>
+    <button type="button" onClick={onClick} disabled={disabled} className={`rounded-md px-4 py-2 font-semibold shadow-sm disabled:cursor-not-allowed disabled:opacity-50 ${styles}`}>
       {children}
     </button>
   );

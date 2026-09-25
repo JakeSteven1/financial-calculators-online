@@ -4,20 +4,36 @@ import EmailWinnerPicker from '../components/calculators/EmailWinnerPicker';
 
 const faqs = [
   {
-    q: 'How is the winner chosen?',
-    a: 'Every unique, valid email gets exactly one entry. The tool uses your browser’s cryptographic random number generator (Web Crypto) and a Fisher-Yates shuffle, so each entry has the same chance of winning.',
+    q: 'Is the winner picked at random?',
+    a: 'Yes. The draw uses your browser’s cryptographically secure random number generator (crypto.getRandomValues), the same source used to create encryption keys, not Math.random. Every entry left after cleanup has exactly the same chance of winning.',
   },
   {
-    q: 'What happens to duplicate emails?',
-    a: 'Duplicates are removed before the draw, ignoring capitalization, so someone who entered twice still has one chance. If you want repeats to count as extra entries, use the weighted giveaway picker.',
+    q: 'Can I run the draw again?',
+    a: 'Yes. Press Draw again for a completely new, independent result. For a fair contest, decide before you start that the first draw counts, and use alternates if a winner can’t be reached rather than redrawing until you like the result.',
   },
   {
-    q: 'Can I pick more than one winner?',
-    a: 'Yes. Set the number of winners and the tool draws that many different emails. Nobody can win twice in the same draw.',
+    q: 'Is my email list stored or uploaded?',
+    a: 'No. Nothing leaves your browser. Pasted text and uploaded files are read on your own device, the draw runs there, and the CSV download is created there too. We never see, send, or save your list, and it is gone when you close the page.',
   },
   {
-    q: 'Are my email lists uploaded anywhere?',
-    a: 'No. The list is processed entirely in your browser and is never sent to our server or stored.',
+    q: 'How are duplicate entries handled?',
+    a: 'Duplicates are removed before the draw, ignoring capitalization and extra spaces, so someone who entered three times still has one chance. The tool shows how many duplicates it removed. If repeat entries should count as extra chances, use the weighted giveaway picker instead.',
+  },
+  {
+    q: 'What are alternates?',
+    a: 'Alternates are backup winners drawn at the same time as the winners, in order. If a winner doesn’t reply or turns the prize down, contact alternate 1, then 2, and so on. Nobody can be both a winner and an alternate.',
+  },
+  {
+    q: 'How many entries can it handle?',
+    a: 'Lists of 10,000 or even 100,000 entries work fine. Paste them or upload a CSV or TXT file up to 20 MB. You can draw up to 50 winners and 50 alternates at once.',
+  },
+  {
+    q: 'Can I post the winners publicly?',
+    a: 'Turn on “Mask entries for public posting” to show winners as j***@gmail.com. The copied text and the CSV download use the masked view too, so you can share them without exposing anyone’s full address.',
+  },
+  {
+    q: 'Can I pick from names instead of emails?',
+    a: 'Yes. Turn off “Ignore invalid emails” and the tool will draw from any text, one entry per line or separated by commas: names, ticket numbers, or social media handles.',
   },
 ];
 ---
@@ -25,18 +41,37 @@ const faqs = [
 <CalculatorLayout
   slug="randomly-select-contest-winner-from-list-of-emails"
   h1="Randomly Select a Contest Winner From a List of Emails"
-  description="Paste a list of emails and pick one or more random contest winners. Duplicates and invalid addresses are removed automatically. Free and private."
+  description="Free random email picker for contests and giveaways. Paste or upload your list, remove duplicates, and draw winners and alternates. Nothing leaves your browser."
   faqs={faqs}
+  formulaHeading="How the random draw works"
 >
-  <EmailWinnerPicker client:visible />
+  <EmailWinnerPicker entriesLabel="Email entries" client:visible />
   <Fragment slot="formula">
+    <ol>
+      <li>
+        <strong>Your list is cleaned up.</strong> Entries are split one per line or at commas, extra spaces and blank
+      lines are dropped, and duplicates are removed so each person has one entry. With “Ignore invalid emails” on,
+      anything that isn’t an email address (like a CSV header row) is left out. The big number in the results panel is
+      exactly how many entries go into the draw.
+      </li>
+      <li>
+        <strong>The draw uses secure randomness.</strong> The tool asks your browser for random numbers from <code>crypto.getRandomValues</code>, the generator built for security work like encryption keys, and uses them to
+      shuffle the list (a Fisher-Yates shuffle). Every entry has the same chance: with <em>N</em> entries and <em>k</em> winners, each one has a <strong>k / N</strong> chance of winning. Nobody, including us, can steer or
+      predict the result.
+      </li>
+      <li>
+        <strong>Winners and alternates come from one draw.</strong> They are picked together without replacement, so no
+      entry can win twice or be both a winner and an alternate.
+      </li>
+      <li>
+        <strong>The animation is just for show.</strong> The result is fixed the moment you press Draw; the rolling
+      names only make the reveal fun to watch or screen-record. If you’ve turned on reduced motion, winners appear
+      instantly.
+      </li>
+    </ol>
     <p>
-      The list is split on new lines, commas, and semicolons, then each entry is checked against a standard email
-      pattern. Valid emails are lowercased and deduplicated, leaving <em>N</em> eligible entries.
-    </p>
-    <p>
-      Winners are drawn with a Fisher-Yates shuffle driven by <code>crypto.getRandomValues</code>, so every entry has a
-      probability of exactly <strong>k / N</strong> of being among <em>k</em> winners.
+      For a draw your entrants can trust, publish the rules and the draw date ahead of time, stop accepting entries before
+      you draw, count the first result, and save the CSV (it records the date, time, and entry count).
     </p>
   </Fragment>
 </CalculatorLayout>
