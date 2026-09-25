@@ -33,3 +33,50 @@ Choices made without asking, per CLAUDE.md.
 
 ## Charts
 - Plain SVG stacked bar chart (`src/components/ui/BarChart.tsx`) rendered inside islands.
+
+## Pages and SEO
+- Hub pages and the homepage use `CollectionPage` + `ItemList` + `FAQPage` JSON-LD (plus `BreadcrumbList`/`WebSite`)
+  instead of `WebApplication`, since they are directories rather than tools, and have no formula section.
+  The privacy policy has no FAQ or JSON-LD.
+- Calculator pages also emit `BreadcrumbList` JSON-LD and link to up to six sibling calculators in the same hub.
+- The homepage renders the prose of the old WP front page (`free-online-financial-calculators`), which already
+  301s to `/` on the live site.
+- Nav label for the real-estate hub is "Real Estate" (not "Home", which read as the homepage).
+- Imported prose: internal links to the old domain (http/https, with or without trailing slash) are rewritten to
+  root-relative URLs with a trailing slash. A build-time check found 0 broken internal links across 66 pages.
+- Long URLs wrap and wide tables scroll inside `.prose` so no page scrolls sideways at 390px.
+- FAQ answers with worked examples were checked against the calc library; several hand-estimated figures were corrected.
+
+## Calculator behavior changes vs. the WordPress originals
+- **Giveaway picker**: the page was a premium upsell. It is now a working free tool with weighted entries and
+  unique winners; the paid-plan pitch, saved contests, and lead capture were not rebuilt (lead capture is out of scope).
+- **Contest winner picker**: embed button/modal dropped (embeds out of scope). Uses Web Crypto instead of Math.random.
+- **Fantasy trade values**: the original only valued picks 1–10. Now uses the full 224-pick Jimmy Johnson chart,
+  with round + pick-in-round and league size (8–16 teams). Values for picks 1–10 are unchanged.
+- **Life clock / life seconds**: life expectancy updated to CDC 2023 final data (78.4 all, 75.8 male, 81.1 female)
+  from the original 76/73.2/79.1 and 79. Custom expectancy added.
+- **Tile floor**: the original divided flat equipment and removal costs by square footage (a bug) and mislabeled
+  square feet as "number of tiles". Now: area from length × width, waste %, flat equipment (~$79) and removal
+  (~$652), per-sq-ft supplies ($1.06) and disposal ($0.93). Material prices kept from the original.
+- **Life insurance**: the original was income × 10 + debts − 2× income if over 50 + $50k per dependent. Replaced with
+  a DIME needs analysis (income × years, debts, mortgage, education per dependent, final expenses, minus existing
+  coverage and savings); years default to "until 65", clamped to 5–20.
+- **CLV**: the original's basic mode ignored the lifespan input. Unified into lifespan or retention mode with
+  optional margin, discount rate, and CAC. Referral inputs dropped.
+- **AI word count**: now estimates tokens (characters ÷ 4) against a chosen context window (8K–1M or custom) instead of
+  a fixed 24,000-word limit. Context sizes are generic, not tied to named models, because those change often.
+  Unique-word count and the original complexity score are kept.
+- **Retirement planner**: all figures in today's dollars using real returns; the Traditional/Roth/Mixed selector is
+  replaced by a single "tax rate on withdrawals" (use 0% for Roth). Adds a drawdown to find when savings run out.
+- **Closing costs**: the original returned only 2%–5% of price. Now itemized (origination, appraisal, title, escrow,
+  prepaid items) with the 2%–5% range shown for comparison.
+- **Home affordability**: the original assumed a fixed 4% rate and 30% of income. Now uses your rate and term, taxes,
+  insurance, HOA, and selectable DTI limits (28/36, 31/43, 36/45).
+- **Mortgage loan**: the original fixed down payment at 20%. Now adjustable, with tax, insurance, HOA, PMI, and schedule.
+- **Rent vs buy**: the original compared one year of costs. Now a multi-year net-cost comparison including equity,
+  appreciation, selling costs, and the opportunity cost of the down payment.
+- **Our Free Financial Calculator**: rebuilt as tabs reusing the Loan, Compound Interest, and Mortgage islands.
+- All calculators update live as you type; no Calculate button.
+
+## Not rebuilt
+- `/random-email-picker-iloamelkm/` (unlisted premium tool page). See BLOCKED.md.
