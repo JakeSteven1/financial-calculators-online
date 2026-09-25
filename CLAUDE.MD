@@ -32,5 +32,25 @@ no adapter or deploy config needed).
 5. When TODO.md is complete: build hub pages last, verify every slug in TODO.md exists in
    dist/, push, and write a short SUMMARY.md.
 
+## Giveaway tools
+- The contest winner picker, the giveaways picker, and the random number generator share
+  src/lib/calc/giveaway.ts (cleanup, draw, mask, CSV) and src/components/giveaway/. Change
+  behavior there, not per page. The unlisted /random-email-picker-iloamelkm/ uses the same picker.
+- Randomness only via cryptoRng / crypto.getRandomValues in src/lib/calc/random.ts; never Math.random.
+- The reveal animation is decoration: decide the result first, then animate. Respect
+  prefers-reduced-motion (useDrawReveal already does).
+- Entry lists never leave the browser: no network calls, storage, or analytics on list contents.
+- Positioning: the contest winner page is the general-purpose picker; the giveaways page is for
+  Instagram/social giveaways and owns weighted entries. Keep the "after-tool" cross-links between them.
+- PickSafely: PICKSAFELY_URL in src/data/site.ts (www.picksafely.com with utm tags). Only on the two
+  public email pages: one line under results after a draw, one sentence in the fairness section.
+  No banners, popups, or interstitials; the tools must work without it.
+
+## Gotchas
+- Astro drops the line break before an inline tag that starts a source line ("and\n<em>x</em>"
+  renders as "and<em>x</em>"). Keep <a>, <em>, <code>, <strong> on the same line as the preceding word.
+- Checks before each commit: npm test, npm run check, npm run build, npm run check:links,
+  npm run check:artifacts, and npm run smoke for UI changes.
+
 ## Out of scope for now
 Embeds, lead capture, programmatic SEO pages, deployment config.
