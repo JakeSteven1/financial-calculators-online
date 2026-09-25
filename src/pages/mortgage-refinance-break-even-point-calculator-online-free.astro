@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RefinanceCalculator from '../components/calculators/RefinanceCalculator';
+
+const faqs = [
+  {
+    q: 'What is the refinance break-even point?',
+    a: 'The number of months it takes for the monthly savings from a lower payment to add up to the closing costs you paid to refinance. After that point, the refinance is saving you money.',
+  },
+  {
+    q: 'How do I calculate the break-even point?',
+    a: 'Divide total closing costs by monthly savings. $5,000 in closing costs with $180 in monthly savings breaks even in 28 months.',
+  },
+  {
+    q: 'What is a good break-even period?',
+    a: 'Shorter than the time you expect to keep the loan. If you plan to move in three years, a 48-month break-even means refinancing costs more than it saves.',
+  },
+  {
+    q: 'Does break-even tell the whole story?',
+    a: 'No. Resetting to a new 30-year term can lower the payment while increasing total interest. Check the lifetime savings figure too, and consider a shorter new term if you can afford the payment.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="mortgage-refinance-break-even-point-calculator-online-free"
+  h1="Refinance Break-Even Calculator"
+  description="How long until your mortgage refinance pays for itself? Calculate the break-even point from closing costs and monthly savings, plus lifetime savings."
+  faqs={faqs}
+>
+  <RefinanceCalculator focus="breakEven" client:visible />
+  <Fragment slot="formula">
+    <p><strong>Break-even months = closing costs ÷ (current payment − new payment)</strong></p>
+    <p>
+      Both payments use M = P × i ÷ (1 − (1 + i)<sup>−n</sup>) with your balance, each rate, and each term. Lifetime
+      savings compare all remaining payments on the current loan with all payments on the new loan plus closing costs.
+    </p>
+  </Fragment>
+</CalculatorLayout>
