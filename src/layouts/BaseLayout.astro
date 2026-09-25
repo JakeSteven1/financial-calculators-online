@@ -13,9 +13,11 @@ interface Props {
   jsonLd?: object[];
   /** Social share image; defaults to the logo. */
   image?: SiteImage;
+  /** Keep the page out of search results (it is also left out of the sitemap in astro.config.mjs). */
+  noindex?: boolean;
 }
 
-const { title, description, jsonLd = [], image } = Astro.props;
+const { title, description, jsonLd = [], image, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 const year = new Date().getFullYear();
 // Social cards want a JPEG or PNG no wider than 1200px; WebP is not read everywhere.
@@ -48,6 +50,7 @@ const navItems = HUBS.map((hub) => ({
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={SITE_NAME} />

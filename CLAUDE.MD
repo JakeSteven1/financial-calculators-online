@@ -12,7 +12,7 @@ no adapter or deploy config needed).
 - All math in pure TS functions in src/lib/calc/ with Vitest unit tests.
 - No charting libraries; plain SVG if a chart is needed.
 - AdSense: reusable <AdSlot> component with fixed-height containers (no layout shift).
-  Publisher ID via a single config constant, placeholder for now. public/ads.txt placeholder. The publisher id is pub-2644536267352236 and we need an ads.txt at root that is: google.com, pub-7205603150750890, DIRECT, f08c47fec0942fa0
+  Publisher ID via a single config constant, placeholder for now. public/ads.txt placeholder. The publisher id is pub-7205603150750890 (client ca-pub-7205603150750890) and we need an ads.txt at root that is: google.com, pub-7205603150750890, DIRECT, f08c47fec0942fa0
 - Each page: unique title, meta description, H1, short explanation of the formula, FAQ section,
   JSON-LD (WebApplication + FAQPage). sitemap via @astrojs/sitemap. robots.txt.
 - Hub pages link to their calculators; every calculator links back to its hub.

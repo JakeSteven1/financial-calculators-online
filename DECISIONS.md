@@ -24,9 +24,8 @@ Choices made without asking, per CLAUDE.md.
 - Imported prose may still mention a "Calculate" button from the old widgets; left as-is.
 
 ## Ads
-- `ADSENSE_PUBLISHER_ID` in `src/data/site.ts` is `pub-2644536267352236` as specified.
-- **`public/ads.txt` uses `pub-7205603150750890`, exactly as CLAUDE.md specified, which does not match the
-  publisher ID above.** AdSense requires ads.txt to list the publishing account; confirm which ID is correct.
+- `ADSENSE_PUBLISHER_ID` in `src/data/site.ts` is `pub-7205603150750890` (client `ca-pub-7205603150750890`), matching
+  `public/ads.txt`. (The first build used a mistyped ID; corrected in the design phase.)
 - No ad unit (slot) IDs were provided, so `<AdSlot>` renders a fixed-height reserved placeholder. Passing
   `slot="..."` renders a live `<ins class="adsbygoogle">` in the same fixed box.
 - The AdSense loader script and per-slot `push()` are the only non-island JS; they are third-party and required.
@@ -204,3 +203,14 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
 - Screenshots (1280px and 390px) of the homepage, the real estate hub, and the mortgage, compound interest, and mean
   calculators are in `screenshots/before/` and `screenshots/after/` (gitignored; `npm run screenshots <label>`).
 - Copy: "ever-growing number financial calculators" → "number of financial calculators" on four hubs.
+
+### BLOCKED.md items (task 8)
+- AdSense publisher ID set to `pub-7205603150750890` in `src/data/site.ts` (the only place it is used); the old ID was
+  also replaced in CLAUDE.MD. `public/ads.txt` is exactly `google.com, pub-7205603150750890, DIRECT, f08c47fec0942fa0`
+  plus a trailing newline.
+- `/random-email-picker-iloamelkm/` is a standalone page on `BaseLayout` (not in the calculator registry, so it cannot
+  appear on hubs or in related links) using `EmailWinnerPicker allowWeighting`. `BaseLayout` gained a `noindex` prop, and
+  the sitemap integration filters the page out via `UNLISTED` in `astro.config.mjs`. The imported WordPress copy was not
+  used because it described features that no longer exist (saved contests, embed code, non-cryptographic randomness);
+  the page has short accurate notes and a link to the public giveaway picker instead.
+- `public/_redirects` (Cloudflare Pages format): `/free-online-financial-calculators/ / 301`.

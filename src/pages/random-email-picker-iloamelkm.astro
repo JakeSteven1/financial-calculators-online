@@ -1,0 +1,40 @@
+---
+// Unlisted page kept for people who have the link to the old premium picker.
+// noindex, and excluded from the sitemap (astro.config.mjs), nav, and hubs.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EmailWinnerPicker from '../components/calculators/EmailWinnerPicker';
+---
+
+<BaseLayout
+  title="Random Email Picker - Free Financial Calculator Online"
+  description="Pick random winners from a list of emails, with optional weighted entries. Runs entirely in your browser."
+  noindex
+>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Random Email Picker' }]} />
+  <header class="mt-3 max-w-[70ch]">
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Random Email Picker</h1>
+    <p class="mt-3 text-lg text-gray-600">
+      Paste your list of emails, choose how many winners you need, and draw. Turn on weighted entries to give people
+      listed more than once extra chances; every winner is still unique.
+    </p>
+  </header>
+
+  <div class="mt-8">
+    <EmailWinnerPicker allowWeighting client:visible />
+  </div>
+
+  <section class="prose prose-gray mt-12" aria-labelledby="notes-heading">
+    <h2 id="notes-heading">Good to know</h2>
+    <ul>
+      <li><strong>Private:</strong> everything runs in your browser. Your list is never uploaded or stored.</li>
+      <li><strong>Fair:</strong> winners are drawn with your browser’s cryptographically secure random number generator.</li>
+      <li><strong>Invalid entries</strong> are skipped, and duplicate emails count once unless weighted entries are on.</li>
+      <li>Please follow your contest’s rules and any privacy rules that apply to your entrants’ emails.</li>
+    </ul>
+    <p>
+      Running a public giveaway? The same tool is at
+      <a href="/randomly-select-emails-for-giveaways/">Random Email Selector for Giveaways</a>.
+    </p>
+  </section>
+</BaseLayout>
