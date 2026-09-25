@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import StockSaleCalculator from '../components/calculators/StockSaleCalculator';
+
+const faqs = [
+  {
+    q: 'How much did I make on my stock sale?',
+    a: 'Profit = (sale price × shares) − (purchase price × shares + fees). Buying 100 shares at $50 and selling at $75 with no fees is a $2,500 profit on $7,500 of proceeds.',
+  },
+  {
+    q: 'What is cost basis?',
+    a: 'What you paid for the shares, including commissions and fees. It is subtracted from sale proceeds to find your capital gain or loss for taxes.',
+  },
+  {
+    q: 'How are stock profits taxed in the US?',
+    a: 'Shares held more than a year get long-term capital gains rates of 0%, 15%, or 20% depending on income. Shares held a year or less are taxed as ordinary income at your regular bracket.',
+  },
+  {
+    q: 'Can I deduct a loss?',
+    a: 'Capital losses offset capital gains, and up to $3,000 of net losses a year can offset ordinary income, with the rest carried forward. Wash-sale rules apply if you rebuy within 30 days.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="stock-price-revenue-sale"
+  h1="How Much Did You Make on That Stock Sale?"
+  description="Calculate the proceeds, profit, return, and estimated capital gains tax on a stock sale from shares, purchase price, sale price, and fees."
+  faqs={faqs}
+>
+  <StockSaleCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Proceeds</strong> = shares × sale price</li>
+      <li><strong>Cost basis</strong> = shares × purchase price + fees</li>
+      <li><strong>Profit</strong> = proceeds − cost basis; <strong>return</strong> = profit ÷ cost basis</li>
+      <li><strong>Estimated tax</strong> = profit × capital gains rate (gains only)</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>

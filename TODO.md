@@ -44,7 +44,7 @@
 - [x] /convert-salary-to-daily-wage/
 - [x] /effective-annual-interest-rate-calculator-online/
 - [x] /return-on-investment-calculator/
-- [ ] /stock-price-revenue-sale/
+- [x] /stock-price-revenue-sale/
 - [ ] /ai-word-count-calculator/
 - [ ] /character-count-tool-free/
 - [ ] /tile-floor-cost-calculator/
