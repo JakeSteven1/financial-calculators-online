@@ -6,7 +6,7 @@
 - [x] /randomly-select-emails-for-giveaways/
 - [x] /fair-fantasy-trade-value-draft-picks/
 - [x] /life-seconds-calculator/
-- [ ] /tvm-calculator-online/
+- [x] /tvm-calculator-online/
 - [ ] /sales-calculator-online/
 - [ ] /customer-lifetime-value-calculator-online/
 - [x] /life-clock-calculator/

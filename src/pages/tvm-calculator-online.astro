@@ -1,0 +1,41 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import TvmCalculator from '../components/calculators/TvmCalculator';
+
+const faqs = [
+  {
+    q: 'What is the time value of money?',
+    a: 'It is the idea that a dollar today is worth more than a dollar in the future because today’s dollar can be invested to earn interest. TVM math converts money between different points in time.',
+  },
+  {
+    q: 'Why are some values negative?',
+    a: 'Like a financial calculator or Excel, the solver uses signs to show direction: money you pay out (a deposit or loan payment) is negative and money you receive (a loan or a withdrawal) is positive. A savings problem usually has a negative PV and PMT and a positive FV.',
+  },
+  {
+    q: 'What is the difference between end and beginning of period?',
+    a: 'End of period is an ordinary annuity, like most loan payments. Beginning of period is an annuity due, like rent, where each payment earns one extra period of interest.',
+  },
+  {
+    q: 'How is the interest rate solved?',
+    a: 'There is no closed-form formula for the rate, so the calculator finds it numerically with Newton’s method, falling back to bisection. Results match Excel’s RATE function.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="tvm-calculator-online"
+  h1="TVM Calculator (Time Value of Money Solver)"
+  description="Free TVM solver. Enter any four of PV, FV, payment, interest rate, and periods to solve for the fifth, with end or beginning-of-period payments."
+  faqs={faqs}
+>
+  <TvmCalculator client:visible />
+  <Fragment slot="formula">
+    <p>All five variables are tied together by one equation, where <em>i</em> is the rate per period:</p>
+    <p><strong>PV × (1 + i)<sup>N</sup> + PMT × (1 + i × type) × [((1 + i)<sup>N</sup> − 1) ÷ i] + FV = 0</strong></p>
+    <p>
+      <em>type</em> is 0 for end-of-period payments and 1 for beginning-of-period payments. The periodic rate is the annual
+      rate divided by periods per year. For example, depositing $1,000 today plus $100 at the end of each year for 10 years
+      at 5% gives an FV of $2,886.68.
+    </p>
+  </Fragment>
+</CalculatorLayout>
