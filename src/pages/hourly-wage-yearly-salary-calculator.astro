@@ -1,0 +1,54 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import HourlySalaryCalculator from '../components/calculators/HourlySalaryCalculator';
+
+const faqs = [
+  {
+    q: 'How much is $7.25 an hour per year?',
+    a: 'At the federal minimum wage of $7.25, a full-time worker (40 hours a week, 52 weeks) earns $15,080 a year before taxes, or about $1,257 a month.',
+  },
+  {
+    q: 'How do I convert an hourly wage to a yearly salary?',
+    a: 'Multiply the hourly wage by hours per week, then by 52 weeks. A quick shortcut for full-time work: double the hourly wage and add three zeros. $20 an hour is roughly $40,000 a year (exactly $41,600).',
+  },
+  {
+    q: 'How do I convert a salary to an hourly wage?',
+    a: 'Divide the yearly salary by 52 and then by your weekly hours. $50,000 ÷ 52 ÷ 40 = $24.04 an hour.',
+  },
+  {
+    q: 'What if I don’t get paid vacation?',
+    a: 'Reduce the paid weeks per year. With two unpaid weeks off, use 50 weeks: $20 × 40 × 50 = $40,000.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="hourly-wage-yearly-salary-calculator"
+  h1="Hourly Wage to Yearly Salary Calculator"
+  description="How much is your hourly wage per year? Convert hourly pay to annual, monthly, biweekly, weekly, and daily salary, or turn a salary back into an hourly rate."
+  faqs={faqs}
+>
+  <HourlySalaryCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Yearly salary = hourly wage × hours per week × paid weeks per year</strong></p>
+    <p>Monthly pay is yearly ÷ 12, weekly is hourly × hours, and hourly from salary is yearly ÷ weeks ÷ hours.</p>
+    <table>
+      <thead><tr><th>Hourly wage</th><th>Yearly (40 hrs × 52 wks)</th><th>Monthly</th></tr></thead>
+      <tbody>
+        <tr><td>$7.25</td><td>$15,080</td><td>$1,257</td></tr>
+        <tr><td>$10.00</td><td>$20,800</td><td>$1,733</td></tr>
+        <tr><td>$12.00</td><td>$24,960</td><td>$2,080</td></tr>
+        <tr><td>$15.00</td><td>$31,200</td><td>$2,600</td></tr>
+        <tr><td>$17.00</td><td>$35,360</td><td>$2,947</td></tr>
+        <tr><td>$18.00</td><td>$37,440</td><td>$3,120</td></tr>
+        <tr><td>$20.00</td><td>$41,600</td><td>$3,467</td></tr>
+        <tr><td>$22.00</td><td>$45,760</td><td>$3,813</td></tr>
+        <tr><td>$25.00</td><td>$52,000</td><td>$4,333</td></tr>
+        <tr><td>$30.00</td><td>$62,400</td><td>$5,200</td></tr>
+        <tr><td>$35.00</td><td>$72,800</td><td>$6,067</td></tr>
+        <tr><td>$40.00</td><td>$83,200</td><td>$6,933</td></tr>
+        <tr><td>$50.00</td><td>$104,000</td><td>$8,667</td></tr>
+      </tbody>
+    </table>
+  </Fragment>
+</CalculatorLayout>
