@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://financialcalculatoronlinefree.com/sitemap-index.xml

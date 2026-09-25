@@ -1,0 +1,32 @@
+---
+// Fixed-height ad container: the box is reserved before the ad loads, so ads
+// never cause layout shift. Heights are per breakpoint and must not change.
+import { ADSENSE_CLIENT } from '../data/site';
+
+interface Props {
+  /** AdSense ad unit ID (data-ad-slot). Empty renders a reserved placeholder. */
+  slot?: string;
+  size?: 'banner' | 'rectangle';
+  class?: string;
+}
+
+const { slot = '', size = 'banner', class: className = '' } = Astro.props;
+const heights = size === 'rectangle' ? 'h-[280px]' : 'h-[100px] md:h-[90px]';
+const live = Boolean(ADSENSE_CLIENT && slot);
+---
+
+<aside class:list={['my-8 flex w-full items-center justify-center overflow-hidden', heights, className]} aria-label="Advertisement">
+  {live ? (
+    <>
+      <ins
+        class="adsbygoogle block h-full w-full"
+        data-ad-client={ADSENSE_CLIENT}
+        data-ad-slot={slot}
+        data-full-width-responsive="false"
+      />
+      <script is:inline>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </>
+  ) : (
+    <div class="h-full w-full rounded-md border border-dashed border-slate-200" />
+  )}
+</aside>

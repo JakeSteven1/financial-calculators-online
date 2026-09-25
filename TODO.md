@@ -1,0 +1,72 @@
+# Rebuild checklist (priority order)
+
+## Tier 1: pages with traction
+- [ ] /randomly-select-contest-winner-from-list-of-emails/
+- [ ] /random-number-generator-online-free/
+- [ ] /randomly-select-emails-for-giveaways/
+- [ ] /fair-fantasy-trade-value-draft-picks/
+- [ ] /life-seconds-calculator/
+- [ ] /tvm-calculator-online/
+- [ ] /sales-calculator-online/
+- [ ] /customer-lifetime-value-calculator-online/
+- [ ] /life-clock-calculator/
+- [ ] /online-calculator-for-interest-plus-principal/
+- [ ] /quartile-calculator-online-free/
+- [ ] /liquidity-ratio-calculator-online/
+- [ ] /rule-of-72-calculator/
+- [ ] /break-even-point-calculator/
+- [ ] /online-median-calculator/
+
+## Tier 2: everything else
+- [ ] /modular-home-cost-calculator/
+- [ ] /gross-margin-calculator-online/
+- [ ] /mortgage-loan-calculator-online/
+- [ ] /representative-sample-calculator/
+- [ ] /simple-loan-calculator/
+- [ ] /profit-margin-calculator/
+- [ ] /car-loan-calculator/
+- [ ] /ideal-email-subject-length/
+- [ ] /cost-per-lead-calculator/
+- [ ] /mean-online-calculator/
+- [ ] /mode-calculator-online/
+- [ ] /standard-deviation-calculator-online-free/
+- [ ] /monthly-loan-calculator/
+- [ ] /refinance-calculator-online-free/
+- [ ] /mortgage-points-calculator-online/
+- [ ] /mortgage-length-calculator-online/
+- [ ] /rent-or-buy-calculator-online-free/
+- [ ] /home-selling-price-calculator/
+- [ ] /home-renovation-roi-calculator/
+- [ ] /home-affordability-calculator/
+- [ ] /lifetime-wealth-ratio-calculator/
+- [ ] /hourly-wage-yearly-salary-calculator/
+- [ ] /closing-costs-calculator/
+- [ ] /convert-salary-to-daily-wage/
+- [ ] /effective-annual-interest-rate-calculator-online/
+- [ ] /return-on-investment-calculator/
+- [ ] /stock-price-revenue-sale/
+- [ ] /ai-word-count-calculator/
+- [ ] /character-count-tool-free/
+- [ ] /tile-floor-cost-calculator/
+- [ ] /home-equity-calculator-online/
+- [ ] /life-insurance-coverage-estimator/
+- [ ] /online-tip-calculator/
+- [ ] /current-ratio-calculator/
+- [ ] /quick-ratio-calculator-finance/
+- [ ] /free-online-retirement-calculator/
+- [ ] /mortgage-refinance-break-even-point-calculator-online-free/
+- [ ] /amoritization-schedule-online/
+- [ ] /50-30-20-budget-calculator/
+- [ ] /mortgage-rate-comparison-calculator/
+- [ ] /retirement-calculator-online/
+- [ ] /customer-acquisition-cost/
+- [ ] /our-free-financial-calculator/
+
+## Hub and static pages (build last)
+- [ ] / (homepage)
+- [ ] /free-business-calculators/
+- [ ] /financial-calculators-online/
+- [ ] /personal-financial-calculators/
+- [ ] /home-calculators-online/
+- [ ] /free-online-statistics-calculators/
+- [ ] /privacy-policy-2/
