@@ -12,7 +12,8 @@
     "smoke": "node scripts/smoke.mjs",
     "check:artifacts": "node scripts/check-artifacts.mjs",
     "check:links": "node scripts/check-links.mjs",
-    "screenshots": "node scripts/screenshots.mjs"
+    "screenshots": "node scripts/screenshots.mjs",
+    "favicons": "node scripts/generate-favicons.mjs"
   },
   "repository": {
     "type": "git",

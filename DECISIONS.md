@@ -118,7 +118,7 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
 - `src/data/related.ts` holds 3–5 related calculators per calculator, ordered by relevance; `getRelated()` puts same-hub
   entries first. A "Related calculators" card grid replaces the old "More <hub>" list (which linked six arbitrary siblings).
   Unit tests check 3–5 valid, distinct, non-self entries and that every calculator is someone's related link.
-- 32 contextual links added in the prose of 22 calculator pages (at most 2 per page), each on a phrase the sentence
+- 32 contextual links added in the prose of 23 calculator pages (at most 2 per page), each on a phrase the sentence
   already contained (e.g. "amortization schedule", "closing costs", "Lifetime Value (LTV)"). No sentences were added.
 - 21 vague links to the homepage from old WordPress copy ("[calculator](/)", "[calculations](/)") were unlinked; one
   "other calculators" link now points to the personal finance hub with that as its anchor text, and "compound interest
@@ -129,3 +129,14 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
 - `npm run check:links` checks every internal URL in `dist/` and counts distinct pages linking to each calculator.
   Every calculator has at least 3 (hub, homepage, and at least one related or contextual link). Fewest (3): stock sale
   profit, life clock, fantasy draft pick trade value, and mortgage length calculators.
+
+### Logo and favicons (task 4)
+- The logo moved to `src/assets/calculator-logo.png` (the original). `npm run favicons` (`scripts/generate-favicons.mjs`,
+  using `sharp`) writes `favicon.ico`, `apple-touch-icon.png` (180), `icon-192.png`, `icon-512.png` to `public/`, plus
+  `src/assets/calculator-logo-trimmed.png` for the header (the original is ~60% empty margin, so the calculator
+  would render ~16px wide in a 40px header).
+- The logo is a thin-line ink sketch on transparency. Rendered at 32px it is a faint gray smudge, and dark browser tab
+  bars would hide it. So `public/favicon.svg` is a hand-drawn, bold trace of the same calculator (white body, dark outline
+  and keys) and `favicon.ico` (32px, PNG-in-ICO) is rendered from it. The PNG app icons put the original artwork on white.
+- The header logo uses `astro:assets` `<Image>` (WebP, 1x/2x) with empty alt, since the site name next to it is the link text.
+- `site.webmanifest` lists the 192/512 icons; the base layout links the ICO, SVG, apple-touch icon, and manifest.

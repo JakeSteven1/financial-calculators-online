@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Simplified trace of src/assets/calculator-logo.png, bold enough to read at 16px. -->
+  <rect x="5.5" y="1.5" width="21" height="29" rx="3.5" fill="#fff" stroke="#262626" stroke-width="2"/>
+  <rect x="9" y="5" width="14" height="6.5" rx="1" fill="none" stroke="#262626" stroke-width="1.5"/>
+  <path d="M13.5 10l4-4M16.5 10l4-4" stroke="#262626" stroke-width="1"/>
+  <g fill="#262626">
+    <rect x="9" y="14" width="2.75" height="2.5" rx=".6"/><rect x="12.75" y="14" width="2.75" height="2.5" rx=".6"/><rect x="16.5" y="14" width="2.75" height="2.5" rx=".6"/><rect x="20.25" y="14" width="2.75" height="2.5" rx=".6"/>
+    <rect x="9" y="18" width="2.75" height="2.5" rx=".6"/><rect x="12.75" y="18" width="2.75" height="2.5" rx=".6"/><rect x="16.5" y="18" width="2.75" height="2.5" rx=".6"/><rect x="20.25" y="18" width="2.75" height="2.5" rx=".6"/>
+    <rect x="9" y="22" width="2.75" height="2.5" rx=".6"/><rect x="12.75" y="22" width="2.75" height="2.5" rx=".6"/><rect x="16.5" y="22" width="2.75" height="2.5" rx=".6"/><rect x="20.25" y="22" width="2.75" height="6.5" rx=".6"/>
+    <rect x="9" y="26" width="2.75" height="2.5" rx=".6"/><rect x="12.75" y="26" width="2.75" height="2.5" rx=".6"/><rect x="16.5" y="26" width="2.75" height="2.5" rx=".6"/>
+  </g>
+</svg>

@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/calculator-logo-trimmed.png';
 import { HUBS, hubForPath } from '../data/calculators';
 import { ADSENSE_CLIENT, SITE_NAME, SITE_URL } from '../data/site';
 
@@ -37,6 +39,11 @@ const navItems = HUBS.map((hub) => ({
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {ADSENSE_CLIENT && (
       <script
@@ -51,7 +58,10 @@ const navItems = HUBS.map((hub) => ({
   <body class="flex min-h-screen flex-col">
     <header class="border-b border-slate-200 bg-white">
       <div class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-3">
-        <a href="/" class="text-lg font-bold text-brand-800 no-underline">{SITE_NAME}</a>
+        <a href="/" class="flex items-center gap-2 text-lg font-bold leading-tight text-slate-900 no-underline">
+          <Image src={logo} alt="" height={40} densities={[1, 2]} loading="eager" class="h-10 w-auto" />
+          <span>{SITE_NAME}</span>
+        </a>
         <nav aria-label="Calculator categories" class="hidden md:block">
           <ul class="flex gap-1 text-sm font-medium">
             {navItems.map((item) => (
