@@ -8,7 +8,7 @@
 - [x] /life-seconds-calculator/
 - [x] /tvm-calculator-online/
 - [x] /sales-calculator-online/
-- [ ] /customer-lifetime-value-calculator-online/
+- [x] /customer-lifetime-value-calculator-online/
 - [x] /life-clock-calculator/
 - [ ] /online-calculator-for-interest-plus-principal/
 - [ ] /quartile-calculator-online-free/

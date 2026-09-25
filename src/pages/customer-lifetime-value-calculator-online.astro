@@ -1,0 +1,47 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import ClvCalculator from '../components/calculators/ClvCalculator';
+
+const faqs = [
+  {
+    q: 'What is customer lifetime value (CLV)?',
+    a: 'CLV is the total revenue or profit you can expect from one customer over the entire relationship. It tells you how much you can afford to spend to acquire and keep a customer.',
+  },
+  {
+    q: 'What is the simplest CLV formula?',
+    a: 'CLV = average purchase value × purchases per year × customer lifespan in years. A customer who spends $50 four times a year for three years is worth $600 in revenue.',
+  },
+  {
+    q: 'How does retention rate affect CLV?',
+    a: 'With annual retention r, the expected customer lifespan is 1 ÷ (1 − r) years. At 70% retention that is 3.3 years; at 90% it is 10 years, which is why small retention gains have a large effect on CLV.',
+  },
+  {
+    q: 'What is a good CLV to CAC ratio?',
+    a: 'A ratio of 3:1 is a widely used benchmark: each customer brings in three times what it cost to acquire them. Below 1:1 you lose money on every customer; far above 5:1 may mean you are under-investing in growth.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="customer-lifetime-value-calculator-online"
+  h1="Customer Lifetime Value (CLV) Calculator"
+  description="Free customer lifetime value calculator. Estimate CLV from purchase value, frequency, and lifespan or retention rate, with optional margin, discounting, and CAC."
+  faqs={faqs}
+>
+  <ClvCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Annual value</strong> = average purchase value × purchases per year × gross margin.</p>
+    <ul>
+      <li><strong>Lifespan method:</strong> CLV = annual value × lifespan in years.</li>
+      <li><strong>Retention method:</strong> CLV = annual value ÷ (1 − retention rate).</li>
+      <li>
+        <strong>With a discount rate d:</strong> CLV = annual value × (1 + d) ÷ (1 + d − retention), or the present value of
+        an annuity due for a fixed lifespan.
+      </li>
+    </ul>
+    <p>
+      Example: $50 × 4 purchases × 100% margin = $200 per year. At 75% retention the expected lifespan is 4 years, so CLV =
+      $800.
+    </p>
+  </Fragment>
+</CalculatorLayout>
