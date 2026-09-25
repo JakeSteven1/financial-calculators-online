@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import TileFloorCalculator from '../components/calculators/TileFloorCalculator';
+
+const faqs = [
+  {
+    q: 'How much does it cost to tile a floor?',
+    a: 'Material ranges from about $2 per square foot for vinyl to $30 for metal tile, and professional installation commonly adds $5 to $10 per square foot. A 120 sq ft ceramic floor with installation often lands between $1,500 and $2,500.',
+  },
+  {
+    q: 'How much extra tile should I buy?',
+    a: 'Add 10% for waste on a straight layout and 15% or more for diagonal, herringbone, or large-format tile. Extra tile also covers future repairs, since dye lots change.',
+  },
+  {
+    q: 'How do I measure square footage?',
+    a: 'Multiply the room’s length by its width in feet. For L-shaped rooms, split them into rectangles, calculate each, and add them together.',
+  },
+  {
+    q: 'Is removing old flooring expensive?',
+    a: 'Removing existing tile is labor-intensive; a typical room runs a few hundred to over a thousand dollars depending on size and what is underneath. The calculator uses a midpoint of about $650.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="tile-floor-cost-calculator"
+  h1="Tile Floor Cost Calculator"
+  description="Estimate the cost of a new tile floor: tile material with waste, installation labor, supplies, equipment, and removal of old flooring, by room size."
+  faqs={faqs}
+>
+  <TileFloorCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Area</strong> = length × width</li>
+      <li><strong>Tile</strong> = area × (1 + waste %) × price per sq ft</li>
+      <li><strong>Labor, supplies ($1.06/sq ft), and disposal ($0.93/sq ft)</strong> = area × rate</li>
+      <li><strong>Equipment (~$79) and removal (~$652)</strong> are flat project costs</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
