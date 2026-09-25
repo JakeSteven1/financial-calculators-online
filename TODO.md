@@ -7,7 +7,7 @@
 - [x] /fair-fantasy-trade-value-draft-picks/
 - [x] /life-seconds-calculator/
 - [x] /tvm-calculator-online/
-- [ ] /sales-calculator-online/
+- [x] /sales-calculator-online/
 - [ ] /customer-lifetime-value-calculator-online/
 - [x] /life-clock-calculator/
 - [ ] /online-calculator-for-interest-plus-principal/

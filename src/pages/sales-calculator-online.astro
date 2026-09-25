@@ -1,0 +1,43 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import SalesCalculator from '../components/calculators/SalesCalculator';
+
+const faqs = [
+  {
+    q: 'What is the difference between margin and markup?',
+    a: 'Both measure profit, but against different bases. Gross margin is profit divided by the selling price; markup is profit divided by cost. An item that costs $60 and sells for $100 has a 40% margin and a 66.7% markup.',
+  },
+  {
+    q: 'Which two values do I need?',
+    a: 'Any two of cost, revenue, gross profit, margin, and markup, as long as at least one is a dollar amount. Margin and markup together describe a ratio but not a price.',
+  },
+  {
+    q: 'How do I find the selling price from cost and margin?',
+    a: 'Divide cost by (1 − margin). For a $60 cost and a 40% target margin: $60 ÷ 0.60 = $100.',
+  },
+  {
+    q: 'How do I convert markup to margin?',
+    a: 'Margin = markup ÷ (1 + markup). A 50% markup equals a 33.3% margin. Going the other way, markup = margin ÷ (1 − margin).',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="sales-calculator-online"
+  h1="Sales Calculator: Cost, Revenue, Margin, and Markup"
+  description="Enter any two of cost, selling price, gross profit, margin, or markup and this free sales calculator solves the rest, with totals for units sold."
+  faqs={faqs}
+>
+  <SalesCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Gross profit</strong> = revenue − cost</li>
+      <li><strong>Gross margin</strong> = gross profit ÷ revenue × 100</li>
+      <li><strong>Markup</strong> = gross profit ÷ cost × 100</li>
+    </ul>
+    <p>
+      Rearranging these gives every other combination, such as revenue = cost ÷ (1 − margin) or cost = revenue ÷ (1 +
+      markup). Totals multiply the per-unit figures by units sold.
+    </p>
+  </Fragment>
+</CalculatorLayout>
