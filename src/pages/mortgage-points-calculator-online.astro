@@ -1,0 +1,41 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import MortgagePointsCalculator from '../components/calculators/MortgagePointsCalculator';
+
+const faqs = [
+  {
+    q: 'What are mortgage points?',
+    a: 'Discount points are prepaid interest you pay at closing to get a lower rate. One point costs 1% of the loan amount; on a $300,000 loan, one point is $3,000.',
+  },
+  {
+    q: 'How much does one point lower the rate?',
+    a: 'It varies by lender and market, but one point commonly lowers the rate by about 0.25 percentage points. Compare the lender’s actual quotes with and without points.',
+  },
+  {
+    q: 'When is buying points worth it?',
+    a: 'When you keep the loan past the break-even point: cost of points ÷ monthly savings. If you might sell or refinance within a few years, points usually don’t pay off.',
+  },
+  {
+    q: 'Are mortgage points tax deductible?',
+    a: 'Points paid on a loan to buy your primary home are often deductible as mortgage interest if you itemize. Rules differ for refinances; check IRS Publication 936 or a tax professional.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="mortgage-points-calculator-online"
+  h1="Mortgage Points Calculator"
+  description="Is buying mortgage points worth it? Compare payments with and without discount points to find your break-even point and net savings."
+  faqs={faqs}
+>
+  <MortgagePointsCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Cost of points</strong> = loan amount × points ÷ 100</li>
+      <li><strong>Monthly savings</strong> = payment at the base rate − payment at the reduced rate</li>
+      <li><strong>Break-even months</strong> = cost of points ÷ monthly savings</li>
+      <li><strong>Net savings</strong> = monthly savings × months you keep the loan − cost of points</li>
+    </ul>
+    <p>2 points ($6,000) to cut a $300,000, 30-year loan from 7% to 6.5% saves $99.70 a month, breaking even in about 61 months.</p>
+  </Fragment>
+</CalculatorLayout>
