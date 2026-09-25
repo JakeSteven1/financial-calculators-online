@@ -46,7 +46,7 @@
 - [x] /return-on-investment-calculator/
 - [x] /stock-price-revenue-sale/
 - [x] /ai-word-count-calculator/
-- [ ] /character-count-tool-free/
+- [x] /character-count-tool-free/
 - [ ] /tile-floor-cost-calculator/
 - [ ] /home-equity-calculator-online/
 - [ ] /life-insurance-coverage-estimator/

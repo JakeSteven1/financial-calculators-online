@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import CharacterCounter from '../components/calculators/CharacterCounter';
+
+const faqs = [
+  {
+    q: 'Do spaces count as characters?',
+    a: 'Yes, for most limits, including email subjects, meta descriptions, SMS, and social posts. The tool shows counts with and without spaces.',
+  },
+  {
+    q: 'How long should a meta description be?',
+    a: 'About 150 to 160 characters. Google truncates longer descriptions in search results, typically around 155 to 160 characters on desktop.',
+  },
+  {
+    q: 'What is the ideal email subject line length?',
+    a: 'Keep it under about 60 characters so it isn’t cut off on desktop, and put the key words in the first 30 to 40 for mobile inboxes.',
+  },
+  {
+    q: 'How are emojis counted?',
+    a: 'Each emoji counts as one character here. Some platforms, like X and SMS, count certain emojis as two characters, so leave a little room.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="character-count-tool-free"
+  h1="Free Character Count Tool"
+  description="Count characters, words, sentences, and paragraphs instantly, and check your text against email subject, meta description, SMS, and social post limits."
+  faqs={faqs}
+>
+  <CharacterCounter client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Characters</strong>: every Unicode character, including spaces and line breaks</li>
+      <li><strong>Words</strong>: runs of text separated by whitespace</li>
+      <li><strong>Sentences</strong>: text ending in a period, question mark, or exclamation point</li>
+      <li><strong>Reading time</strong>: words ÷ 238, the average adult silent reading speed</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
