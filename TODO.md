@@ -58,7 +58,7 @@
 - [x] /amoritization-schedule-online/
 - [x] /50-30-20-budget-calculator/
 - [x] /mortgage-rate-comparison-calculator/
-- [ ] /retirement-calculator-online/
+- [x] /retirement-calculator-online/
 - [ ] /customer-acquisition-cost/
 - [ ] /our-free-financial-calculator/
 

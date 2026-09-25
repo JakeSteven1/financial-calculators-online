@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RetirementPlanner from '../components/calculators/RetirementPlanner';
+
+const faqs = [
+  {
+    q: 'How much do I need to retire?',
+    a: 'Enough that withdrawals, plus Social Security and any pension, cover your spending for the rest of your life. A common starting point is 25 times the yearly amount you need from savings, which corresponds to a 4% withdrawal rate.',
+  },
+  {
+    q: 'Why are results shown in today’s dollars?',
+    a: 'Inflation makes future dollars worth less. Showing everything in today’s dollars lets you compare the projection with your current income and spending. The calculator also shows the future-dollar balance for reference.',
+  },
+  {
+    q: 'What spending should I plan for in retirement?',
+    a: 'Many planners use 70% to 80% of pre-retirement income. Your actual number depends on housing costs, health care, travel, and whether debts are paid off.',
+  },
+  {
+    q: 'How does the tax rate on withdrawals work?',
+    a: 'Withdrawals from traditional 401(k)s and IRAs are taxed as income, so you must withdraw more than you spend. The calculator grosses up withdrawals by your tax rate. For Roth accounts, which are tax-free in retirement, use 0%.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="retirement-calculator-online"
+  h1="Retirement Calculator"
+  description="Will your savings last? Project your retirement savings with contribution increases, inflation, taxes, and Social Security, and see the age your money runs out."
+  faqs={faqs}
+>
+  <RetirementPlanner client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Real return</strong> = (1 + nominal return) ÷ (1 + inflation) − 1, so all figures are in today’s dollars</li>
+      <li><strong>Saving years</strong>: balance = balance × (1 + real return) + contribution, with contributions rising each year</li>
+      <li><strong>Withdrawal</strong> = (spending − Social Security/pension) ÷ (1 − tax rate)</li>
+      <li><strong>Retirement years</strong>: balance = (balance − withdrawal) × (1 + real return), until the plan-until age or the money runs out</li>
+    </ul>
+  </Fragment>
+</CalculatorLayout>
