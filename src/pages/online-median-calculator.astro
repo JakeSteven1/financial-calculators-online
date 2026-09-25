@@ -1,0 +1,40 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import StatsCalculator from '../components/calculators/StatsCalculator';
+
+const faqs = [
+  {
+    q: 'How do you find the median?',
+    a: 'Sort the numbers from smallest to largest. With an odd count, the median is the middle number. With an even count, it is the average of the two middle numbers.',
+  },
+  {
+    q: 'What is the median of 3, 1, 4, 1, 5, 9?',
+    a: 'Sorted: 1, 1, 3, 4, 5, 9. There are six values, so average the 3rd and 4th: (3 + 4) ÷ 2 = 3.5.',
+  },
+  {
+    q: 'When is the median better than the mean?',
+    a: 'When data is skewed or has outliers, such as incomes or home prices. One very large value pulls the mean up but barely moves the median.',
+  },
+  {
+    q: 'Can the median be a number that is not in the data?',
+    a: 'Yes. With an even number of values, the median is the average of the two middle values, which may not appear in the data set.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="online-median-calculator"
+  h1="Median Calculator"
+  description="Free online median calculator. Paste any list of numbers to find the median instantly, plus the sorted data, mean, mode, and quartiles."
+  faqs={faqs}
+>
+  <StatsCalculator focus="median" client:visible />
+  <Fragment slot="formula">
+    <p>Sort the <em>n</em> values in ascending order.</p>
+    <ul>
+      <li>If <em>n</em> is odd: <strong>median = value at position (n + 1) ÷ 2</strong>.</li>
+      <li>If <em>n</em> is even: <strong>median = average of the values at positions n ÷ 2 and n ÷ 2 + 1</strong>.</li>
+    </ul>
+    <p>For 12, 3, 7, 9, 5: sorted 3, 5, 7, 9, 12, so the median is the 3rd value, 7.</p>
+  </Fragment>
+</CalculatorLayout>

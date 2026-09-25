@@ -15,7 +15,7 @@
 - [x] /liquidity-ratio-calculator-online/
 - [x] /rule-of-72-calculator/
 - [x] /break-even-point-calculator/
-- [ ] /online-median-calculator/
+- [x] /online-median-calculator/
 
 ## Tier 2: everything else
 - [ ] /modular-home-cost-calculator/
