@@ -1,0 +1,44 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import DraftTradeCalculator from '../components/calculators/DraftTradeCalculator';
+
+const faqs = [
+  {
+    q: 'Where do the pick values come from?',
+    a: 'From the classic NFL draft value chart popularized by Jimmy Johnson, which assigns 3,000 points to the first overall pick and declining values to every pick after it. NFL front offices have used it for decades as a starting point for trades.',
+  },
+  {
+    q: 'How does league size change the values?',
+    a: 'Picks are converted to an overall pick number: (round − 1) × number of teams + pick in round. In a 10-team league, the 3rd pick of round 2 is the 13th overall pick, worth 1,150 points.',
+  },
+  {
+    q: 'When is a trade considered fair?',
+    a: 'When the two sides are within 5% of each other in total value. Beyond that, the side that gives up more points is overpaying.',
+  },
+  {
+    q: 'Does the chart account for player needs?',
+    a: 'No. The chart measures draft capital only. Roster needs, keepers, and the depth of your draft class can justify paying more or less than the chart suggests.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="fair-fantasy-trade-value-draft-picks"
+  h1="Fantasy Draft Pick Trade Value Calculator"
+  description="Is your fantasy draft-pick trade fair? Compare up to five picks per side using the NFL draft value chart, adjusted for your league size."
+  faqs={faqs}
+>
+  <DraftTradeCalculator client:visible />
+  <Fragment slot="formula">
+    <p>
+      Each pick becomes an overall pick number: <strong>overall = (round − 1) × teams + pick in round</strong>. That
+      number is looked up on the NFL draft value chart, where pick 1 is worth 3,000 points, pick 10 is worth 1,300, and
+      pick 32 is worth 590.
+    </p>
+    <p>
+      Each side’s value is the sum of its picks. The trade is fair when the difference is no more than 5% of the larger
+      side. For example, in a 10-team league picks 1.05 + 1.10 (1,700 + 1,300 = 3,000) are an even swap for pick 1.01
+      (3,000).
+    </p>
+  </Fragment>
+</CalculatorLayout>

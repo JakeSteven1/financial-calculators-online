@@ -4,7 +4,7 @@
 - [x] /randomly-select-contest-winner-from-list-of-emails/
 - [x] /random-number-generator-online-free/
 - [x] /randomly-select-emails-for-giveaways/
-- [ ] /fair-fantasy-trade-value-draft-picks/
+- [x] /fair-fantasy-trade-value-draft-picks/
 - [ ] /life-seconds-calculator/
 - [ ] /tvm-calculator-online/
 - [ ] /sales-calculator-online/
