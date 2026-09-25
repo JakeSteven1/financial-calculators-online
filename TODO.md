@@ -22,7 +22,7 @@
 - [x] /gross-margin-calculator-online/
 - [x] /mortgage-loan-calculator-online/
 - [x] /representative-sample-calculator/
-- [ ] /simple-loan-calculator/
+- [x] /simple-loan-calculator/
 - [ ] /profit-margin-calculator/
 - [ ] /car-loan-calculator/
 - [ ] /ideal-email-subject-length/

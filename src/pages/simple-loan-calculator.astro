@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import LoanCalculator from '../components/calculators/LoanCalculator';
+
+const faqs = [
+  {
+    q: 'How do I calculate a loan payment?',
+    a: 'Use M = P × i ÷ (1 − (1 + i)^−n): P is the amount borrowed, i the annual rate ÷ 12, and n the number of monthly payments. A $10,000 loan at 7% for 5 years costs $198.01 a month.',
+  },
+  {
+    q: 'How much interest will I pay in total?',
+    a: 'Multiply the monthly payment by the number of payments and subtract the amount borrowed. For $10,000 at 7% over 5 years: $198.01 × 60 − $10,000 = $1,880.72.',
+  },
+  {
+    q: 'Why does most of my early payment go to interest?',
+    a: 'Interest is charged on the outstanding balance, which is highest at the start. As the balance falls, less of each fixed payment goes to interest and more goes to principal. The amortization schedule shows the split every month.',
+  },
+  {
+    q: 'Does this include fees?',
+    a: 'No. Origination fees and other charges are not included. To compare offers with fees, use each loan’s APR as the interest rate.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="simple-loan-calculator"
+  h1="Simple Loan Calculator"
+  description="Free simple loan calculator. Enter the amount, interest rate, and term to see your monthly payment, total interest, and a full amortization schedule."
+  faqs={faqs}
+>
+  <LoanCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>M = P × i ÷ (1 − (1 + i)<sup>−n</sup>)</strong></p>
+    <p>
+      <em>P</em> is the principal, <em>i</em> the monthly rate (annual rate ÷ 12), and <em>n</em> the number of monthly
+      payments. Each month, interest = balance × <em>i</em>, and the rest of the payment reduces the balance.
+    </p>
+  </Fragment>
+</CalculatorLayout>
