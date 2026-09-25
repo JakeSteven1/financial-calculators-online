@@ -25,5 +25,3 @@ Next, fill in the costs of any improvements made to the property since your purc
 ### Now Calculate and Evaluate the Output
 
 Once all the relevant information has been input, click the 'Calculate' button. The calculator will then output a suggested selling price that would cover your initial investment, improvement costs, selling costs, and desired profit. This suggested selling price can then be used as a benchmark when listing your property or discussing pricing with your real estate agent.
-
-## Let's calculate The sale price

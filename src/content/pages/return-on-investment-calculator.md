@@ -26,8 +26,6 @@ The final value (Vf) is the worth of your investment at the end of the investmen
 
 Once you've input the initial and final values, click the "Calculate" button. The calculator will subtract the initial value from the final value, divide the result by the initial value, and then multiply by 100 to obtain the ROI as a percentage. The output will display your ROI, allowing you to understand the profitability of your investment.
 
-Let's Calculate!
-
 ## How Should You Interpret The Results?
 
 The results from the Return on Investment (ROI) Calculator are displayed as a percentage, which represents the profitability or financial gain of an investment relative to its cost. Essentially, a positive ROI means that the earnings from an investment have exceeded the cost of the investment, indicating a profitable situation. For example, an ROI of 20% suggests that the investment has returned 20% more than its original cost. On the other hand, a negative ROI indicates that the costs of the investment have exceeded the returns, implying a loss on the investment.

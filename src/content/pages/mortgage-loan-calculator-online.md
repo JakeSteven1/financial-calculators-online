@@ -25,5 +25,3 @@ Once all your information is entered correctly(!), click on the "Calculate" butt
 ### Review!
 
 Look at the result presented under the "Calculate" button. This figure represents the estimated monthly payment for the mortgage loan based on the details you provided. Always remember this is an estimation, and the actual monthly payment may vary slightly due to other factors not accounted for in this calculator, such as insurance and taxes.
-
-## Let's calculate that mortgage loan!

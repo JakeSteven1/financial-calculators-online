@@ -6,24 +6,6 @@ wpId: 1231
 wpType: page
 modified: "2023-07-02T12:40:01"
 ---
--   [Representative Sample](/representative-sample-calculator/)
--   [Quartile Calculator](/quartile-calculator-online-free/)
--   [Mean](/mean-online-calculator/)
--   [Median](/online-median-calculator/)
--   [Mode](/mode-calculator-online/)
--   [Random Number Generator](/random-number-generator-online-free/)
--   [Standard Deviation](/standard-deviation-calculator-online-free/)
--   [Randomly Select Winner From Emails](/randomly-select-contest-winner-from-list-of-emails/)
-
--   [Representative Sample](/representative-sample-calculator/)
--   [Quartile Calculator](/quartile-calculator-online-free/)
--   [Mean](/mean-online-calculator/)
--   [Median](/online-median-calculator/)
--   [Mode](/mode-calculator-online/)
--   [Random Number Generator](/random-number-generator-online-free/)
--   [Standard Deviation](/standard-deviation-calculator-online-free/)
--   [Randomly Select Winner From Emails](/randomly-select-contest-winner-from-list-of-emails/)
-
 See below for a list of our ever-growing number statistics calculators. First let’s start with the basics and then we’ll get to some of our more complex calculators.
 
 ## Mean
@@ -36,9 +18,9 @@ Formula:
 
 Where:
 
--   Σ represents summation (the sum of all)
--   x is the set of values
--   n is the total number of values.
+- Σ represents summation (the sum of all)
+- x is the set of values
+- n is the total number of values.
 
 ## The Mode
 
@@ -48,9 +30,9 @@ The mode is particularly useful when dealing with non-numerical data, as it can 
 
 How to find the Mode (other than using our calculator):
 
-1.  Order your data from smallest to largest.
-2.  If n is odd, the median is the ((n + 1) / 2)th value.
-3.  If n is even, the median is the average of the (n / 2)th and ((n / 2) + 1)th values.
+1. Order your data from smallest to largest.
+2. If n is odd, the median is the ((n + 1) / 2)th value.
+3. If n is even, the median is the average of the (n / 2)th and ((n / 2) + 1)th values.
 
 ## Median Calculator
 
@@ -62,11 +44,11 @@ In terms of use cases, the median is often used in income and property value stu
 
 Use our [Random Number generator](/random-number-generator-online-free/) tool free online. Simply put in a minimum number and a maximum number and the calculator will print a random number between these two numbers.
 
-For example if you were to input minimum 1, maximum 10 and click “generate” the random number generator  might output “5.” Use cases include doing free giveaways or trying to settle a score in a free and unbiased way.
+For example if you were to input minimum 1, maximum 10 and click “generate” the random number generator might output “5.” Use cases include doing free giveaways or trying to settle a score in a free and unbiased way.
 
 ## Representative Sample Calculator
 
-One of the most important concepts in statistics, the  **representative sample** in statistics is a subset of a statistical population that accurately reflects the characteristics of the whole population. The concept of a representative sample is essential in the field of statistics because it allows for accurate predictions and conclusions about larger groups based on studying a smaller, more manageable subset. The aim is to select a sample that has the same distribution of characteristics as the entire population. Try our free [representative sample calculator](/representative-sample-calculator/) or read more about use cases.
+One of the most important concepts in statistics, the **representative sample** in statistics is a subset of a statistical population that accurately reflects the characteristics of the whole population. The concept of a representative sample is essential in the field of statistics because it allows for accurate predictions and conclusions about larger groups based on studying a smaller, more manageable subset. The aim is to select a sample that has the same distribution of characteristics as the entire population. Try our free [representative sample calculator](/representative-sample-calculator/) or read more about use cases.
 
 In terms of practical use, representative samples are incredibly important in survey data collection and observational studies across numerous fields. For example, in political polling, a representative sample of voters can give an indication of how the entire population might vote. Similarly, in medical research, a representative sample of patients can help in understanding the probable effects of a drug in the broader patient population. The key is that the sample should accurately reflect the larger population’s demographic and characteristic distribution.
 
@@ -82,10 +64,10 @@ This [Standard Deviation Calculator](/standard-deviation-calculator-online-free/
 
 Where:
 
--   σ is the standard deviation
--   xi are the observed values in the sample
--   μ is the mean of the sample
--   N is the number of observations in the sample
+- σ is the standard deviation
+- xi are the observed values in the sample
+- μ is the mean of the sample
+- N is the number of observations in the sample
 
 Please note that the above formula represents the calculation of standard deviation for a population. If you are calculating the standard deviation for a sample, you would divide by (N – 1) instead of N in the third step, which is known as Bessel’s correction. This correction is used to correct the bias in the estimation of the population variance. However, if your sample size is large, this distinction becomes less important.
 

@@ -25,5 +25,3 @@ Input the interest rate on the loan. This is the amount added to the principal i
 ### Calculate and review!
 
 Click calculate and a table will be created below the "Calculate" button. Be sure to review the amortization schedule, which breaks down each monthly payment and shows how much goes towards principal and interest, as well as the remaining balance after each payment.
-
-## Let's Pay off that car!

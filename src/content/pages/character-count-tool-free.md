@@ -13,5 +13,3 @@ Our Character Counter tool is a pivotal aid for individuals in marketing and adv
 A recommended length here is approximately 125 characters, long enough to convey the essence of the image, but short enough to keep the viewer’s attention. Our Character Counter tool is designed to make adherence to these standards effortless, ensuring your content is always optimized for maximum impact.
 
 This tool isn’t just about conformity, but about enhancing the effectiveness of your content. By keeping within the recommended character limits, you ensure that your message remains sharp, digestible, and more importantly, memorable. Whether you’re crafting the perfect headline for your next blog post, fine-tuning a pitch email to a potential client, or captioning a powerful image for your brand’s social media, this Character Counter tool ensures you hit the sweet spot every time. Remember, in today’s digital age, less is often more.
-
-## Paste in your text and see how many characters you're at

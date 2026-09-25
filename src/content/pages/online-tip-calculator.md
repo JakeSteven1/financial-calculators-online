@@ -26,8 +26,6 @@ Click Calculate Tip and we will output how much you should tip.
 
 You choose how much you should tip. We are not here to judge anyone. Just think, if you were the waiter, how much would you want?
 
-## Find Out How Much You Should Tip
-
 ## How Standard Tips Are Different Across the world?
 
 Something to keep in mind is how standard tip rate varies significantly around the world, reflecting a wide array of cultural norms and expectations. In the Americas, tipping is generally expected and forms a substantial part of service workers’ incomes. For instance, in the United States, Canada, and Colombia, it’s customary to tip 15-20% at restaurants and for taxi services. However, in countries like Brazil, Chile, and Costa Rica, a 10% service charge is often included in the bill, with no additional tip expected, although extra cash tips are appreciated for excellent service​​.

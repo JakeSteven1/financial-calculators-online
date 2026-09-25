@@ -25,5 +25,3 @@ In the field labeled "Number of Compounding Periods per Year", input the number 
 ### Calculate the Effective Interest Rate
 
 Once you've inputted the nominal interest rate and the number of compounding periods, click on the "Calculate" button. The calculator will use these inputs to compute the effective interest rate and display the result. The output will give you the actual annual interest rate that reflects the impact of compounding.
-
-Let's Find The True Interest

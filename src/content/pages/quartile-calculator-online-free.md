@@ -25,5 +25,3 @@ After entering your data, press the button labeled "Calculate Quartiles". The ca
 ### View the results
 
 After the calculations have been done, the results are displayed on the same page under the button. The first quartile (Q1), the second quartile or median (Q2), and the third quartile (Q3) are displayed. These values divide your data into four equal parts, allowing you to understand the spread of your data better.
-
-## Find the quartile!

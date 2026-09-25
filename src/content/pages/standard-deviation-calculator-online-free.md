@@ -26,8 +26,6 @@ Click on the "Calculate" button. The calculator will process the data, calculate
 
 The result displayed is the standard deviation of your dataset. A smaller standard deviation means that the values in your dataset are closer to the mean, and hence, the data points are less spread out. On the other hand, a larger standard deviation indicates a greater amount of dispersion in your data.
 
-## Find The Standard Deviation
-
 ## How is the standard deviation used in different fields?
 
 As we’ve discussed, the standard deviation is more than just a homework problem. The concept has been used in almost every field from science to finance.

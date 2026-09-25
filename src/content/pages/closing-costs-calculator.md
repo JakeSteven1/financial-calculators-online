@@ -25,5 +25,3 @@ Once you've entered the home price, click on the 'Calculate' button. Our calcula
 ### Review Estimated Closing Costs
 
 After hitting the 'Calculate' button, the tool will display a range estimating your potential closing costs. Use this information to plan for these costs as you budget for your home purchase. Remember, these are just estimates, and your actual closing costs may be different. For a more accurate estimate, consult with your lender or a real estate professional.
-
-## Let's See What Closing Costs To Expect

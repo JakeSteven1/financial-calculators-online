@@ -25,5 +25,3 @@ Next, you need to input the interest rate in the "Interest Rate (%)" field, foll
 ### Calculate!
 
 Finally, simply click on the "Calculate" button. The calculator will instantly calculate your monthly payment based on the input values and display it in the "Monthly Payment" section. Always ensure that you have input the correct values before hitting the calculate button to get the most accurate results.
-
-## Calculate Average Monthly Loan Payments

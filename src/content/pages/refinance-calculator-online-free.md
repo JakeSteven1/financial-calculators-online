@@ -25,5 +25,3 @@ Next, enter the proposed new mortgage rate and the term for the new mortgage. Th
 ### Calculate and Review the Output
 
 Click the "Calculate" button to find out if refinancing could potentially save you money. The calculator will provide an estimate of your potential savings, or inform you if it's more cost-effective to stick with your current mortgage. Remember, this is a simple tool and doesn't account for all possible factors, so you should consult a financial advisor or mortgage professional for a comprehensive analysis.
-
-## Let's Figure Out if You Should Refinance

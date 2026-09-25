@@ -12,8 +12,6 @@ A few things to keep in mind about this [calculator](/). First of all, relax. It
 
 What we hope, is that the time of day that you see after entering your birthday motivates in a way like never before. That you realize that it’s time for you to start doing all the fun things that you’ve been putting off. However, that’s up to you. Also note this is based on the average lifespan of 76 years. Update: We have updated the life clock calculator to include a place where you can select whether you are male or female which impacts the time. The difference is based on this [CDC study](https://www.cdc.gov/nchs/data/vsrr/vsrr023.pdf).
 
-## How far in the day of your life are you?
-
 ## Some Notes about our life clock
 
 ### This is based on CDC's August 2022 Study
@@ -28,32 +26,20 @@ It gets the life expectancy based on the gender selected: 73.2 for males and 79.
 
 These "life clock times" are based on averages and should not be taken as an actual prediction of an individual's lifespan. Factors such as country and ethnicity can play a major role in life expectancy.
 
-### More Calculators
+## You might also be interested in these Calculators
 
-## You might also **be interested** in these Calculators
-
-## Hourly Salary Calculator
+### Hourly Salary Calculator
 
 ### Convert Hourly Wage To Yearly Salary
 
 Want to see how much you make in a year if you get paid hourly? Try our free hourly wage to yearly salary calculator
 
-[
+[Open the Hourly Wage to Salary Calculator](/hourly-wage-yearly-salary-calculator/)
 
-### Try it now!
-
-Calculate!
-
-](/hourly-wage-yearly-salary-calculator/)
-
-## 50-30-20 Calculator
+### 50-30-20 Calculator
 
 ### How much should you spend on rent?
 
 Use our 50-30-20 budget calculator to budget how much you should spend on essentials, necessities and wants.
 
-### Calculate Now!
-
-Get started budgeting now!
-
-Calculate
+[Open the 50/30/20 Budget Calculator](/50-30-20-budget-calculator/)

@@ -25,5 +25,3 @@ Enter any costs to market the product that is not included in the hard costs of 
 ### Input Desired Revenue
 
 Input the desired revenue you want to make out of each sale. Then simply hit calculate and the resulting margin will be displayed.
-
-## Let's calculate that Desired Margin!

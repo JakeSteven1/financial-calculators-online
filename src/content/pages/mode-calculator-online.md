@@ -25,5 +25,3 @@ After inputting your dataset, click on the button labeled "Calculate Mode". The 
 ### View Result!
 
 The mode of the dataset you entered will be displayed below the "Calculate Mode" button. The result will be displayed as "Mode(s): x", where x is the calculated mode value(s). If you want to calculate the mode for a new dataset, just clear the input field, enter the new data, and click "Calculate Mode" again.
-
-## Let's find that Mode

@@ -10,10 +10,10 @@ Easily pick random winners for your contests with our Email Winner Selector tool
 
 Please Note - Important Disclaimers:
 
--   **Client-Side Processing:** All calculations and data handling occur **only** within your web browser. Your email list is **not** uploaded or stored on our servers.
--   **Local Storage:** Saved contests rely on your browser's local storage. This data persists only on your current browser and computer and **will be deleted** if you clear your browser's cache or site data. Local storage also has size limits (typically 5-10MB), which could be reached if you save many contests with very large email lists.
--   **Randomness:** The tool uses standard browser-based pseudo-random number generation, suitable for most informal draws. It is not cryptographically secure or certified for high-stakes, regulated competitions.
--   **Use Responsibly:** Please use this tool responsibly and ensure compliance with any applicable contest rules or privacy regulations.
+- **Client-Side Processing:** All calculations and data handling occur **only** within your web browser. Your email list is **not** uploaded or stored on our servers.
+- **Local Storage:** Saved contests rely on your browser's local storage. This data persists only on your current browser and computer and **will be deleted** if you clear your browser's cache or site data. Local storage also has size limits (typically 5-10MB), which could be reached if you save many contests with very large email lists.
+- **Randomness:** The tool uses standard browser-based pseudo-random number generation, suitable for most informal draws. It is not cryptographically secure or certified for high-stakes, regulated competitions.
+- **Use Responsibly:** Please use this tool responsibly and ensure compliance with any applicable contest rules or privacy regulations.
 
 ## Email Winner Selector
 

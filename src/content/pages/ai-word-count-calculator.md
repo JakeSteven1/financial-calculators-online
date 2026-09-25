@@ -14,9 +14,7 @@ Understanding firsthand the pivotal role context plays in meaningful AI interact
 
 \*Update to tool 9/7/2023: A user has suggested trying to factor in the difference in words. Here’s what we’ve done: applied weights based on the complexity of the word. Those weights are below:
 
-					`Score = (Simple words * 1) + (Moderate words * 2) + (Complex words * 3)`
-
-## Paste your full conversation into our word counter below
+					`Score = (Simple words × 1) + (Moderate words × 2) + (Complex words × 3)`
 
 ## But Why Can't AI Remember?
 

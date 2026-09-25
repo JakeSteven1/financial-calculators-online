@@ -6,7 +6,7 @@ wpId: 298
 wpType: page
 modified: "2025-04-16T19:39:39"
 ---
-Our easy-to-use liquidity calculator helps you determine your current ratio and quick ratio, providing valuable insights into your company’s short-term debt obligations. 
+Our easy-to-use liquidity calculator helps you determine your current ratio and quick ratio, providing valuable insights into your company’s short-term debt obligations.
 
 The Liquidity Ratio [Calculator](/) is a powerful online tool that computes four crucial measures of a business’s liquidity: the current ratio, the quick ratio, the cash ratio, and working capital. By inputting key financial data points such as current assets, current liabilities, inventory, cash, and cash equivalents, users can quickly and easily calculate these ratios, gaining valuable insights into the financial health and stability of a business. It is designed to facilitate the analysis of a single company over a single or multiple reporting periods, or comparison of two different companies.
 

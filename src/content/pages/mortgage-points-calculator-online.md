@@ -25,5 +25,3 @@ Enter the new interest rate you would secure if you purchased the points. This i
 ### Calculate and Evaluate the Output
 
 Click the "Calculate" button. The calculator will estimate your monthly savings from the lower interest rate, the upfront cost of buying the points, and the breakeven point in months when the savings from the reduced payments equal the upfront cost of the points. Use these results to determine if buying points could be beneficial based on your specific circumstances. As always, consult a financial advisor or mortgage professional for a comprehensive evaluation.
-
-## Mortgage Points Calculator

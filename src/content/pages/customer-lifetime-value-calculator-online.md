@@ -28,7 +28,7 @@ Understanding your CLV empowers you to make informed decisions about customer ac
 
 ## What Was The Problem With This CLV Calculator?
 
-Perhaps the most important rule of analytics or data analysis of any type is that one must be extremely careful about what you average. If you have different products that the customer will buy along the way, you might realize that all customers are not in fact the same. A lesson from statistics, curtesy of Major League Baseball is [Simpson’s Paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox): 
+Perhaps the most important rule of analytics or data analysis of any type is that one must be extremely careful about what you average. If you have different products that the customer will buy along the way, you might realize that all customers are not in fact the same. A lesson from statistics, curtesy of Major League Baseball is [Simpson’s Paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox):
 
 In both years 1995 and 1996, Derek Jeter had a lower batting average than David Justice however Derek Jeter’s combined batting average for the two years was higher than David Justice. How did it happen?
 

@@ -26,8 +26,6 @@ Next, enter the amount you still owe on your mortgage. This is the remaining bal
 
 The calculator will subtract your mortgage balance from your home's value to find your estimated home equity. This is the portion of your home's value that you truly own, and it represents wealth that you might be able to access through selling your home or through certain types of loans.
 
-## Let's See What The House Is Worth
-
 ## Using Your Home Equity Information
 
 Home equity is the portion of your property that you truly ‘own’, representing the difference between the market value of your home and what you owe on it. For many homeowners, it’s not just a number; it’s a potential financial catalyst. As your home equity grows, so do the opportunities that come with it. The calculated equity figure from the provided calculator can open a door to myriad financial strategies, and understanding how to harness this potential is essential for maximizing one’s financial health.
@@ -38,8 +36,8 @@ To begin with, home equity serves as a testament to a homeowner’s financial st
 
 How can you use quity strategically? Well there’s several strategies you can utilize.
 
-1.  **Home Equity Loans and Lines of Credit (HELOC):** These are popular options for homeowners looking to tap into their home’s value. These financial products allow homeowners to borrow against their home equity. They can be a boon when funds are needed for substantial expenses, like home renovations, which in turn might increase the property’s value even more.
+1. **Home Equity Loans and Lines of Credit (HELOC):** These are popular options for homeowners looking to tap into their home’s value. These financial products allow homeowners to borrow against their home equity. They can be a boon when funds are needed for substantial expenses, like home renovations, which in turn might increase the property’s value even more.
 
-2.  **Debt Consolidation:** High-interest debts, such as credit card balances, can be consolidated using a home equity loan, typically at a much lower interest rate. This can save homeowners a significant amount in interest payments.
+2. **Debt Consolidation:** High-interest debts, such as credit card balances, can be consolidated using a home equity loan, typically at a much lower interest rate. This can save homeowners a significant amount in interest payments.
 
-3.  **Investment:** If the conditions are right, one might use home equity as a stepping stone to purchase an investment property, thus diversifying their income streams.
+3. **Investment:** If the conditions are right, one might use home equity as a stepping stone to purchase an investment property, thus diversifying their income streams.

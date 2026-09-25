@@ -20,25 +20,17 @@ If the average life expectancy were compressed into a single 24 hour calendar, h
 
 Check out some of our other popular calculators including a random number generator used for giveaways, a break-even point calculator to help you understand if and when you're making a profit and a representative sample calculator so you can actually do polls that matter.
 
-[](/randomly-select-contest-winner-from-list-of-emails/)
-
 #### [Random Email Picker](/randomly-select-contest-winner-from-list-of-emails/)
 
 Running a giveaway and need to randomly select a winning email from a list of emails? Use our free tool that will pick the winner for you.
-
-[](/break-even-point-calculator/)
 
 #### [Break Even Point Calculator](/break-even-point-calculator/)
 
 Enter your fixed costs, sale price per unit and variable cost per unit and figure out where your break-even point is.
 
-[](/representative-sample-calculator/)
-
 #### [Representative Sample Calculator](/representative-sample-calculator/)
 
 Need to calculate the representative sample of a target population? Enter the population size, the confidence level and the margin of error percentage desired.
-
-[](/mortgage-loan-calculator-online/)
 
 #### [Online Mortgage Loan Calculator](/mortgage-loan-calculator-online/)
 

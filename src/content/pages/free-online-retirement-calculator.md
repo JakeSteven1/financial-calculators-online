@@ -6,7 +6,7 @@ wpId: 1989
 wpType: page
 modified: "2024-08-04T19:55:10"
 ---
-Use our free online retirement calculator and begin planning for your retirement the right way. 
+Use our free online retirement calculator and begin planning for your retirement the right way.
 
 The Retirement Planning Calculator is a simple yet powerful tool designed to help you estimate your future savings and plan for a secure retirement. To begin, enter your current age and the age at which you plan to retire. Next, input your current savings amount, which represents the total savings you have accumulated so far. In the annual contribution field, specify the amount you plan to add to your savings each year. Finally, estimate the expected annual rate of return on your investments, expressed as a percentage. This rate reflects the growth potential of your savings through investments such as stocks, bonds, or savings accounts. Once you’ve filled in all the fields, click the “Calculate” button to see an estimate of your total savings at retirement.
 
@@ -25,8 +25,6 @@ Enter the expected annual rate of return on your investments as a percentage. Th
 ### Calculate Your Retirement Savings
 
 Once all the fields are filled, click the "Calculate" button. The calculator will estimate your total savings at retirement, helping you determine if your current savings strategy aligns with your financial goals. Adjust your contributions or expected returns as needed to plan effectively for your future.
-
-## Start Planning. Start Saving.
 
 ## Things To keep in mind when planning your retirement savings
 

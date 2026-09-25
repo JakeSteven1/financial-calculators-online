@@ -12,10 +12,10 @@ Have you ever wondered exactly how many seconds in a lifetime the average person
 
 To determine how many seconds in a lifetime a person lives, we need to understand the basic time conversion factors:
 
--   1 minute = 60 seconds
--   1 hour = 3,600 seconds
--   1 day = 86,400 seconds
--   1 year = 31,557,600 seconds (accounting for leap years)
+- 1 minute = 60 seconds
+- 1 hour = 3,600 seconds
+- 1 day = 86,400 seconds
+- 1 year = 31,557,600 seconds (accounting for leap years)
 
 Given that the global average life expectancy is approximately 73 years, we can calculate:
 
@@ -31,8 +31,8 @@ When asking “how many seconds in a lifetime?”, geography plays a significant
 
 Gender also significantly impacts how many seconds in a lifetime a person experiences:
 
--   Women globally: ~75.6 years (2,385,754,560 seconds)
--   Men globally: ~70.8 years (2,234,277,680 seconds)
+- Women globally: ~75.6 years (2,385,754,560 seconds)
+- Men globally: ~70.8 years (2,234,277,680 seconds)
 
 This difference means women typically experience about 151 million more seconds in their lifetimes than men—equivalent to nearly 5 additional years!
 
@@ -40,9 +40,9 @@ This difference means women typically experience about 151 million more seconds 
 
 The mathematical answer to “how many seconds in a lifetime?” only tells part of the story. Our subjective experience of these seconds varies dramatically throughout our lives:
 
-1.  **Proportional Time Perception**: To a 10-year-old, one year represents 10% of all life experience, making time seem to pass slowly. For an 80-year-old, one year is just 1.25% of life experience, creating the sensation that time accelerates with age.
-2.  **Novel Experiences**: When calculating how many seconds in a lifetime feel meaningful, research shows that new experiences create stronger memory imprints. This is why childhood—filled with first-time experiences—seems to contain more seconds than equivalent periods in routine-driven adulthood.
-3.  **Flow States**: During deep engagement in challenging activities, our perception of seconds can dramatically alter—with hours passing like minutes. These flow states effectively compress our subjective experience of lifetime seconds.
+1. **Proportional Time Perception**: To a 10-year-old, one year represents 10% of all life experience, making time seem to pass slowly. For an 80-year-old, one year is just 1.25% of life experience, creating the sensation that time accelerates with age.
+2. **Novel Experiences**: When calculating how many seconds in a lifetime feel meaningful, research shows that new experiences create stronger memory imprints. This is why childhood—filled with first-time experiences—seems to contain more seconds than equivalent periods in routine-driven adulthood.
+3. **Flow States**: During deep engagement in challenging activities, our perception of seconds can dramatically alter—with hours passing like minutes. These flow states effectively compress our subjective experience of lifetime seconds.
 
 Understanding these phenomena can help us manipulate our subjective answer to “how many seconds in a lifetime?” by making intentional choices about how we allocate our time.
 
@@ -50,12 +50,12 @@ Understanding these phenomena can help us manipulate our subjective answer to �
 
 Examining how many seconds in a lifetime are allocated to different activities provides eye-opening insights:
 
--   **Sleep**: ~26 years (819,497,600 seconds) – Over a third of our lifetime seconds
--   **Work**: ~13.2 years (416,560,320 seconds)
--   **Screen Time**: ~9.1 years (287,074,160 seconds)
--   **Eating**: ~3.6 years (113,607,360 seconds)
--   **Commuting**: ~4.3 years (135,697,680 seconds)
--   **Social Activities**: ~1.5 years (47,336,400 seconds)
+- **Sleep**: ~26 years (819,497,600 seconds) – Over a third of our lifetime seconds
+- **Work**: ~13.2 years (416,560,320 seconds)
+- **Screen Time**: ~9.1 years (287,074,160 seconds)
+- **Eating**: ~3.6 years (113,607,360 seconds)
+- **Commuting**: ~4.3 years (135,697,680 seconds)
+- **Social Activities**: ~1.5 years (47,336,400 seconds)
 
 This breakdown reveals that many people spend nearly twice as many seconds watching screens as they do socializing with loved ones. When considering how many seconds in a lifetime we have at our disposal, such statistics prompt important questions about time allocation.
 
@@ -79,10 +79,10 @@ Consider conducting a personal time audit: Are you spending your lifetime second
 
 Understanding how many seconds in a lifetime are affected by daily habits can transform our decision-making:
 
--   If you check social media for 30 minutes daily, you’ll spend approximately 55,188,000 seconds (1.75 years) of your lifetime on these platforms.
--   Smoking regularly reduces your lifetime seconds by approximately 315,576,000 seconds (10 years).
--   Just 10 minutes daily of physical activity can add approximately 94,672,800 seconds (3 years) to your lifetime.
--   5 minutes daily spent in meditation adds up to 6,897,600 seconds over a lifetime—potentially improving the quality of all remaining seconds.
+- If you check social media for 30 minutes daily, you’ll spend approximately 55,188,000 seconds (1.75 years) of your lifetime on these platforms.
+- Smoking regularly reduces your lifetime seconds by approximately 315,576,000 seconds (10 years).
+- Just 10 minutes daily of physical activity can add approximately 94,672,800 seconds (3 years) to your lifetime.
+- 5 minutes daily spent in meditation adds up to 6,897,600 seconds over a lifetime—potentially improving the quality of all remaining seconds.
 
 These calculations demonstrate how seemingly small daily choices significantly impact the total seconds in our lifetime.
 
@@ -90,9 +90,9 @@ These calculations demonstrate how seemingly small daily choices significantly i
 
 When considering how many seconds in a lifetime truly matter, quality often outweighs quantity:
 
--   The few seconds it takes to express love to someone could be among the most consequential in your entire lifetime.
--   The seconds spent watching a sunset in awe might be remembered more vividly than weeks of routine work.
--   The brief seconds making eye contact with a child while they share something important builds trust that enhances thousands of future seconds together.
+- The few seconds it takes to express love to someone could be among the most consequential in your entire lifetime.
+- The seconds spent watching a sunset in awe might be remembered more vividly than weeks of routine work.
+- The brief seconds making eye contact with a child while they share something important builds trust that enhances thousands of future seconds together.
 
 This variance in the value of different seconds reminds us that the answer to “how many seconds in a lifetime?” should consider qualitative dimensions alongside pure quantities.
 
@@ -100,15 +100,13 @@ This variance in the value of different seconds reminds us that the answer to �
 
 Discovering how many seconds in a lifetime you’ve already experienced can provide profound perspective. Our Life Seconds Calculator below allows you to:
 
-1.  Enter your birthdate to calculate exactly how many seconds you’ve lived
-2.  See how this compares to average lifetime expectations
-3.  Visualize your life progress in multiple time units
-4.  Identify key milestones you’ve reached and those still ahead
-5.  Gain perspective on how to make your remaining lifetime seconds count
+1. Enter your birthdate to calculate exactly how many seconds you’ve lived
+2. See how this compares to average lifetime expectations
+3. Visualize your life progress in multiple time units
+4. Identify key milestones you’ve reached and those still ahead
+5. Gain perspective on how to make your remaining lifetime seconds count
 
 Understanding how many seconds in a lifetime you’ve accumulated can inspire gratitude for your journey so far while motivating intentionality about your seconds ahead.
-
-## How Many Seconds Have You lived?
 
 ## What are some major life milestones?
 

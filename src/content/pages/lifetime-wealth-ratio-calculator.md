@@ -25,5 +25,3 @@ Input these values into the appropriate fields in the calculator. It's also nece
 ### Calculate!
 
 Once you've inputted all the necessary data, click on the 'Calculate' button. The calculator will then determine your net worth by subtracting your liabilities from your assets, and then calculate your Lifetime Wealth Ratio (LWR). The result will be displayed along with an interpretation to help you understand your financial standing.
-
-## Your Life. Your Wealth.

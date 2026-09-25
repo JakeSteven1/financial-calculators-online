@@ -25,5 +25,3 @@ After inputting your data, click on the button labeled "Calculate Median". This 
 ### View the Result
 
 The median of the dataset you entered will be displayed below the "Calculate Median" button. The result will be displayed as "Median: x", where x is the calculated median value. If you want to calculate the median for a new dataset, simply clear the input field, enter the new data, and click "Calculate Median" again.
-
-## Let's find the middle number!

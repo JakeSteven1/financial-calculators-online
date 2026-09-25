@@ -25,5 +25,3 @@ Click the "Calculate" button. The calculator will use the information provided t
 ### Review the Results
 
 Review the output provided by the calculator. This is an estimated home price based on the information you provided. Remember, this is a simple tool and doesn't take into account other factors that could impact the price of the home you can afford, like local tax rates, homeowners' insurance, and more. It's always a good idea to consult with a financial advisor or mortgage professional to get a more comprehensive understanding.
-
-## Let's see what you can afford

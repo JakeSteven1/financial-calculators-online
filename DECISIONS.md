@@ -80,3 +80,27 @@ Choices made without asking, per CLAUDE.md.
 
 ## Not rebuilt
 - `/random-email-picker-iloamelkm/` (unlisted premium tool page). See BLOCKED.md.
+
+## Design and fixes phase
+
+### Copy cleanup (task 1)
+`npm run check:artifacts` greps the visible text of every page in `dist/` for stray `#`/Markdown, `£`, entities shown
+as text, mojibake, shortcodes, broken link markup, empty headings, doubled spaces, and unconverted lists. It reports 0 hits.
+No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixes were:
+- **Duplicated WordPress menus**: each hub page's prose opened with its nav menu twice (desktop and mobile copies).
+  Both removed; the hub's calculator grid replaces them.
+- **Duplicated article**: the refinance break-even page contained its long article (and references) twice. The copy
+  without a heading was removed.
+- **Broken bold in headings**: `## **Title` + `**` on the next line rendered literal `**` (5 hub headings). Bold markers
+  inside headings were removed everywhere.
+- **Elementor call-to-action boxes** rendered as literal `[`, "Try it now!", "Calculate!", `](/url/)` on 9 pages. Each is
+  now one descriptive link ("Open the Hourly Wage to Salary Calculator"). The copied "Get started budgeting now!" text on the
+  sample-size CTA was dropped.
+- **Widget placeholder headings**: 40 headings like "Let's calculate that mortgage loan!" sat above the removed WordPress
+  calculator and now introduced empty sections; removed. "More Calculators" eyebrows removed and the per-calculator
+  sections under "You might also be interested in these Calculators" demoted to H3.
+- Orphan button labels ("Let's Calculate!", "Let's Find The True Interest") and empty image-only links on the old homepage removed.
+- KaTeX copy-paste triplication on the personal finance hub ("AAA", "A−B=ΔA – B = \DeltaA−B\=Δ") fixed to "A", "A − B = Δ".
+- Two bold pseudo-headings on the CAC page became H2s.
+- Non-breaking-space runs and doubled spaces collapsed; multiplication written as `*` in prose formulas now uses `×`.
+- The Markdown in `src/content/pages/` is now hand-maintained: re-running `npm run import:wp` would overwrite these fixes.

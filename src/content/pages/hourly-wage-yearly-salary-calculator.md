@@ -25,5 +25,3 @@ Next, provide the number of hours you typically work per week in the input field
 ### Calculate and View Yearly Salary
 
 Once you have entered both the hourly wage and the hours per week, click the "Calculate" button. The calculator will instantly compute your yearly salary based on the provided information. The result will appear in the "Yearly Salary" section, displaying your estimated annual income.
-
-## Let's Convert Hourly Wage To Yearly Salary

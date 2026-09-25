@@ -25,5 +25,3 @@ Next you're going to track down and enter costs associated with your home. Trust
 ### Calculate, evaluate, make the call
 
 After hitting calculate you will be given the information to make a rough estimate about what is best for you. Don't forget, studies show that the most rational option may not be the one that makes you the happiest.
-
-## To rent or to buy?

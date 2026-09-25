@@ -8,7 +8,11 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",
-    "import:wp": "node scripts/import-wp.mjs"
+    "import:wp": "node scripts/import-wp.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "check:artifacts": "node scripts/check-artifacts.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "screenshots": "node scripts/screenshots.mjs"
   },
   "repository": {
     "type": "git",
@@ -37,6 +41,9 @@
     "@tailwindcss/typography": "^0.5.20",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "entities": "^8.1.0",
+    "playwright": "1.63",
+    "sharp": "^0.35.4",
     "turndown": "^7.2.4",
     "vitest": "^5.0.2"
   },

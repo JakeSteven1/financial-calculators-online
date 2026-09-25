@@ -25,5 +25,3 @@ Next, enter the amount you still owe on your mortgage. This is the remaining bal
 ### Calculate and Evaluate the Output
 
 The calculator will subtract your mortgage balance from your home's value to find your estimated home equity. This is the portion of your home's value that you truly own, and it represents wealth that you might be able to access through selling your home or through certain types of loans. Remember that this is a simplified tool, and it's always a good idea to consult with a real estate professional or a financial advisor for a comprehensive understanding of your home equity.
-
-## Home Renovation ROI Calculator

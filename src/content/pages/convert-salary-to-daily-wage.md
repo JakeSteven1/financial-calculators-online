@@ -14,32 +14,20 @@ However, while this calculator offers valuable insight (or at least we’d like 
 
 ## Let's Find Out How Much You Make In a Day
 
-### More Calculators
+## You might also be interested in these Calculators
 
-## You might also **be interested** in these Calculators
-
-## Hourly Salary Calculator
+### Hourly Salary Calculator
 
 ### Convert Hourly Wage To Yearly Salary
 
 Want to see how much you make in a year if you get paid hourly? Try our free hourly wage to yearly salary calculator
 
-[
+[Open the Hourly Wage to Salary Calculator](/hourly-wage-yearly-salary-calculator/)
 
-### Try it now!
-
-Calculate!
-
-](/hourly-wage-yearly-salary-calculator/)
-
-## 50-30-20 Calculator
+### 50-30-20 Calculator
 
 ### How much should you spend on rent?
 
 Use our 50-30-20 budget calculator to budget how much you should spend on essentials, necessities and wants.
 
-### Calculate Now!
-
-Get started budgeting now!
-
-Calculate
+[Open the 50/30/20 Budget Calculator](/50-30-20-budget-calculator/)

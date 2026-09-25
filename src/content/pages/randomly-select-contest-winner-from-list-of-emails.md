@@ -30,38 +30,22 @@ The popular Math.Random function in JavaScript, like most programming languages�
 
 However, the important thing to note is that for most practical purposes, including a simple giveaway tool like the one you provided, the sequence is sufficiently random. The initial seed used by the generator is typically based on the system time or some other variable source that a user wouldn’t be able to know or control, making it practically impossible to predict what number will be generated next. Even if a technically savvy user could discern the seed and algorithm, the computational effort to predict the outcome would far outweigh the benefits of winning such a contest. Therefore, the pseudorandomness of the `Math.random()` function doesn’t meaningfully affect the fairness of the tool.
 
-However, it’s important to note that this calculator doesn’t guarantee fairness in the sense that it doesn’t check for duplicate entries. If an email is entered more than once, that email has a higher chance of winning. Also, this calculator does not store previous winners, so it’s possible for the same email to win multiple times if the function is run more than once. One final caveat, this calculator is entirely client-side, meaning that the selection process happens entirely on the user’s machine and no data is sent to our  server. We do this for reasons of simplicity and privacy benefits, but also means that the host of the giveaway has no control over or visibility into the selection process once the page is loaded on the user’s machine. The good news is that we guarantee that we do not save, or even collect, any of the emails entered into the form field. As soon as you leave this web page, the emails will disappear. So long as you yourself are not randomly selecting an email (I guess it wouldn’t be random then) or manipulating the list in any way you should be fine. If you’re looking for a simple random number generator, try our [free random number generator](/random-number-generator-online-free/).
+However, it’s important to note that this calculator doesn’t guarantee fairness in the sense that it doesn’t check for duplicate entries. If an email is entered more than once, that email has a higher chance of winning. Also, this calculator does not store previous winners, so it’s possible for the same email to win multiple times if the function is run more than once. One final caveat, this calculator is entirely client-side, meaning that the selection process happens entirely on the user’s machine and no data is sent to our server. We do this for reasons of simplicity and privacy benefits, but also means that the host of the giveaway has no control over or visibility into the selection process once the page is loaded on the user’s machine. The good news is that we guarantee that we do not save, or even collect, any of the emails entered into the form field. As soon as you leave this web page, the emails will disappear. So long as you yourself are not randomly selecting an email (I guess it wouldn’t be random then) or manipulating the list in any way you should be fine. If you’re looking for a simple random number generator, try our [free random number generator](/random-number-generator-online-free/).
 
-### More Calculators
+## You might also be interested in these Calculators
 
-## You might also **be interested** in these Calculators
-
-## Random Number Generator
+### Random Number Generator
 
 ### Random Number Generator
 
 Need to randomly generate a number between a starting number (usually 0) and another number? Try our original RNG generator.
 
-[
+[Open the Random Number Generator](/random-number-generator-online-free/)
 
-### Try it now!
-
-Calculate!
-
-](/random-number-generator-online-free/)
-
-## Representative Sample Generator
+### Representative Sample Generator
 
 ### Find the Representative Sample of a population
 
 Running a poll and need to know the representative sample of the population? Use our free calculator.
 
-[
-
-### Calculate Now!
-
-Get started budgeting now!
-
-Calculate
-
-](/representative-sample-calculator/)
+[Open the Sample Size Calculator](/representative-sample-calculator/)
