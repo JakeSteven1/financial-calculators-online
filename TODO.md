@@ -12,7 +12,7 @@
 - [x] /life-clock-calculator/
 - [x] /online-calculator-for-interest-plus-principal/
 - [x] /quartile-calculator-online-free/
-- [ ] /liquidity-ratio-calculator-online/
+- [x] /liquidity-ratio-calculator-online/
 - [ ] /rule-of-72-calculator/
 - [ ] /break-even-point-calculator/
 - [ ] /online-median-calculator/

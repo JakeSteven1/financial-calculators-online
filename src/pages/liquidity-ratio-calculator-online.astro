@@ -1,0 +1,44 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import LiquidityRatioCalculator from '../components/calculators/LiquidityRatioCalculator';
+
+const faqs = [
+  {
+    q: 'What are liquidity ratios?',
+    a: 'Liquidity ratios measure whether a company can pay its short-term obligations with its short-term assets. The three standard ones are the current ratio, the quick (acid-test) ratio, and the cash ratio.',
+  },
+  {
+    q: 'What is a good current ratio?',
+    a: 'Between about 1.5 and 3 is generally considered healthy. Below 1 means current liabilities exceed current assets. A very high ratio can mean cash or inventory is sitting idle.',
+  },
+  {
+    q: 'Why does the quick ratio exclude inventory?',
+    a: 'Inventory can take months to sell and may sell below book value. The quick ratio counts only assets that can quickly become cash, giving a stricter test.',
+  },
+  {
+    q: 'Do healthy ratios vary by industry?',
+    a: 'Yes, a lot. Grocery chains and restaurants often run current ratios below 1 because they collect cash fast, while manufacturers carrying large inventories need higher ratios. Compare against companies in the same industry.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="liquidity-ratio-calculator-online"
+  h1="Liquidity Ratio Calculator"
+  description="Calculate the current ratio, quick ratio, cash ratio, and working capital from a balance sheet, with a quick read on whether each is healthy."
+  faqs={faqs}
+>
+  <LiquidityRatioCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Current ratio</strong> = current assets ÷ current liabilities</li>
+      <li><strong>Quick ratio</strong> = (current assets − inventory − prepaid expenses) ÷ current liabilities</li>
+      <li><strong>Cash ratio</strong> = (cash + cash equivalents and marketable securities) ÷ current liabilities</li>
+      <li><strong>Working capital</strong> = current assets − current liabilities</li>
+    </ul>
+    <p>
+      A company with $300,000 of current assets, $100,000 of inventory, and $150,000 of current liabilities has a current
+      ratio of 2.0 and a quick ratio of 1.33.
+    </p>
+  </Fragment>
+</CalculatorLayout>
