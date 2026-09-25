@@ -10,7 +10,7 @@
 - [x] /sales-calculator-online/
 - [x] /customer-lifetime-value-calculator-online/
 - [x] /life-clock-calculator/
-- [ ] /online-calculator-for-interest-plus-principal/
+- [x] /online-calculator-for-interest-plus-principal/
 - [ ] /quartile-calculator-online-free/
 - [ ] /liquidity-ratio-calculator-online/
 - [ ] /rule-of-72-calculator/

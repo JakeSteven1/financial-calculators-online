@@ -1,0 +1,39 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import SimpleInterestCalculator from '../components/calculators/SimpleInterestCalculator';
+
+const faqs = [
+  {
+    q: 'How do I calculate interest plus principal?',
+    a: 'Multiply the principal by (1 + rate × time). $10,000 at 5% for 3 years: $10,000 × (1 + 0.05 × 3) = $11,500, which is $10,000 of principal plus $1,500 of interest.',
+  },
+  {
+    q: 'Is this simple or compound interest?',
+    a: 'Simple interest: interest is charged only on the original principal. If interest is added to the balance and earns interest itself, use the compound interest calculator instead.',
+  },
+  {
+    q: 'Do I enter the rate as a decimal or a percent?',
+    a: 'Enter it as a percent, so 5 means 5%. The calculator converts it to 0.05 for the formula.',
+  },
+  {
+    q: 'How are months and days converted?',
+    a: 'Months are divided by 12 and days by 365 to get years. Some lenders use a 360-day year, which gives slightly more interest.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="online-calculator-for-interest-plus-principal"
+  h1="Interest Plus Principal Calculator"
+  description="Calculate the total you will repay or earn, principal plus simple interest, from an amount, annual rate, and time in years, months, or days."
+  faqs={faqs}
+>
+  <SimpleInterestCalculator client:visible />
+  <Fragment slot="formula">
+    <p><strong>Total = P × (1 + r × t)</strong>, and the interest alone is <strong>I = P × r × t</strong>.</p>
+    <p>
+      <em>P</em> is the principal, <em>r</em> the annual rate as a decimal, and <em>t</em> the time in years. Borrowing
+      $2,500 at 8% for 18 months: $2,500 × (1 + 0.08 × 1.5) = $2,800.
+    </p>
+  </Fragment>
+</CalculatorLayout>
