@@ -6,7 +6,7 @@ wpId: 9
 wpType: page
 modified: "2023-07-07T16:06:05"
 ---
-Before using our compound interest calculator, it might help to know what it is and why this important. If you’re already familiar with the concept, then feel free to scroll down to the calculator below.
+Before using our compound interest calculator, it might help to know what it is and why it’s important. If you’re already familiar with the concept, the calculator is at the top of the page.
 
 Compound interest is a [financial concept](/financial-calculators-online/) where the interest you earn or owe on a sum of money is added back to the original amount, thus increasing the total base amount on which future interest is calculated. This process can significantly boost growth over time, which is why it is often referred to as “interest on interest”. Compound interest can apply to various forms of investment and borrowing, such as savings accounts, loans, bonds, and more.
 

@@ -113,3 +113,19 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
   `aria-current="page"` on the hub page itself and `aria-current="true"` on its calculators.
 - `src/data/calculators.test.ts` checks each calculator is registered once in one hub and that the registry matches the
   calculator page files one to one. Hub pages list from the registry; a build check found all 59 on their hub pages.
+
+### Internal linking (task 3)
+- `src/data/related.ts` holds 3–5 related calculators per calculator, ordered by relevance; `getRelated()` puts same-hub
+  entries first. A "Related calculators" card grid replaces the old "More <hub>" list (which linked six arbitrary siblings).
+  Unit tests check 3–5 valid, distinct, non-self entries and that every calculator is someone's related link.
+- 32 contextual links added in the prose of 22 calculator pages (at most 2 per page), each on a phrase the sentence
+  already contained (e.g. "amortization schedule", "closing costs", "Lifetime Value (LTV)"). No sentences were added.
+- 21 vague links to the homepage from old WordPress copy ("[calculator](/)", "[calculations](/)") were unlinked; one
+  "other calculators" link now points to the personal finance hub with that as its anchor text, and "compound interest
+  formula" on the Rule of 72 page now links to the compound interest calculator.
+- Copy that was wrong once the calculator moved above the prose was corrected: 17 "calculator below"/"scroll down" pointers
+  now say "above", and the median and profit margin pages no longer open with "Before using our compound interest
+  calculator" (copied from that page). "why this important" → "why it’s important"; "first et’s" → "first let’s".
+- `npm run check:links` checks every internal URL in `dist/` and counts distinct pages linking to each calculator.
+  Every calculator has at least 3 (hub, homepage, and at least one related or contextual link). Fewest (3): stock sale
+  profit, life clock, fantasy draft pick trade value, and mortgage length calculators.

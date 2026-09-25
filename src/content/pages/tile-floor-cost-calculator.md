@@ -6,7 +6,7 @@ wpId: 1750
 wpType: page
 modified: "2023-09-11T23:21:21"
 ---
-Mulling the possibility of having a new tile floor installed in your home but not sure about the costs? Our tile floor cost calculator will give you a rough idea of how much it’s going to cost you. First some notes about this [calculator](/).
+Mulling the possibility of having a new tile floor installed in your home but not sure about the costs? Our tile floor cost calculator will give you a rough idea of how much it’s going to cost you. First some notes about this calculator.
 
 The Tile Floor Cost Calculator is a user-friendly tool designed to provide homeowners and contractors with a clear and comprehensive estimate of the potential costs associated with various tiling projects. By inputting the type of tile material and the number of tiles needed, users are given a baseline estimate. The calculator includes options for different tile materials such as Vinyl, Linoleum, Cork, Ceramic, and more, each with its own specific cost per square foot. These costs, ranging from $2/sq.ft. for Vinyl to $30/sq.ft. for Metal tiles, are utilized as multipliers to provide the primary foundation for the final cost estimate.
 

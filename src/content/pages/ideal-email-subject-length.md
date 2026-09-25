@@ -20,7 +20,7 @@ Navigate to the "Enter Email Subject" section. In the provided text area, type o
 
 ### Evaluate
 
-Once you've entered your desired subject, click the "Evaluate" button below the text area. The tool will immediately calculate and display two pieces of vital information: the total character count of your subject and a grade based on the subject's word length.
+Once you've entered your desired subject, click the "Evaluate" button below the text area. The tool will immediately calculate and display two pieces of vital information: the total [character count](/character-count-tool-free/) of your subject and a grade based on the subject's word length.
 
 ### Review and Refine
 

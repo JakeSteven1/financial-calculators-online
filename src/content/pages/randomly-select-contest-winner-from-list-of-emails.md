@@ -18,7 +18,7 @@ Managing promotions should be straightforward and stress-free. Our tool was desi
 
 ### Key Features That Set Our Tool Apart
 
-Easily pick a random winner from your list of emails by simply pasting them into the form below. Our free email winner selector tool ensures a fair, unbiased, and transparent result every time, perfect for giveaways, contests, and promotional drawings.
+Easily pick a random winner from your list of emails by simply pasting them into the form above. Our free email winner selector tool ensures a fair, unbiased, and transparent result every time, perfect for giveaways, contests, and promotional drawings.
 
 Our Email Winner Selector Tool utilizes JavaScript’s built-in `Math.random()` function, an industry-standard method for unbiased winner selection. This function generates a random decimal between 0 and 1, ensuring every email in your list has an equal probability of being selected. By leveraging this trusted randomization approach, we guarantee transparency and fairness in every giveaway or promotional drawing you run.
 

@@ -10,7 +10,7 @@ Welcome to the Rule of 72 Calculator, a tool that lets you take advantage of the
 
 The Rule of 72 is a simple mathematical concept used in finance to quickly estimate the doubling time of an investment given a constant annual rate of interest. It’s a handy rule of thumb used to determine when an investment will double. You simply divide 72 by the annual rate of return, and the result is approximately the number of years it will take for the investment to double in value. For instance, an investment with a 6% annual return would take about 12 years (72/6) to double.
 
-However, it’s important to note that the Rule of 72 is an approximation and is most accurate for interest rates between 6% and 10%. It doesn’t account for the effects of compounding more than once a year or the potential for the interest rate to change over time. For a more precise [calculation](/), a compound interest formula should be used. Still, the Rule of 72 offers a quick and easy way to understand the power of compounding and the time value of money.
+However, it’s important to note that the Rule of 72 is an approximation and is most accurate for interest rates between 6% and 10%. It doesn’t account for the effects of compounding more than once a year or the potential for the interest rate to change over time. For a more precise calculation, a [compound interest formula](/compound-interest-calculator-online/) should be used. Still, the Rule of 72 offers a quick and easy way to understand the power of compounding and the time value of money.
 
 ## How To Use Our Rule of 72 Calculator
 

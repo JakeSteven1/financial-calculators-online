@@ -98,7 +98,7 @@ This variance in the value of different seconds reminds us that the answer to �
 
 ## Calculate How Many Seconds in Your Lifetime So Far
 
-Discovering how many seconds in a lifetime you’ve already experienced can provide profound perspective. Our Life Seconds Calculator below allows you to:
+Discovering how many seconds in a lifetime you’ve already experienced can provide profound perspective. Our Life Seconds Calculator above allows you to:
 
 1. Enter your birthdate to calculate exactly how many seconds you’ve lived
 2. See how this compares to average lifetime expectations

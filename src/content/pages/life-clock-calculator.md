@@ -8,7 +8,7 @@ modified: "2024-06-19T20:39:22"
 ---
 If the average life expectancy were compressed into a single 24 hour calendar, how far into the day would you be? Let’s find out.
 
-A few things to keep in mind about this [calculator](/). First of all, relax. It’s a metaphor. We hope it helps you but it’s a metaphor. Also, life expectancy changes every year and is different depending on your gender (women typically live longer), where you were born (developing nation vs undeveloped) and when you were born. Life extending technologies have made the promise of extending life possible, but that’s no excuse to avoid taking life by the horns.
+A few things to keep in mind about this calculator. First of all, relax. It’s a metaphor. We hope it helps you but it’s a metaphor. Also, life expectancy changes every year and is different depending on your gender (women typically live longer), where you were born (developing nation vs undeveloped) and when you were born. Life extending technologies have made the promise of extending life possible, but that’s no excuse to avoid taking life by the horns.
 
 What we hope, is that the time of day that you see after entering your birthday motivates in a way like never before. That you realize that it’s time for you to start doing all the fun things that you’ve been putting off. However, that’s up to you. Also note this is based on the average lifespan of 76 years. Update: We have updated the life clock calculator to include a place where you can select whether you are male or female which impacts the time. The difference is based on this [CDC study](https://www.cdc.gov/nchs/data/vsrr/vsrr023.pdf).
 

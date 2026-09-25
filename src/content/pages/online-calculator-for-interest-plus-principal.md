@@ -8,7 +8,7 @@ modified: "2023-06-11T19:58:01"
 ---
 User our free online interest calculator for determining what interest (counting the principal) you owe or will owe on a loan.
 
-This simple online [calculator](/) is primarily designed to determine the total amount, inclusive of principal and interest, resulting from an investment or a loan over a fixed period of time. It can be especially useful for individuals or businesses who are considering making an investment and want to estimate the total returns at the end of the investment period. It can also be used to understand how much one would end up paying, including the original principal and the interest, for a loan taken for a specific period.
+This simple online calculator is primarily designed to determine the total amount, inclusive of principal and interest, resulting from an investment or a loan over a fixed period of time. It can be especially useful for individuals or businesses who are considering making an investment and want to estimate the total returns at the end of the investment period. It can also be used to understand how much one would end up paying, including the original principal and the interest, for a loan taken for a specific period.
 
 In addition, this tool can be beneficial in financial planning and decision-making. For instance, investors can use it to compare the returns from different investment opportunities, while individuals planning to take a loan can use it to understand their repayment obligations over time. It’s worth noting that this calculator uses simple interest calculation, which means it assumes that interest does not compound over the investment or loan period. For situations where interest compounds, a different calculation would be necessary.
 

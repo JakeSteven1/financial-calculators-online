@@ -12,13 +12,13 @@ Customer Acquisition Cost, or CAC, is a critical business metric that measures t
 
 Understanding your CAC is vital for several reasons:
 
-- **Profitability Analysis:** Comparing CAC to the Lifetime Value (LTV) of a customer helps determine if your business model is sustainable. Ideally, LTV should be significantly higher than CAC.
+- **Profitability Analysis:** Comparing CAC to the [Lifetime Value (LTV)](/customer-lifetime-value-calculator-online/) of a customer helps determine if your business model is sustainable. Ideally, LTV should be significantly higher than CAC.
 - **Marketing Effectiveness:** CAC helps evaluate the efficiency of your sales and marketing campaigns. By tracking CAC across different channels, you can identify which strategies yield the best return on investment.
 - **Budgeting and Forecasting:** Knowing your CAC allows for more accurate budgeting for future growth and forecasting profitability as you scale.
 - **Pricing Strategy:** CAC can inform your pricing decisions to ensure you cover acquisition costs and achieve desired profit margins.
 - **Investor Confidence:** Investors often look at the CAC:LTV ratio as a key indicator of a company's health and scalability.
 
-## Using the Calculator Below
+## Using the Calculator Above
 
 The calculator provided on this page offers a straightforward way to get a basic estimate of your Customer Acquisition Cost. It focuses on the core components: total marketing and sales expenses divided by the number of new customers acquired during the same period.
 
@@ -48,7 +48,7 @@ Knowing your CAC empowers you to make data-driven decisions. Here are some examp
 
 - **Optimizing Marketing Spend:** While this simple calculator uses total costs, imagine you track expenses and customer sources more granularly. If you find your CAC from email marketing is $20, while your CAC from paid social media ads is $75, you might consider shifting more budget towards email marketing, assuming both channels can scale effectively. Your overall CAC helps set a baseline for evaluating channel performance.
 - **Evaluating Campaign Success:** Let's say your typical CAC is $100. You run a specific three-month marketing campaign costing $15,000 and acquire 200 new customers directly attributable to it. The campaign's CAC is $15,000 / 200 = $75. Since this is lower than your average CAC, the campaign looks efficient from an acquisition cost perspective.
-- **Informing Pricing Strategy:** If your product costs $80, but your CAC is $70, your profit margin on the initial sale is very thin ($10), potentially not even covering other operational costs. This might signal a need to either increase your product price, find ways to significantly lower CAC, or focus heavily on increasing LTV through repeat purchases or upselling.
+- **Informing Pricing Strategy:** If your product costs $80, but your CAC is $70, your [profit margin](/profit-margin-calculator/) on the initial sale is very thin ($10), potentially not even covering other operational costs. This might signal a need to either increase your product price, find ways to significantly lower CAC, or focus heavily on increasing LTV through repeat purchases or upselling.
 - **Improving Funnel Efficiency:** A consistently high or rising CAC might indicate problems in your marketing or sales funnel. Are you spending money reaching the wrong audience? Is your website converting visitors poorly? Is the sales team struggling to close leads? High CAC can be a symptom prompting deeper investigation into specific stages of the customer journey.
 - **Forecasting and Budgeting:** If you know your average CAC is $50 and you aim to acquire 1,000 new customers next quarter, you can estimate needing a marketing and sales budget of approximately $50,000 (1,000 × $50). This provides a data-based starting point for budget allocation.
 

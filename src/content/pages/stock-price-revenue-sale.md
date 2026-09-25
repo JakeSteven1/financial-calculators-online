@@ -6,7 +6,7 @@ wpId: 1658
 wpType: page
 modified: "2023-08-09T01:51:16"
 ---
-Use our stock calculator below to find out how much you made on your, or your friends, recent stock sale. Just put the number of shares you had and the sale price and then click calculate.
+Use our stock calculator above to find out how much you made on your, or your friends, recent stock sale. Just put the number of shares you had and the sale price and then click calculate.
 
 Our Stock Calculator is a user-friendly online tool designed to assist investors and traders in quickly determining the total value of their shares. By simply entering the number of shares and the sale price per share, users can instantly calculate the total amount they would receive from the sale of those shares. This calculator can be a handy asset for those looking to make informed decisions regarding their stock sales without manually crunching numbers.
 

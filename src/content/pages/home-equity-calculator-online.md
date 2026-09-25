@@ -16,7 +16,7 @@ Finally, we must also give some limitations about the calculator. While the Home
 
 ### Input Your Home's Current Value
 
-Enter the estimated current market value of your home. This is the price at which you could reasonably expect to sell your home in the current market. You might base this on recent sales of similar homes in your area, or you might have a recent appraisal to base this on.
+Enter the estimated current market value of your home. This is the price at which you could reasonably expect to [sell your home](/home-selling-price-calculator/) in the current market. You might base this on recent sales of similar homes in your area, or you might have a recent appraisal to base this on.
 
 ### Input Remaining Mortgage Balance
 

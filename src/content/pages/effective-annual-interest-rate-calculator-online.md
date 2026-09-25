@@ -6,7 +6,7 @@ wpId: 1595
 wpType: page
 modified: "2023-07-08T17:53:41"
 ---
-Need to calculate the effective interest rate of an investment or loan payment? Use our free calculator below!
+Need to calculate the effective interest rate of an investment or loan payment? Use our free calculator above!
 
 The Effective Interest Rate Calculator is a tool designed to help you understand the impact of the frequency of interest compounding on the actual annual interest rate you earn on an investment or pay on a [loan](/simple-loan-calculator/). Nominal interest rate, also known as the quoted or stated rate, is the rate that doesn’t take into account the effect of compounding. However, in reality, the interest you earn or owe can be compounded on various intervals such as annually, semiannually, quarterly, monthly, or daily. The effective interest rate, also known as the annual equivalent rate (AER), reveals the true return on an investment or the true cost of a loan, which is typically higher than the nominal rate due to the effects of compounding.
 

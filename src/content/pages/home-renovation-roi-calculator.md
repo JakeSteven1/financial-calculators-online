@@ -6,7 +6,7 @@ wpId: 1170
 wpType: page
 modified: "2023-06-20T21:34:06"
 ---
-Planning home renovations and curious about the return on investment (ROI)? Our Home Renovation ROI Calculator can provide a helpful estimate to inform your decisions.
+Planning home renovations and curious about the [return on investment (ROI)](/return-on-investment-calculator/)? Our Home Renovation ROI Calculator can provide a helpful estimate to inform your decisions.
 
 A home renovation can significantly increase the value of your property, but the upfront costs can be substantial. It’s crucial to assess the potential ROI before proceeding with any renovation project. Our Home Renovation ROI Calculator assists users in doing just that. It compares the cost of a potential renovation with the estimated increase in home value, providing a percentage that indicates the ROI. For example, if you plan to renovate your kitchen for $20,000 and expect that the project will raise your home’s value by $30,000, your ROI would be 50%.
 
@@ -24,4 +24,4 @@ Next, enter the amount you still owe on your mortgage. This is the remaining bal
 
 ### Calculate and Evaluate the Output
 
-The calculator will subtract your mortgage balance from your home's value to find your estimated home equity. This is the portion of your home's value that you truly own, and it represents wealth that you might be able to access through selling your home or through certain types of loans. Remember that this is a simplified tool, and it's always a good idea to consult with a real estate professional or a financial advisor for a comprehensive understanding of your home equity.
+The calculator will subtract your mortgage balance from your home's value to find your estimated [home equity](/home-equity-calculator-online/). This is the portion of your home's value that you truly own, and it represents wealth that you might be able to access through selling your home or through certain types of loans. Remember that this is a simplified tool, and it's always a good idea to consult with a real estate professional or a financial advisor for a comprehensive understanding of your home equity.
