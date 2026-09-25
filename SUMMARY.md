@@ -45,8 +45,9 @@ Static Astro rebuild of financialcalculatoronlinefree.com, ready for Cloudflare 
 Current checks: 182 tests pass, `astro check` 0 errors, 67 pages built, 390px smoke test clean on all pages,
 0 broken internal links. Details and reasoning are in DECISIONS.md under "Design and fixes phase".
 
-## Needs your attention (see BLOCKED.md)
-1. No AdSense ad unit IDs yet, so ad slots are empty reserved boxes.
+## Ads
+Every ad box serves the "Fincalc slots" display unit (`1963056538`, set as `ADSENSE_DEFAULT_SLOT` in `src/data/site.ts`):
+two per calculator page (after the formula, and after the FAQ), one per hub and on the homepage. Nothing is blocked.
 
 ## Commands
 - `npm run dev`: local dev server

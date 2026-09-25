@@ -1,16 +1,18 @@
 ---
 // Fixed-height ad container: the box is reserved before the ad loads, so ads
 // never cause layout shift. Heights are per breakpoint and must not change.
-import { ADSENSE_CLIENT } from '../data/site';
+// The ad unit is responsive, but data-ad-format / full-width-responsive are left
+// off on purpose: AdSense then sizes the ad to the <ins> box set by CSS.
+import { ADSENSE_CLIENT, ADSENSE_DEFAULT_SLOT } from '../data/site';
 
 interface Props {
-  /** AdSense ad unit ID (data-ad-slot). Empty renders a reserved placeholder. */
+  /** AdSense ad unit ID (data-ad-slot); defaults to the site's display unit. Empty renders a reserved placeholder. */
   slot?: string;
   size?: 'banner' | 'rectangle';
   class?: string;
 }
 
-const { slot = '', size = 'banner', class: className = '' } = Astro.props;
+const { slot = ADSENSE_DEFAULT_SLOT, size = 'banner', class: className = '' } = Astro.props;
 const heights = size === 'rectangle' ? 'h-[280px]' : 'h-[100px] md:h-[90px]';
 const live = Boolean(ADSENSE_CLIENT && slot);
 ---

@@ -214,3 +214,11 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
   used because it described features that no longer exist (saved contests, embed code, non-cryptographic randomness);
   the page has short accurate notes and a link to the public giveaway picker instead.
 - `public/_redirects` (Cloudflare Pages format): `/free-online-financial-calculators/ / 301`.
+
+### Ad unit
+- The "Fincalc slots" unit (`1963056538`) is `ADSENSE_DEFAULT_SLOT` in `src/data/site.ts` and `<AdSlot>`'s default, so
+  every ad box serves it (AdSense allows one unit to be used several times on a page). Pass `slot="…"` to use another unit.
+- The unit was created as responsive, but `data-ad-format="auto"` and `data-full-width-responsive="true"` from the AdSense
+  snippet are deliberately omitted: with them, AdSense can resize the ad after load and shift content. Without them it
+  fills the fixed-height `<ins>` box (90/100px banner, 280px rectangle), which is Google's documented way to fix the size
+  of a responsive unit. The loader script from the snippet was already in `<head>`.
