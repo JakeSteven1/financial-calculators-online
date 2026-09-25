@@ -27,7 +27,7 @@
 - [x] /car-loan-calculator/
 - [x] /ideal-email-subject-length/
 - [x] /cost-per-lead-calculator/
-- [ ] /mean-online-calculator/
+- [x] /mean-online-calculator/
 - [ ] /mode-calculator-online/
 - [ ] /standard-deviation-calculator-online-free/
 - [ ] /monthly-loan-calculator/

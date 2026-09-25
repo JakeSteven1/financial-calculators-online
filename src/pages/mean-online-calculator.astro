@@ -1,0 +1,36 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import StatsCalculator from '../components/calculators/StatsCalculator';
+
+const faqs = [
+  {
+    q: 'How do you calculate the mean?',
+    a: 'Add all the values together and divide by how many there are. The mean of 4, 8, 15, 16, 23, 42 is 108 ÷ 6 = 18.',
+  },
+  {
+    q: 'Is the mean the same as the average?',
+    a: 'Yes. In everyday use, “average” means the arithmetic mean. Statisticians sometimes use “average” more loosely to include the median and mode.',
+  },
+  {
+    q: 'When is the mean misleading?',
+    a: 'When the data has outliers or is skewed. Nine people earning $50,000 and one earning $5 million have a mean income of $545,000, which describes nobody. The median is better in cases like that.',
+  },
+  {
+    q: 'Can I paste data from Excel or Google Sheets?',
+    a: 'Yes. Copy a column or row and paste it in; values separated by new lines, tabs, commas, or spaces are all recognized.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="mean-online-calculator"
+  h1="Mean Calculator"
+  description="Free mean calculator. Paste a list of numbers to get the arithmetic mean (average) instantly, plus the sum, count, median, mode, and standard deviation."
+  faqs={faqs}
+>
+  <StatsCalculator focus="mean" client:visible />
+  <Fragment slot="formula">
+    <p><strong>Mean (x̄) = Σx ÷ n</strong></p>
+    <p>Σx is the sum of all values and <em>n</em> is how many values there are. For 2, 4, 4, 4, 5, 5, 7, 9: 40 ÷ 8 = 5.</p>
+  </Fragment>
+</CalculatorLayout>
