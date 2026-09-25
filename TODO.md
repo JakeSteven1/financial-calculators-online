@@ -64,7 +64,7 @@
 
 ## Hub and static pages (build last)
 - [x] / (homepage)
-- [ ] /free-business-calculators/
+- [x] /free-business-calculators/
 - [ ] /financial-calculators-online/
 - [ ] /personal-financial-calculators/
 - [ ] /home-calculators-online/

@@ -1,0 +1,27 @@
+---
+import HubLayout from '../layouts/HubLayout.astro';
+
+const faqs = [
+  {
+    q: 'What business calculators are available?',
+    a: 'Sales and pricing (cost, margin, markup), gross and net profit margin, break-even point, ROI, customer lifetime value, customer acquisition cost, cost per lead, and tools for email subject lines and character counts.',
+  },
+  {
+    q: 'What is the difference between margin and markup?',
+    a: 'Margin is profit as a percentage of the selling price; markup is profit as a percentage of cost. A product that costs $60 and sells for $100 has a 40% margin and a 66.7% markup.',
+  },
+  {
+    q: 'Which metrics matter most for a growing business?',
+    a: 'Gross margin, break-even volume, and the ratio of customer lifetime value to acquisition cost. Together they show whether each sale is profitable and whether growth pays for itself.',
+  },
+];
+---
+
+<HubLayout
+  hub="free-business-calculators"
+  contentSlug="free-business-calculators"
+  h1="Free Business Calculators"
+  intro="Pricing, profitability, and marketing calculators for small business owners, marketers, and students."
+  description="Free business calculators: sales and pricing, gross and profit margin, break-even point, ROI, customer lifetime value, CAC, cost per lead, and more."
+  faqs={faqs}
+/>
