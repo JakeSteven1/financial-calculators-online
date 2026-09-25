@@ -20,3 +20,6 @@
   .prose { overflow-wrap: anywhere; }
   .prose table { display: block; max-width: 100%; overflow-x: auto; }
 }
+
+/* Zero-JS mobile menu: hide the native disclosure marker in every engine. */
+.site-menu > summary::-webkit-details-marker { display: none; }

@@ -41,7 +41,7 @@ Choices made without asking, per CLAUDE.md.
 - Calculator pages also emit `BreadcrumbList` JSON-LD and link to up to six sibling calculators in the same hub.
 - The homepage renders the prose of the old WP front page (`free-online-financial-calculators`), which already
   301s to `/` on the live site.
-- Nav label for the real-estate hub is "Real Estate" (not "Home", which read as the homepage).
+- Nav label for the real-estate hub was "Real Estate"; superseded in the design phase (now "Home", as specified).
 - Imported prose: internal links to the old domain (http/https, with or without trailing slash) are rewritten to
   root-relative URLs with a trailing slash. A build-time check found 0 broken internal links across 66 pages.
 - Long URLs wrap and wide tables scroll inside `.prose` so no page scrolls sideways at 390px.
@@ -104,3 +104,12 @@ No `£`, mojibake, shortcodes, or double-encoded entities were present; the fixe
 - Two bold pseudo-headings on the CAC page became H2s.
 - Non-breaking-space runs and doubled spaces collapsed; multiplication written as `*` in prose formulas now uses `×`.
 - The Markdown in `src/content/pages/` is now hand-maintained: re-running `npm run import:wp` would overwrite these fixes.
+
+### Navigation (task 2)
+- Main nav is exactly Financial, Business, Statistics, Home, Personal Finance, taken from `HUBS` (order and labels are
+  locked by a unit test). The Real Estate hub keeps its page name "Real Estate Calculators"; only the nav label is "Home".
+- Desktop (≥768px) shows an inline list; below that a `<details>`/`<summary>` "Menu" disclosure (zero JS).
+- Active hub: `hubForPath()` maps a hub page or calculator to its hub. The link gets a tinted background, with
+  `aria-current="page"` on the hub page itself and `aria-current="true"` on its calculators.
+- `src/data/calculators.test.ts` checks each calculator is registered once in one hub and that the registry matches the
+  calculator page files one to one. Hub pages list from the registry; a build check found all 59 on their hub pages.

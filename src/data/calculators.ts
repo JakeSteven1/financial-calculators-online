@@ -15,12 +15,13 @@ export interface Hub {
   navLabel: string;
 }
 
+// Order and labels are the site's main navigation.
 export const HUBS: Hub[] = [
   { slug: 'financial-calculators-online', name: 'Financial Calculators', navLabel: 'Financial' },
-  { slug: 'personal-financial-calculators', name: 'Personal Finance Calculators', navLabel: 'Personal' },
-  { slug: 'home-calculators-online', name: 'Real Estate Calculators', navLabel: 'Real Estate' },
   { slug: 'free-business-calculators', name: 'Business Calculators', navLabel: 'Business' },
   { slug: 'free-online-statistics-calculators', name: 'Statistics Calculators', navLabel: 'Statistics' },
+  { slug: 'home-calculators-online', name: 'Real Estate Calculators', navLabel: 'Home' },
+  { slug: 'personal-financial-calculators', name: 'Personal Finance Calculators', navLabel: 'Personal Finance' },
 ];
 
 export interface CalculatorEntry {
@@ -113,4 +114,10 @@ export function getHub(slug: HubSlug): Hub {
   const hub = HUBS.find((h) => h.slug === slug);
   if (!hub) throw new Error(`Unknown hub "${slug}"`);
   return hub;
+}
+
+/** The hub a page belongs to: the hub itself, or the hub of a calculator. */
+export function hubForPath(pathname: string): HubSlug | undefined {
+  const slug = pathname.replace(/^\/|\/$/g, '');
+  return HUBS.find((h) => h.slug === slug)?.slug ?? CALCULATORS.find((c) => c.slug === slug)?.hub;
 }

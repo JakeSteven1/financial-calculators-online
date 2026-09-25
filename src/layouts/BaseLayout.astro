@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { HUBS } from '../data/calculators';
+import { HUBS, hubForPath } from '../data/calculators';
 import { ADSENSE_CLIENT, SITE_NAME, SITE_URL } from '../data/site';
 
 interface Props {
@@ -13,6 +13,14 @@ interface Props {
 const { title, description, jsonLd = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 const year = new Date().getFullYear();
+const activeHub = hubForPath(Astro.url.pathname);
+const navItems = HUBS.map((hub) => ({
+  ...hub,
+  href: `/${hub.slug}/`,
+  active: hub.slug === activeHub,
+  // The hub page itself is the current page; on a calculator the hub is the current section.
+  current: hub.slug === activeHub ? (Astro.url.pathname === `/${hub.slug}/` ? 'page' : 'true') : undefined,
+}));
 ---
 
 <!doctype html>
@@ -42,15 +50,40 @@ const year = new Date().getFullYear();
   </head>
   <body class="flex min-h-screen flex-col">
     <header class="border-b border-slate-200 bg-white">
-      <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-3">
+      <div class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-3">
         <a href="/" class="text-lg font-bold text-brand-800 no-underline">{SITE_NAME}</a>
-        <nav aria-label="Calculator categories">
-          <ul class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            {HUBS.map((hub) => (
-              <li><a href={`/${hub.slug}/`} class="text-slate-600 no-underline hover:text-brand-700">{hub.navLabel}</a></li>
+        <nav aria-label="Calculator categories" class="hidden md:block">
+          <ul class="flex gap-1 text-sm font-medium">
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={item.current}
+                  class:list={['block rounded-md px-3 py-2 no-underline', item.active ? 'bg-brand-50 text-brand-800' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900']}
+                >{item.navLabel}</a>
+              </li>
             ))}
           </ul>
         </nav>
+        <details class="site-menu relative md:hidden">
+          <summary class="flex cursor-pointer list-none items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M2 4h12M2 8h12M2 12h12" /></svg>
+            Menu
+          </summary>
+          <nav aria-label="Calculator categories" class="absolute right-0 z-20 mt-2 w-56 rounded-lg border border-slate-200 bg-white p-2 shadow-lg">
+            <ul class="text-base">
+              {navItems.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    aria-current={item.current}
+                    class:list={['block rounded-md px-3 py-2 no-underline', item.active ? 'bg-brand-50 font-semibold text-brand-800' : 'text-slate-700 hover:bg-slate-100']}
+                  >{item.navLabel}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </details>
       </div>
     </header>
     <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
