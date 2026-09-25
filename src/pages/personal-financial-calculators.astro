@@ -1,0 +1,27 @@
+---
+import HubLayout from '../layouts/HubLayout.astro';
+
+const faqs = [
+  {
+    q: 'What personal finance calculators do you offer?',
+    a: 'Budgeting (50/30/20), wage and salary conversions, loan payments, retirement planning, the Rule of 72, tipping, net worth ratios, and a few fun ones like the life clock and life seconds counter.',
+  },
+  {
+    q: 'Where should I start with personal finance?',
+    a: 'Start with a budget. The 50/30/20 calculator splits your take-home pay into needs, wants, and savings, which gives you a baseline for everything else.',
+  },
+  {
+    q: 'Is my information private?',
+    a: 'Yes. Everything is calculated in your browser. We never see or store the numbers you enter.',
+  },
+];
+---
+
+<HubLayout
+  hub="personal-financial-calculators"
+  contentSlug="personal-financial-calculators"
+  h1="Personal Financial Calculators"
+  intro="Everyday money tools for budgeting, pay, loans, saving for retirement, and a few fun ways to look at time and money."
+  description="Free personal finance calculators: 50/30/20 budget, hourly to salary, daily wage, loan payments, retirement, Rule of 72, tips, life clock, and more."
+  faqs={faqs}
+/>

@@ -66,7 +66,7 @@
 - [x] / (homepage)
 - [x] /free-business-calculators/
 - [x] /financial-calculators-online/
-- [ ] /personal-financial-calculators/
+- [x] /personal-financial-calculators/
 - [ ] /home-calculators-online/
 - [ ] /free-online-statistics-calculators/
 - [ ] /privacy-policy-2/
