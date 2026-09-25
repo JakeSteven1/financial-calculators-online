@@ -1,0 +1,42 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RentVsBuyCalculator from '../components/calculators/RentVsBuyCalculator';
+
+const faqs = [
+  {
+    q: 'Is it cheaper to rent or buy?',
+    a: 'It depends mostly on how long you stay. Buying has large upfront and selling costs that take years of appreciation and loan paydown to recover. The longer you stay, the more likely buying wins.',
+  },
+  {
+    q: 'How does the calculator compare renting and buying?',
+    a: 'It adds up everything you pay to rent, and everything you pay to own (down payment, closing costs, mortgage, taxes, insurance, maintenance), then subtracts the equity you would walk away with after selling. It also counts the investment return you give up on the cash used to buy.',
+  },
+  {
+    q: 'What is the opportunity cost of a down payment?',
+    a: 'Money spent on a down payment and closing costs can’t be invested elsewhere. At a 5% return, $92,000 of upfront cash gives up about $4,600 in the first year alone.',
+  },
+  {
+    q: 'What is the price-to-rent ratio?',
+    a: 'Home price ÷ annual rent. Below about 15 tends to favor buying, above about 20 tends to favor renting. A $400,000 home that rents for $2,000 a month has a ratio of 16.7.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="rent-or-buy-calculator-online-free"
+  h1="Rent vs Buy Calculator"
+  description="Should you rent or buy? Compare the true cost of renting and owning over time, including equity, appreciation, selling costs, and lost investment returns."
+  faqs={faqs}
+>
+  <RentVsBuyCalculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Cost of renting</strong> = Σ (monthly rent × 12 + renter’s insurance), with rent rising each year</li>
+      <li>
+        <strong>Cost of buying</strong> = down payment + closing costs + Σ (mortgage payments + property tax + insurance +
+        maintenance) − (home value × (1 − selling costs) − loan balance) + lost investment return on upfront cash
+      </li>
+    </ul>
+    <p>Property tax and maintenance are percentages of the home’s value, which grows with appreciation.</p>
+  </Fragment>
+</CalculatorLayout>
