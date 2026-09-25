@@ -1,0 +1,42 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import RuleOf72Calculator from '../components/calculators/RuleOf72Calculator';
+
+const faqs = [
+  {
+    q: 'What is the Rule of 72?',
+    a: 'A shortcut for estimating how long an investment takes to double: divide 72 by the annual interest rate. At 8% a year, money doubles in about 72 ÷ 8 = 9 years.',
+  },
+  {
+    q: 'How accurate is the Rule of 72?',
+    a: 'Very accurate for rates between about 6% and 10%, usually within a few weeks. It overestimates doubling time at low rates and underestimates it at high rates; the calculator shows the exact figure alongside.',
+  },
+  {
+    q: 'Why 72 and not another number?',
+    a: 'The exact doubling time is ln(2) ÷ ln(1 + r), which is close to 69.3 ÷ r for small rates. 72 is used because it is easy to divide by 2, 3, 4, 6, 8, 9, and 12, and it corrects for typical rates.',
+  },
+  {
+    q: 'Can I use it for inflation?',
+    a: 'Yes. At 3% inflation, prices double in about 72 ÷ 3 = 24 years, meaning a dollar loses half its purchasing power in that time.',
+  },
+];
+---
+
+<CalculatorLayout
+  slug="rule-of-72-calculator"
+  h1="Rule of 72 Calculator"
+  description="How long does it take to double your money? Use the Rule of 72 to estimate doubling time or the rate you need, compared with the exact answer."
+  faqs={faqs}
+>
+  <RuleOf72Calculator client:visible />
+  <Fragment slot="formula">
+    <ul>
+      <li><strong>Years to double ≈ 72 ÷ annual rate (%)</strong></li>
+      <li><strong>Rate needed ≈ 72 ÷ years</strong></li>
+    </ul>
+    <p>
+      The exact answers with annual compounding are <em>ln 2 ÷ ln(1 + r)</em> years and <em>2<sup>1/t</sup> − 1</em>. At
+      6%, the rule says 12 years; the exact figure is 11.9 years.
+    </p>
+  </Fragment>
+</CalculatorLayout>

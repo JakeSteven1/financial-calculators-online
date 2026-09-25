@@ -13,7 +13,7 @@
 - [x] /online-calculator-for-interest-plus-principal/
 - [x] /quartile-calculator-online-free/
 - [x] /liquidity-ratio-calculator-online/
-- [ ] /rule-of-72-calculator/
+- [x] /rule-of-72-calculator/
 - [ ] /break-even-point-calculator/
 - [ ] /online-median-calculator/
 
